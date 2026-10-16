@@ -32,12 +32,17 @@
    "rest_weight": 450,
    "peak_weight": 700,
    "letter_spacing": "0.010em"
-  }
+  },
+  "whatsapp": "https://wa.me/923314074234"
  },
  "nav": [
   {
-   "label": "Career",
+   "label": "Experience",
    "target": "career"
+  },
+  {
+   "label": "Skills",
+   "target": "skills"
   },
   {
    "label": "Certificates",
@@ -62,8 +67,8 @@
    "Sulehri"
   ],
   "portrait": "assets/portrait.webp",
-  "role_line": "Marketing strategist · B2B · AI",
-  "thesis": "B2B growth leader building marketing engines *with AI*.",
+  "role_line": "Senior Marketing Manager · B2B Growth & AI",
+  "thesis": "B2B growth leader,\nbuilding marketing engines *with AI*.",
   "status": "Open to conversations",
   "city": "Lahore",
   "timezone": "Asia/Karachi",
@@ -95,37 +100,43 @@
    "label": "Problems I solve",
    "headline": "Four problems, solved",
    "teaser": "AI, B2B pipeline, complex products, turnarounds",
-   "opens": "problems"
+   "opens": "problems",
+   "icon": "target"
   },
   {
    "label": "Proof of work",
    "headline": "Eight years, five roles",
    "teaser": "Results from every role, and one turnaround",
-   "opens": "proof"
+   "opens": "proof",
+   "icon": "chart"
   },
   {
    "label": "My AI toolkit",
    "headline": "Built with AI, daily",
    "teaser": "10+ agents and automations, human-approved",
-   "opens": "ai"
+   "opens": "ai",
+   "icon": "nodes"
   },
   {
    "label": "Testimonials",
    "headline": "What colleagues say",
    "teaser": "Unedited, from LinkedIn",
-   "opens": "testimonials"
+   "opens": "testimonials",
+   "icon": "quote"
   },
   {
    "label": "Writing",
    "headline": "13 articles",
    "teaser": "Mostly on AI in marketing",
-   "opens": "writing"
+   "opens": "writing",
+   "icon": "pen"
   },
   {
    "label": "Credentials",
    "headline": "Always learning",
    "teaser": "Google · Anthropic · Meta · LUMS",
-   "scrolls_to": "certificates"
+   "scrolls_to": "certificates",
+   "icon": "ribbon"
   }
  ],
  "panels": {
@@ -182,9 +193,14 @@
      "label": "Influencers per campaign, at peak"
     },
     {
-     "value": 35,
+     "value": 60,
      "suffix": "%",
-     "label": "Email open rates, at best"
+     "label": "Email open rate, recent B2B campaigns"
+    },
+    {
+     "value": 5,
+     "suffix": "%+",
+     "label": "Click-through, recent B2B campaigns"
     }
    ],
    "case": {
@@ -209,80 +225,7 @@
     ],
     "callout": "+44%",
     "callout_note": "vs start"
-   },
-   "roles": [
-    {
-     "dates": "Sep 2025 – Present",
-     "title": "Senior Marketing Manager",
-     "company": "People Perfect · Lahore",
-     "summary": "Lead B2B marketing for a multi-country HR services group and its first-of-its-kind HR services marketplace, with a team of 6.",
-     "bullets": [
-      "Own marketing strategy end to end: brand, PR, product marketing, content governance, CRM-led growth and B2B demand",
-      "Lead a team of 4 direct reports and 2 freelancers across content, design, SEO and digital, managing a marketing budget of around $10K a month",
-      "Co-designed and priced 5 HR consulting service lines, now live on the marketplace",
-      "Run account-based marketing through LinkedIn Sales Navigator and email, targeting C-level leaders at UAE enterprises and owners of large Pakistani FMCG businesses",
-      "Run Google, Meta and LinkedIn campaigns, and Path2Progress, our event series and webinars for senior HR leaders",
-      "Final sign-off on all brand and marketplace content; leading the new company website and office wall branding",
-      "Optimise Bitrix24 CRM workflows for lead visibility, lifecycle tracking and sales alignment",
-      "Built 10+ AI agents and automations for reporting, checks and content, each one human-approved"
-     ],
-     "now": true
-    },
-    {
-     "dates": "Dec 2022 – May 2025",
-     "title": "Marketing Manager",
-     "company": "Creative Zone Tax & Accounting · UAE",
-     "summary": "Made UAE corporate tax, new in 2023, easy to act on: 20–40% engagement growth, ~30% more organic traffic and open rates up to 35%.",
-     "bullets": [
-      "Led integrated marketing for a UAE tax and accounting firm: brand visibility, demand generation and client acquisition",
-      "Turned new corporate tax rules into clear Meta and LinkedIn campaigns, delivering 20–40% sustained engagement growth",
-      "Owned email marketing and automation; segmentation and A/B testing lifted open rates up to 35% and CTR to nearly 20%",
-      "Directed SEO-led content, growing organic traffic by about 30% across blogs and landing pages",
-      "Used SEMrush and Google Trends research to shape go-to-market plans, and reported insights to senior leaders"
-     ],
-     "now": false
-    },
-    {
-     "dates": "Sep 2021 – Nov 2022",
-     "title": "Senior Marketing Specialist",
-     "company": "Soliton Technologies · Pakistan/US software house",
-     "summary": "Built marketing from scratch: a rebrand, a new website, campaigns, and an employer brand people loved.",
-     "bullets": [
-      "Built the marketing function from zero: website content, blogs, email campaigns and social presence",
-      "Led the rebrand and launched a new company website",
-      "Made it a fun place to work: employee events, employee of the month, birthdays and farewells, wall branding, merchandise and employee videos",
-      "Built university partnerships and represented the company at industry and campus events",
-      "Secured PR placements and shared performance insights through Looker Studio"
-     ],
-     "now": false
-    },
-    {
-     "dates": "Jan 2019 – Aug 2021",
-     "title": "Assistant Manager Marketing",
-     "company": "Acumen Consulting · Lahore",
-     "summary": "Campaigns for brands like Unilever, Samsung and Telenor: up to 500 influencers and ~27M impressions per campaign on average.",
-     "bullets": [
-      "Delivered integrated digital, influencer and PR campaigns for Samsung, Unilever, Telenor, Haier, Vivo, National Foods, ARY Digital, Honda, SnackVideo, Pink Ribbon and more",
-      "Ran influencer and trend campaigns across X, Instagram, Facebook and LinkedIn with up to 500 influencers per campaign, averaging ~27M impressions",
-      "Managed PR agencies, bloggers and on-ground activations",
-      "Led cross-functional teams through high-pressure launches"
-     ],
-     "now": false
-    },
-    {
-     "dates": "Mar 2018 – Dec 2018",
-     "title": "Digital Marketing Executive",
-     "company": "Transmedia Digital Solutions · Lahore",
-     "summary": "My first agency role: content, SMS campaigns and blogger partnerships for SME clients.",
-     "bullets": [
-      "Wrote blogs and social content for SME clients",
-      "Ran SMS campaigns that reached customers directly",
-      "Coordinated events, vendors and guests",
-      "Built partnerships with bloggers and online publishers"
-     ],
-     "now": false
-    }
-   ]
+   }
   },
   "ai": {
    "lead": "Agents and automations I run at work. A person reviews every output.",
@@ -354,115 +297,6 @@
      "title": "This website",
      "text": "Designed and built with AI, with every design and content decision made by me.",
      "tags": []
-    }
-   ],
-   "tools": [
-    {
-     "group": "AI",
-     "main": [
-      "Claude",
-      "ChatGPT",
-      "Gemini"
-     ],
-     "more": [
-      "Microsoft Copilot",
-      "Grok",
-      "Perplexity",
-      "NotebookLM",
-      "Claude Design",
-      "Claude Cowork",
-      "Claude Code",
-      "Lovable"
-     ]
-    },
-    {
-     "group": "CRM & automation",
-     "main": [
-      "HubSpot",
-      "Bitrix24",
-      "Zapier"
-     ],
-     "more": [
-      "Zoho CRM",
-      "Zoho Campaigns",
-      "Power Automate",
-      "Microsoft Bookings",
-      "Mailchimp"
-     ]
-    },
-    {
-     "group": "Prospecting & data",
-     "main": [
-      "LinkedIn Sales Navigator",
-      "Apollo.io"
-     ],
-     "more": [
-      "ZoomInfo",
-      "Hunter.io",
-      "Snov.io",
-      "Reachinbox",
-      "Scrupp"
-     ]
-    },
-    {
-     "group": "Analytics & SEO",
-     "main": [
-      "Google Analytics",
-      "SEMrush"
-     ],
-     "more": [
-      "Search Console",
-      "Tag Manager",
-      "Looker Studio",
-      "Power BI",
-      "Google Trends",
-      "Yoast SEO",
-      "Windsor.ai"
-     ]
-    },
-    {
-     "group": "Ads & social",
-     "main": [
-      "Meta Ads",
-      "LinkedIn Ads",
-      "Google Ads"
-     ],
-     "more": [
-      "X Ads",
-      "Meta Business Suite",
-      "Hootsuite / Buffer",
-      "Brand24",
-      "TweetDeck",
-      "Tweet Binder"
-     ]
-    },
-    {
-     "group": "Content & design",
-     "main": [
-      "Canva",
-      "Figma"
-     ],
-     "more": [
-      "WordPress",
-      "CapCut",
-      "Grammarly"
-     ]
-    },
-    {
-     "group": "Work & data",
-     "main": [
-      "Notion",
-      "Advanced Excel"
-     ],
-     "more": [
-      "Power Query",
-      "Asana",
-      "Trello",
-      "Jira",
-      "Microsoft Office",
-      "Microsoft Teams",
-      "GitHub"
-     ]
     }
    ]
   },
@@ -2047,92 +1881,6 @@
    ]
   }
  },
- "career": {
-  "eyebrow": "Career",
-  "title": "From blogger to *B2B lead*.",
-  "note": "Oldest to newest",
-  "items": [
-   {
-    "years": "Before 2018",
-    "title": "Tech & lifestyle blogger",
-    "company": "Pakistani tech sites",
-    "headline": "It started with a blog",
-    "story": "I began as a tech blogger for Pakistani tech sites, then moved into lifestyle and food reviews, gadget reviews for mobile brands, and event and launch coverage, including Foodpanda's Pakistan blog. Along the way I qualified as an ACCA, earned a Journalism degree, and kept adding marketing certifications.",
-    "highlights": [],
-    "now": false
-   },
-   {
-    "years": "2018",
-    "title": "Digital Marketing Executive",
-    "company": "Transmedia Digital Solutions",
-    "headline": "From blogger to agency",
-    "story": "My first agency role, where I learned to execute fast: blogs and content for SME clients, SMS campaigns that reached customers directly, vendor coordination, and partnerships with bloggers and publishers, a network I'd built as a blogger myself.",
-    "highlights": [
-     "Wrote blogs and social content for SME clients",
-     "Ran SMS campaigns that reached customers directly",
-     "Coordinated events, vendors and guests",
-     "Built partnerships with bloggers and online publishers"
-    ],
-    "now": false
-   },
-   {
-    "years": "2019 – 2021",
-    "title": "Assistant Manager Marketing",
-    "company": "Acumen Consulting",
-    "headline": "Big brands, big reach",
-    "story": "Integrated campaigns for brands like Unilever, Samsung and Telenor across X, Instagram, Facebook and LinkedIn: up to 500 influencers and ~27M impressions per campaign on average, backed by PR, bloggers and on-ground activations, while leading teams through high-pressure launches.",
-    "highlights": [
-     "Delivered integrated digital, influencer and PR campaigns for Samsung, Unilever, Telenor, Haier, Vivo, National Foods, ARY Digital, Honda, SnackVideo, Pink Ribbon and more",
-     "Ran influencer and trend campaigns across X, Instagram, Facebook and LinkedIn with up to 500 influencers per campaign, averaging ~27M impressions",
-     "Managed PR agencies, bloggers and on-ground activations",
-     "Led cross-functional teams through high-pressure launches"
-    ],
-    "now": false
-   },
-   {
-    "years": "2021 – 2022",
-    "title": "Senior Marketing Specialist",
-    "company": "Soliton Technologies",
-    "headline": "A brand people love working for",
-    "story": "At a Pakistan–US software house, I built marketing from scratch: a rebrand, a new website, emails, blogs and campaigns. Inside, I made it a fun place to work: employee events, employee of the month, birthdays and farewells, wall branding, merchandise, employee videos and university partnerships.",
-    "highlights": [
-     "Built the marketing function from zero: website content, blogs, email campaigns and social presence",
-     "Led the rebrand and launched a new company website",
-     "Made it a fun place to work: employee events, employee of the month, birthdays and farewells, wall branding, merchandise and employee videos",
-     "Built university partnerships and represented the company at industry and campus events"
-    ],
-    "now": false
-   },
-   {
-    "years": "2022 – 2025",
-    "title": "Marketing Manager",
-    "company": "Creative Zone Tax & Accounting · UAE",
-    "headline": "Making the complex simple",
-    "story": "When the UAE introduced corporate tax, businesses were confused. I turned new tax rules into campaigns people acted on across Meta and LinkedIn: 20–40% engagement growth, ~30% more organic traffic, and email open rates up to 35% through segmentation and testing.",
-    "highlights": [
-     "Led integrated marketing for a UAE tax and accounting firm: brand visibility, demand generation and client acquisition",
-     "Turned new corporate tax rules into clear Meta and LinkedIn campaigns, delivering 20–40% sustained engagement growth",
-     "Owned email marketing and automation; segmentation and A/B testing lifted open rates up to 35% and CTR to nearly 20%",
-     "Directed SEO-led content, growing organic traffic by about 30% across blogs and landing pages"
-    ],
-    "now": false
-   },
-   {
-    "years": "2025 – Now",
-    "title": "Senior Marketing Manager",
-    "company": "People Perfect",
-    "headline": "Building growth engines with AI",
-    "story": "I lead B2B marketing for a multi-country HR services group: ABM through Sales Navigator and email, Google, Meta and LinkedIn campaigns, and Path2Progress, our event series for HR leaders. I co-designed and priced our consulting products, am leading the new website, and built 10+ AI agents and automations for reporting and checks.",
-    "highlights": [
-     "Own marketing strategy end to end: brand, PR, product marketing, content governance, CRM-led growth and B2B demand",
-     "Lead a team of 4 direct reports and 2 freelancers across content, design, SEO and digital, managing a marketing budget of around $10K a month",
-     "Co-designed and priced 5 HR consulting service lines, now live on the marketplace",
-     "Run account-based marketing through LinkedIn Sales Navigator and email, targeting C-level leaders at UAE enterprises and owners of large Pakistani FMCG businesses"
-    ],
-    "now": true
-   }
-  ]
- },
  "certificates": {
   "eyebrow": "Certificates",
   "title": "Always learning, *always verified*.",
@@ -2269,7 +2017,7 @@
    },
    {
     "issuer": "University of Pennsylvania (Wharton)",
-    "logo": "",
+    "logo": "assets/logos/wharton.webp",
     "items": [
      {
       "title": "Introduction to Marketing",
@@ -2335,13 +2083,21 @@
     "where": "Member 2016 · Fellow 2021",
     "year": "ACCA"
    }
-  ]
+  ],
+  "summary_line": "{count}+ certificates from Google, Anthropic, Meta, LinkedIn and 5 universities"
  },
  "testimonials": {
   "eyebrow": "Testimonials",
   "title": "What *colleagues* say.",
   "note": "Unedited, from LinkedIn",
   "items": [
+   {
+    "name": "Munazza Waseem",
+    "title": "Digital Content Strategist",
+    "company": "",
+    "year": "2026",
+    "text": "Abdullah is easily one of the best Marketing Managers I've worked with. He knows how to take a simple idea, turn it into a successful campaign, and keep the whole process stress-free for the team. He's creative, super approachable, and always brings a positive attitude to the job."
+   },
    {
     "name": "Shahzaib Sohail",
     "title": "Creative Strategist & AI-Powered Visual Communication",
@@ -2477,7 +2233,8 @@
     "name": "Restaurant client",
     "logo": "assets/logos/trb.webp"
    }
-  ]
+  ],
+  "count_label": "brands on my record"
  },
  "why": {
   "eyebrow": "Why I built this",
@@ -2487,23 +2244,27 @@
    {
     "icon": "brief",
     "title": "Brief",
-    "text": "I set the goal, the audience and the rules: what to say and what never to claim. Every fact comes from my CV, LinkedIn and work records."
+    "text": "I set the goal, the audience and the rules: what to say and what never to claim. Every fact comes from my CV, LinkedIn and work records.",
+    "short": "I set the goal, the audience and what never to claim."
    },
    {
     "icon": "draft",
     "title": "AI drafts",
-    "text": "Claude drafts layouts, code and copy against that brief, often several versions of the same screen."
+    "text": "Claude drafts layouts, code and copy against that brief, often several versions of the same screen.",
+    "short": "Claude drafts layouts, code and copy against that brief."
    },
    {
     "icon": "review",
     "title": "I review",
     "text": "I check every word, number and design choice, test it on laptop and phone, and send back anything that's off.",
-    "highlight": true
+    "highlight": true,
+    "short": "I check every word, number and design choice."
    },
    {
     "icon": "ship",
     "title": "Shipped",
-    "text": "Only what I sign off goes live. When something changes, I edit one content file and the site follows."
+    "text": "Only what I sign off goes live. When something changes, I edit one content file and the site follows.",
+    "short": "Only what I sign off goes live."
    }
   ],
   "seal": {
@@ -2518,11 +2279,446 @@
   "reasons": [
    "A leadership role",
    "A project or advisory",
-   "A collaboration or talk"
+   "A collaboration or talk",
+   "Other"
   ],
-  "form_note": "Opens your email app with the message ready to send."
+  "form_note": "Opens your email app with the message ready to send.",
+  "other_placeholder": "Tell me in a few words"
  },
  "footer": {
   "line": "© 2026 Abdullah Sulehri · Lahore"
+ },
+ "skills": {
+  "eyebrow": "Skills & tools",
+  "title": "What I *work with*.",
+  "groups": [
+   {
+    "title": "AI & automation",
+    "icon": "ai",
+    "skills": [
+     "AI agents & automations",
+     "AI-assisted reporting & content review"
+    ],
+    "tools": [
+     {
+      "name": "Claude",
+      "logo": "assets/tools/claude.webp"
+     },
+     {
+      "name": "ChatGPT",
+      "logo": ""
+     },
+     {
+      "name": "Gemini",
+      "logo": "assets/tools/googlegemini.webp"
+     },
+     {
+      "name": "Microsoft Copilot",
+      "logo": ""
+     },
+     {
+      "name": "Perplexity",
+      "logo": "assets/tools/perplexity.webp"
+     },
+     {
+      "name": "NotebookLM",
+      "logo": ""
+     },
+     {
+      "name": "Grok",
+      "logo": ""
+     },
+     {
+      "name": "Claude Code",
+      "logo": "assets/tools/claude.webp"
+     },
+     {
+      "name": "Claude Design",
+      "logo": "assets/tools/claude.webp"
+     },
+     {
+      "name": "Claude Cowork",
+      "logo": "assets/tools/claude.webp"
+     },
+     {
+      "name": "Lovable",
+      "logo": ""
+     },
+     {
+      "name": "Zapier",
+      "logo": "assets/tools/zapier.webp"
+     },
+     {
+      "name": "Power Automate",
+      "logo": ""
+     }
+    ]
+   },
+   {
+    "title": "Growth & demand",
+    "icon": "growth",
+    "skills": [
+     "B2B Marketing Management",
+     "Account-Based Marketing (ABM)",
+     "Performance Marketing",
+     "Email Marketing & Segmentation",
+     "Social Media Marketing"
+    ],
+    "tools": [
+     {
+      "name": "LinkedIn Sales Navigator",
+      "logo": "assets/tools/linkedin.webp"
+     },
+     {
+      "name": "Meta Ads",
+      "logo": "assets/tools/meta.webp"
+     },
+     {
+      "name": "LinkedIn Ads",
+      "logo": "assets/tools/linkedin.webp"
+     },
+     {
+      "name": "Google Ads",
+      "logo": "assets/tools/googleads.webp"
+     },
+     {
+      "name": "X Ads",
+      "logo": "assets/tools/x.webp"
+     },
+     {
+      "name": "Mailchimp",
+      "logo": "assets/tools/mailchimp.webp"
+     },
+     {
+      "name": "Zoho Campaigns",
+      "logo": "assets/tools/zoho.webp"
+     },
+     {
+      "name": "Apollo.io",
+      "logo": ""
+     },
+     {
+      "name": "ZoomInfo",
+      "logo": ""
+     },
+     {
+      "name": "Hunter.io",
+      "logo": ""
+     },
+     {
+      "name": "Snov.io",
+      "logo": ""
+     },
+     {
+      "name": "Reachinbox",
+      "logo": ""
+     },
+     {
+      "name": "Scrupp",
+      "logo": ""
+     },
+     {
+      "name": "Meta Business Suite",
+      "logo": "assets/tools/meta.webp"
+     },
+     {
+      "name": "Hootsuite / Buffer",
+      "logo": "assets/tools/hootsuite.webp"
+     },
+     {
+      "name": "Brand24",
+      "logo": ""
+     },
+     {
+      "name": "TweetDeck",
+      "logo": "assets/tools/x.webp"
+     },
+     {
+      "name": "Tweet Binder",
+      "logo": ""
+     }
+    ]
+   },
+   {
+    "title": "Brand & content",
+    "icon": "brand",
+    "skills": [
+     "Brand & Employer Branding",
+     "SEO & Content Strategy",
+     "PR & Communications"
+    ],
+    "tools": [
+     {
+      "name": "WordPress",
+      "logo": "assets/tools/wordpress.webp"
+     },
+     {
+      "name": "Figma",
+      "logo": "assets/tools/figma.webp"
+     },
+     {
+      "name": "Canva",
+      "logo": ""
+     },
+     {
+      "name": "SEMrush",
+      "logo": "assets/tools/semrush.webp"
+     },
+     {
+      "name": "Yoast SEO",
+      "logo": "assets/tools/yoast.webp"
+     },
+     {
+      "name": "Grammarly",
+      "logo": "assets/tools/grammarly.webp"
+     },
+     {
+      "name": "CapCut",
+      "logo": ""
+     },
+     {
+      "name": "Google Trends",
+      "logo": ""
+     }
+    ]
+   },
+   {
+    "title": "Data & analytics",
+    "icon": "data",
+    "skills": [
+     "Marketing Analytics & Reporting"
+    ],
+    "tools": [
+     {
+      "name": "Google Analytics",
+      "logo": "assets/tools/googleanalytics.webp"
+     },
+     {
+      "name": "Search Console",
+      "logo": "assets/tools/googlesearchconsole.webp"
+     },
+     {
+      "name": "Tag Manager",
+      "logo": "assets/tools/googletagmanager.webp"
+     },
+     {
+      "name": "Looker Studio",
+      "logo": "assets/tools/looker.webp"
+     },
+     {
+      "name": "Power BI",
+      "logo": ""
+     },
+     {
+      "name": "Advanced Excel",
+      "logo": ""
+     },
+     {
+      "name": "Power Query",
+      "logo": ""
+     },
+     {
+      "name": "Windsor.ai",
+      "logo": ""
+     }
+    ]
+   },
+   {
+    "title": "CRM & operations",
+    "icon": "crm",
+    "skills": [
+     "CRM & Marketing Automation"
+    ],
+    "tools": [
+     {
+      "name": "HubSpot",
+      "logo": "assets/tools/hubspot.webp"
+     },
+     {
+      "name": "Bitrix24",
+      "logo": ""
+     },
+     {
+      "name": "Zoho CRM",
+      "logo": "assets/tools/zoho.webp"
+     },
+     {
+      "name": "Microsoft Bookings",
+      "logo": ""
+     },
+     {
+      "name": "Notion",
+      "logo": "assets/tools/notion.webp"
+     },
+     {
+      "name": "Asana",
+      "logo": "assets/tools/asana.webp"
+     },
+     {
+      "name": "Trello",
+      "logo": "assets/tools/trello.webp"
+     },
+     {
+      "name": "Jira",
+      "logo": "assets/tools/jira.webp"
+     },
+     {
+      "name": "GitHub",
+      "logo": "assets/tools/github.webp"
+     },
+     {
+      "name": "Microsoft Office",
+      "logo": ""
+     },
+     {
+      "name": "Microsoft Teams",
+      "logo": ""
+     }
+    ]
+   },
+   {
+    "title": "Strategy & leadership",
+    "icon": "strategy",
+    "skills": [
+     "Integrated Marketing Management",
+     "Marketing Strategy & GTM Planning",
+     "Budget Management & ROI Evaluation",
+     "Team Leadership & Stakeholder Management",
+     "Product Costing & Pricing Strategy"
+    ],
+    "tools": []
+   }
+  ]
+ },
+ "experience": {
+  "eyebrow": "Experience",
+  "title": "Five roles.\n*One focus: growth.*",
+  "summary": "5 roles · 8+ years in marketing",
+  "origin": {
+   "label": "Where it started",
+   "title": "It started with a blog",
+   "text": "I began as a tech blogger for Pakistani tech sites, then moved into lifestyle and food reviews, gadget reviews for mobile brands, and event and launch coverage, including Foodpanda's Pakistan blog. Along the way I qualified as an ACCA, earned a Journalism degree, and kept adding marketing certifications."
+  },
+  "keywords": [
+   "B2B",
+   "account-based marketing",
+   "ABM",
+   "LinkedIn Sales Navigator",
+   "CRM",
+   "Bitrix24",
+   "SEO",
+   "email marketing",
+   "product marketing",
+   "PR",
+   "brand",
+   "rebrand",
+   "employer brand",
+   "AI agents",
+   "automations",
+   "Meta",
+   "LinkedIn",
+   "Google",
+   "influencers",
+   "go-to-market",
+   "pricing",
+   "budget",
+   "demand generation",
+   "Looker Studio",
+   "SEMrush"
+  ],
+  "items": [
+   {
+    "dot": "2018",
+    "short": "Transmedia",
+    "dates": "Mar 2018 – Dec 2018",
+    "title": "Digital Marketing Executive",
+    "company": "Transmedia Digital Solutions · Lahore",
+    "headline": "From blogger to agency",
+    "story": "My first agency role, where I learned to execute fast: blogs and content for SME clients, SMS campaigns that reached customers directly, vendor coordination, and partnerships with bloggers and publishers, a network I'd built as a blogger myself.",
+    "results": [
+     "Wrote blogs and social content for SME clients",
+     "Ran SMS campaigns that reached customers directly",
+     "Coordinated events, vendors and guests",
+     "Built partnerships with bloggers and online publishers"
+    ],
+    "key": 3,
+    "now": false
+   },
+   {
+    "dot": "2019",
+    "short": "Acumen",
+    "dates": "Jan 2019 – Aug 2021",
+    "title": "Assistant Manager Marketing",
+    "company": "Acumen Consulting · Lahore",
+    "headline": "Big brands, big reach",
+    "story": "Integrated campaigns for brands like Unilever, Samsung and Telenor across X, Instagram, Facebook and LinkedIn: up to 500 influencers and ~27M impressions per campaign on average, backed by PR, bloggers and on-ground activations, while leading teams through high-pressure launches.",
+    "results": [
+     "Delivered integrated digital, influencer and PR campaigns for Samsung, Unilever, Telenor, Haier, Vivo, National Foods, ARY Digital, Honda, SnackVideo, Pink Ribbon and more",
+     "Ran influencer and trend campaigns across X, Instagram, Facebook and LinkedIn with up to 500 influencers per campaign, averaging ~27M impressions",
+     "Managed PR agencies, bloggers and on-ground activations",
+     "Led cross-functional teams through high-pressure launches"
+    ],
+    "key": 3,
+    "now": false
+   },
+   {
+    "dot": "2021",
+    "short": "Soliton",
+    "dates": "Sep 2021 – Nov 2022",
+    "title": "Senior Marketing Specialist",
+    "company": "Soliton Technologies · Pakistan/US software house",
+    "headline": "A brand people love working for",
+    "story": "At a Pakistan–US software house, I built marketing from scratch: a rebrand, a new website, emails, blogs and campaigns. Inside, I made it a fun place to work: employee events, employee of the month, birthdays and farewells, wall branding, merchandise, employee videos and university partnerships.",
+    "results": [
+     "Built the marketing function from zero: website content, blogs, email campaigns and social presence",
+     "Led the rebrand and launched a new company website",
+     "Made it a fun place to work: employee events, employee of the month, birthdays and farewells, wall branding, merchandise and employee videos",
+     "Built university partnerships and represented the company at industry and campus events",
+     "Secured PR placements and shared performance insights through Looker Studio"
+    ],
+    "key": 3,
+    "now": false
+   },
+   {
+    "dot": "2022",
+    "short": "Creative Zone",
+    "dates": "Dec 2022 – May 2025",
+    "title": "Marketing Manager",
+    "company": "Creative Zone Tax & Accounting · UAE",
+    "headline": "Making the complex simple",
+    "story": "When the UAE introduced corporate tax, businesses were confused. I turned new tax rules into campaigns people acted on across Meta and LinkedIn: 20–40% engagement growth, ~30% more organic traffic, and email open rates up to 35% through segmentation and testing.",
+    "results": [
+     "Led integrated marketing for a UAE tax and accounting firm: brand visibility, demand generation and client acquisition",
+     "Turned new corporate tax rules into clear Meta and LinkedIn campaigns, delivering 20–40% sustained engagement growth",
+     "Owned email marketing and automation; segmentation and A/B testing lifted open rates up to 35%",
+     "Directed SEO-led content, growing organic traffic by about 30% across blogs and landing pages",
+     "Used SEMrush and Google Trends research to shape go-to-market plans, and reported insights to senior leaders"
+    ],
+    "key": 3,
+    "now": false
+   },
+   {
+    "dot": "2025",
+    "short": "People Perfect",
+    "dates": "Sep 2025 – Present",
+    "title": "Senior Marketing Manager",
+    "company": "People Perfect · Lahore",
+    "headline": "Building growth engines with AI",
+    "story": "I lead B2B marketing for a multi-country HR services group: ABM through Sales Navigator and email, Google, Meta and LinkedIn campaigns, and Path2Progress, our event series for HR leaders. I co-designed and priced our consulting products, am leading the new website, and built 10+ AI agents and automations for reporting and checks.",
+    "results": [
+     "Own marketing strategy end to end: brand, PR, product marketing, content governance, CRM-led growth and B2B demand",
+     "Lead a team of 4 direct reports and 2 freelancers across content, design, SEO and digital, managing a marketing budget of around $10K a month",
+     "Co-designed and priced 5 HR consulting service lines, now live on the marketplace",
+     "Run account-based marketing through LinkedIn Sales Navigator and email, targeting C-level leaders at UAE enterprises and owners of large Pakistani FMCG businesses",
+     "Recent B2B email campaigns reached a 60% open rate and 5%+ click-through",
+     "Run Google, Meta and LinkedIn campaigns, and Path2Progress, our event series and webinars for senior HR leaders",
+     "Final sign-off on all brand and marketplace content; leading the new company website and office wall branding",
+     "Optimise Bitrix24 CRM workflows for lead visibility, lifecycle tracking and sales alignment",
+     "Built 10+ AI agents and automations for reporting, checks and content, each one human-approved"
+    ],
+    "key": 3,
+    "now": true
+   }
+  ]
  }
 }

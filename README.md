@@ -23,11 +23,13 @@ If the page stops updating after an edit, the file probably has a missing comma 
 
 | What | Where |
 |---|---|
-| Email, LinkedIn, booking link, CV file, accent colour | `settings` |
+| Email, WhatsApp, LinkedIn, booking link, CV file, accent colour | `settings` |
 | Name, photo, role line, headline, status, hero numbers | `hero` |
 | The 6 tiles on the first screen | `tiles` |
 | What each tile opens | `panels` (`problems`, `proof`, `ai`, `testimonials`, `writing`) |
-| Career strip | `career.items` |
+| Certificates summary line (`{count}` is filled in automatically) | `certificates.summary_line` |
+| Experience timeline (5 roles) and the keywords highlighted in "View full experience" | `experience` |
+| Skills & tools (6 groups) | `skills.groups` |
 | Certificates and education | `certificates` |
 | Testimonials | `testimonials.items` |
 | Brand logos | `brands.items` |
@@ -37,14 +39,17 @@ If the page stops updating after an edit, the file probably has a missing comma 
 
 ## How to add things
 
-**A new job.**
-1. Add an entry at the **end** of `career.items`. Items run oldest to newest.
-2. Move `"now": true` to the new entry and set the old one to `false`.
-3. Add the role to `panels.proof.roles` as well, at the **top** (newest first).
+**A new job.** Add an entry at the **end** of `experience.items` (items run oldest to newest; the last one opens first). Move `"now": true` to it. `dot` is the year under the timeline dot, `short` the short company name shown there, `key` how many results show before "Read more".
 
 ```json
-{"years":"2027 – Now","title":"Head of Marketing","company":"Company name","headline":"One-line story","story":"Two or three sentences.","highlights":["Result one","Result two"],"now":true}
+{"dot":"2027","short":"Company","dates":"Jan 2027 – Present","title":"Head of Marketing","company":"Company name · City","headline":"One-line story","story":"Two or three sentences.","results":["Result one","Result two","Result three"],"key":3,"now":true}
 ```
+
+**Highlighted words** in the full experience view: edit `experience.keywords`. Numbers are made bold automatically.
+
+**Skills and tools:** each group in `skills.groups` has `skills` (text) and `tools` (`{"name":"Tool","logo":"assets/tools/tool.webp"}`; leave `logo` empty to show a blue dot instead).
+
+**Headlines:** wrap words in asterisks to colour them blue (they light up when scrolled to); `\n` starts a new line.
 
 **A certificate from a new issuer.** Add an entry to `certificates.issuers`. If there's no logo file yet, leave `"logo":""` and the card shows the issuer's initials, or the text in `"short"`.
 
@@ -83,10 +88,7 @@ If the page stops updating after an edit, the file probably has a missing comma 
 
 - **Tiles:** 2 columns. 6 is ideal; 4 or 8 also fill evenly. A tile with `"scrolls_to"` jumps to a section instead of opening a panel.
 - **Panels:** the pager, its counter and the Previous/Next buttons count the panels automatically. Each panel's headline is its tile's headline.
-- **Career strip:**
-  - Oldest on the left, **Now** on the right.
-  - More than 6 items scroll sideways.
-  - The current role opens by default.
+- **Experience:** one dot per role on a horizontal line, one full card at a time (tap a dot, swipe, or Earlier/Later). Up to about 7 roles fit the line on a phone.
 - **Certificate and education grids:** 3 columns. If the last row is short, its last card stretches, so no card is left alone.
 - **Brand logos:** the column count adjusts so the last row is never a lone logo.
 - **Logos display style:** all logos are shown in one ink colour, so logos of different colours still match.
