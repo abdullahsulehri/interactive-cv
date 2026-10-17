@@ -19,12 +19,20 @@
     "#0F6B6B"
    ],
    [
-    "Coral",
-    "#C4553B"
+    "Terracotta",
+    "#A8452F"
    ],
    [
-    "Graphite",
-    "#2E2E2E"
+    "Burgundy",
+    "#7A2E3B"
+   ],
+   [
+    "Plum",
+    "#5B3A6B"
+   ],
+   [
+    "Ochre",
+    "#7A5A1E"
    ]
   ],
   "name_font": {
@@ -33,19 +41,24 @@
    "peak_weight": 700,
    "letter_spacing": "0.010em"
   },
-  "whatsapp": "https://wa.me/923314074234"
+  "whatsapp": "https://wa.me/923314074234",
+  "web3forms_key": "c2a48dc6-ef0c-4030-959f-76dc39f2e789"
  },
  "nav": [
   {
    "label": "Experience",
-   "target": "career"
+   "target": "panel:proof"
+  },
+  {
+   "label": "AI toolkit",
+   "target": "panel:ai"
   },
   {
    "label": "Skills",
    "target": "skills"
   },
   {
-   "label": "Certificates",
+   "label": "Certifications",
    "target": "certificates"
   },
   {
@@ -104,9 +117,9 @@
    "icon": "target"
   },
   {
-   "label": "Proof of work",
+   "label": "Experience",
    "headline": "Eight years, five roles",
-   "teaser": "Results from every role, and one turnaround",
+   "teaser": "Every role, plus one turnaround",
    "opens": "proof",
    "icon": "chart"
   },
@@ -132,9 +145,9 @@
    "icon": "pen"
   },
   {
-   "label": "Credentials",
+   "label": "Qualifications",
    "headline": "Always learning",
-   "teaser": "Google · Anthropic · Meta · LUMS",
+   "teaser": "Certifications and education",
    "scrolls_to": "certificates",
    "icon": "ribbon"
   }
@@ -147,25 +160,52 @@
      "title": "Put AI to work in marketing",
      "text": "I build AI agents and automations that take reporting, checks and content work off a team's plate, with a person reviewing every output.",
      "proof": "10+ live agents and automations",
-     "link_to": "ai"
+     "link_to": "ai",
+     "proofs": [
+      "10+ live agents and automations, each human-approved",
+      "Daily checks across 6 websites and 10,000+ links",
+      "Up to PKR 700,000 a year saved on HTML emails"
+     ],
+     "link_label": "See it in my toolkit"
     },
     {
      "title": "Build a B2B pipeline that converts",
      "text": "Account-based marketing through LinkedIn Sales Navigator and email, Google, Meta and LinkedIn campaigns, and events that warm up senior buyers before the pitch.",
      "proof": "ABM across the UAE and Pakistan; Path2Progress events for HR leaders",
-     "link_to": "proof"
+     "link_to": "proof",
+     "proofs": [
+      "ABM through LinkedIn Sales Navigator for UAE enterprise and Pakistan FMCG leaders",
+      "Recent B2B emails: 60% open rate, 5%+ click-through",
+      "Path2Progress events that warm up senior HR leaders"
+     ],
+     "link_label": "See it in my experience",
+     "role": 0
     },
     {
      "title": "Make complex products easy to buy",
      "text": "Tax, HR services, software: I turn what's hard to explain into offers people act on, and help shape and price the product itself. Trained as a chartered accountant (ACCA), so reporting, budgets, planning and pricing come naturally.",
      "proof": "20–40% engagement growth after UAE corporate tax launched; priced 5 HR consulting services",
-     "link_to": "proof"
+     "link_to": "proof",
+     "proofs": [
+      "20–40% engagement growth after UAE corporate tax launched",
+      "~30% more organic traffic from SEO-led content",
+      "Priced 5 HR consulting services, now live"
+     ],
+     "link_label": "See it in my experience",
+     "role": 1
     },
     {
      "title": "Turn falling sales around",
      "text": "When a fast food restaurant in DHA, Lahore had seen a year of falling sales, I strengthened the menu, relaunched consumer campaigns and opened a new B2B channel with offers for nearby software houses.",
      "proof": "+25% sales in month one, then a further +15%",
-     "link_to": "proof"
+     "link_to": "proof",
+     "proofs": [
+      "+25% sales in month one",
+      "A further +15% in month two, ~44% above the start",
+      "New B2B channel: team offers for nearby software houses"
+     ],
+     "link_label": "See it in my experience",
+     "role": 5
     }
    ]
   },
@@ -228,75 +268,97 @@
    }
   },
   "ai": {
-   "lead": "Agents and automations I run at work. A person reviews every output.",
+   "lead": "Built with AI. Approved by me. Ten agents and automations I run at work, and I review every output before it's used.",
    "projects": [
     {
-     "title": "Live campaign report for management",
-     "text": "Every campaign budget is checked automatically and shown to management on a live dashboard.",
+     "title": "Live campaign report",
+     "text": "Joins data from different sources and calculates derived metrics that platforms don't link up, in one custom dashboard for management.",
      "tags": [
-      "Budget errors caught early",
-      "No more chasing numbers"
-     ]
+      "Lovable",
+      "Claude"
+     ],
+     "saves": "One live view of every running campaign, with metrics no single platform shows."
     },
     {
-     "title": "Ad performance tracker",
-     "text": "Links 1,000+ ads across Google, Meta and LinkedIn to the leads they actually brought in.",
+     "title": "Ad performance report",
+     "text": "Puts campaigns from Google, Meta and LinkedIn side by side and shows which creatives actually performed, so budget moves to what works.",
      "tags": [
-      "1,000+ ads tracked",
-      "Report in hours, not days"
-     ]
+      "Claude",
+      "Excel"
+     ],
+     "saves": "Compares campaigns and creatives in 3 hours instead of 3 days, across 1,000+ ads."
     },
     {
      "title": "SEO & AEO page optimizer",
-     "text": "Rewrites web pages to rank on Google and get quoted by ChatGPT, Gemini and other AI answer engines.",
+     "text": "Rewrites web pages so they rank on Google and get quoted by ChatGPT, Gemini and other AI answer engines, using real evidence only.",
      "tags": [
-      "Rewrite in about an hour",
-      "Built for AI search"
-     ]
+      "Claude",
+      "SEMrush"
+     ],
+     "saves": "A full page rewrite in about an hour instead of a day, ready for Google and AI search."
     },
     {
      "title": "Daily website health check",
-     "text": "Checks 6 company websites every day and flags anything broken before customers see it.",
+     "text": "Scans 6 company websites daily, flags broken links and pages before customers see them, and emails the report at a set time.",
      "tags": [
-      "10,000+ links daily",
-      "~300 hidden issues found"
-     ]
+      "GitHub",
+      "Zapier"
+     ],
+     "saves": "10,000+ links checked every morning; ~300 hidden issues found on the first run."
     },
     {
-     "title": "On-brand email designer",
-     "text": "Builds marketing emails in-house that work in Outlook and Gmail, with the same branding every time.",
+     "title": "HTML emails & landing pages",
+     "text": "Builds robust HTML emails that display correctly in Outlook and Gmail, and landing pages ready to publish, on brand every time.",
      "tags": [
-      "Saves up to PKR 15,000 per email",
-      "Consistent branding"
-     ]
+      "Claude",
+      "Bitrix24"
+     ],
+     "saves": "Up to PKR 700,000 saved a year on HTML emails; landing pages in a day, not 3."
     },
     {
-     "title": "Company knowledge base + page agent",
-     "text": "One indexed source of truth for two countries; every new page is added in the same format.",
+     "title": "Knowledge base + page agent",
+     "text": "One indexed source of truth for two countries. New pages follow one template, join a master index, and wait for my approval.",
      "tags": [
-      "Consistent data",
-      "Answers in minutes"
-     ]
+      "Notion",
+      "Claude"
+     ],
+     "saves": "Every figure traceable to its source; every new page checked for duplicates first."
     },
     {
-     "title": "Multi-scenario pricing calculator",
-     "text": "A sales page where companies price an offshore team themselves, across packages and scenarios.",
-     "tags": []
+     "title": "Pricing calculator",
+     "text": "Runs complex pricing formulas behind a simple page, so buyers compare packages and scenarios and see a realistic cost before the first call.",
+     "tags": [
+      "Claude",
+      "Excel"
+     ],
+     "saves": "Customers get an estimated price instantly, which helps turn visitors into leads."
     },
     {
      "title": "Booking → CRM automation",
-     "text": "Every online meeting booking becomes a CRM lead automatically.",
-     "tags": []
+     "text": "Turns every online meeting booking into a CRM lead automatically, so sales can follow up without retyping anything.",
+     "tags": [
+      "Power Automate",
+      "Bitrix24"
+     ],
+     "saves": "Zero missed leads, and ~5 minutes of data entry saved on every booking."
     },
     {
      "title": "Data formatter",
-     "text": "Cleans any contact file into one standard format, so data stays consistent and usable.",
-     "tags": []
+     "text": "Cleans and standardises any export (Bitrix24 CRM records, campaign data, contact lists and more) into one consistent format, ready to use.",
+     "tags": [
+      "Claude",
+      "Excel"
+     ],
+     "saves": "Turns messy exports of 10,000+ rows into clean, usable data in minutes, not days."
     },
     {
      "title": "This website",
-     "text": "Designed and built with AI, with every design and content decision made by me.",
-     "tags": []
+     "text": "A live demo of how I work: AI drafts layout, code and copy, I review every detail, and each version is refined from real feedback before release.",
+     "tags": [
+      "Claude",
+      "GitHub"
+     ],
+     "saves": "Built with AI, tested on 9 screen sizes against 29 design rules before every release."
     }
    ]
   },
@@ -416,6 +478,10 @@
        "p",
        "I invite insights from peers in the network. How is your team balancing AI velocity with strategic refinement, and where are you still experiencing friction?"
       ]
+     ],
+     "tags": [
+      "AI",
+      "Strategy"
      ]
     },
     {
@@ -536,6 +602,10 @@
        "p",
        "Marketing in the FMCG space is about creating meaningful impact, not merely repeating familiar patterns. Whether arranging dry staples on the shelves, engaging shoppers with knowledgeable Brand Ambassadors for chilled food tastings, or showcasing frozen items through seasonal displays, every channel plays a critical role. For Pakistani FMCG brands caught between tradition and change, the best progress begins with a simple but powerful step: <strong>asking the right questions and embracing better answers through data-driven planning</strong>."
       ]
+     ],
+     "tags": [
+      "FMCG",
+      "Data"
      ]
     },
     {
@@ -624,6 +694,10 @@
        "p",
        "&nbsp;"
       ]
+     ],
+     "tags": [
+      "E-commerce",
+      "Tax"
      ]
     },
     {
@@ -756,6 +830,10 @@
        "li",
        "Try experimenting with AI-generated content for blogs or social media posts, but make sure to keep human oversight to maintain the right tone and relevance."
       ]
+     ],
+     "tags": [
+      "AI",
+      "Strategy"
      ]
     },
     {
@@ -876,6 +954,10 @@
        "p",
        "Marketers hold diverse views on AI's integration into their field, ranging from caution to enthusiasm. While they acknowledge AI's advantages, they also voice reservations about its implications."
       ]
+     ],
+     "tags": [
+      "AI",
+      "Careers"
      ]
     },
     {
@@ -1040,6 +1122,10 @@
        "p",
        "In conclusion, CGI has revolutionized the way brands communicate with their audiences, offering unparalleled opportunities for creativity and engagement. From redefining brand storytelling to enhancing brand identity and driving engagement, CGI has become an indispensable tool for modern marketers. As we embrace the potential of CGI in marketing, we can look forward to a future where brands continue to push the boundaries of creativity and innovation, captivating audiences and driving success in the digital age."
       ]
+     ],
+     "tags": [
+      "Branding",
+      "Creative"
      ]
     },
     {
@@ -1232,6 +1318,10 @@
        "p",
        "Remember, the key to success lies in selecting the right marketing automation tools that align with your unique needs and objectives. As we navigate through 2024 and anticipate the marketing landscape of 2025, embracing the power of automation will undoubtedly be a cornerstone of continued success in the ever-evolving realm of digital marketing."
       ]
+     ],
+     "tags": [
+      "Automation",
+      "CRM"
      ]
     },
     {
@@ -1320,6 +1410,10 @@
        "p",
        "As we navigate the twists and turns of the marketing world, the fusion of Influencer Marketing and Digital Marketing opens up exciting possibilities. By infusing your unique flair and embracing these strategies, your brand can thrive and leave a lasting impression in the expansive digital universe. It's not about being the best; it's about being the best for your audience."
       ]
+     ],
+     "tags": [
+      "Influencer",
+      "Strategy"
      ]
     },
     {
@@ -1592,6 +1686,10 @@
        "p",
        "Brand recognition is more than just a business strategy; it's the heartbeat of your brand's triumphant narrative. It's the symphony that resonates in customers' minds, molding their preferences, actions, and above all, their loyalty. By strategically elevating your brand recognition, you can effectively steer customer behavior, nurturing enduring relationships and thriving in today's fiercely competitive business landscape. Recognizing the transformative power of brand recognition isn't merely an option; it's a strategic imperative for sustainable growth and success."
       ]
+     ],
+     "tags": [
+      "Branding",
+      "Loyalty"
      ]
     },
     {
@@ -1660,6 +1758,10 @@
        "p",
        "Embarking on a voyage into the captivating realm of Social Media Marketing unfolds as a thrilling adventure, brimming with boundless promise in the world of social media marketing. Envision it as your brand's grand expedition through the ever-evolving digital terrain. By meticulously adhering to these six crucial insights while infusing a touch of human warmth, you will not only craft triumphant Social Media Marketing campaigns but also savor a user-friendly and enriching experience in the world of social media marketing. Always remember, your brand's triumph in the enchanting realm of Social Media Marketing is a narrative awaiting your authorship, and these insights serve as your guiding chapters to mastery in the world of social media marketing."
       ]
+     ],
+     "tags": [
+      "Social",
+      "Tips"
      ]
     },
     {
@@ -1740,6 +1842,10 @@
        "p",
        "In a nutshell, your local PPC game plan can be a real showstopper, especially with these insider tips. Remember, it's not just about data – it's about connecting with your local crowd and making your digital mark."
       ]
+     ],
+     "tags": [
+      "PPC",
+      "Local"
      ]
     },
     {
@@ -1820,6 +1926,10 @@
        "p",
        "With my financial expertise and digital marketing knowledge, I encourage you to embrace the DDMP as your guiding light. Together, we can navigate the digital marketing landscape with confidence, ensuring that your efforts are not only strategic and balanced but also highly effective. Get ready to diversify, grow, and thrive in the world of digital marketing!"
       ]
+     ],
+     "tags": [
+      "Digital",
+      "Strategy"
      ]
     },
     {
@@ -1876,14 +1986,18 @@
        "p",
        "<strong>#AI</strong> <strong>#DigitalMarketing</strong> <strong>#Innovation</strong> <strong>#FutureOfMarketing</strong> <strong>#Technology</strong> <strong>#AIInMarketing</strong> <strong>#MarketingStrategy</strong>"
       ]
+     ],
+     "tags": [
+      "AI",
+      "Digital"
      ]
     }
    ]
   }
  },
  "certificates": {
-  "eyebrow": "Certificates",
-  "title": "Always learning, *always verified*.",
+  "eyebrow": "Certifications & education",
+  "title": "Certifications & *education*.",
   "note": "Every certificate links to its verification page",
   "featured": [
    {
@@ -2079,9 +2193,9 @@
     "year": "2019"
    },
    {
-    "title": "ACCA, chartered accountant",
-    "where": "Member 2016 · Fellow 2021",
-    "year": "ACCA"
+    "title": "ACCA – Fellow",
+    "where": "ACCA, UK",
+    "year": "Member 2016 · Fellow 2021"
    }
   ],
   "summary_line": "{count}+ certificates from Google, Anthropic, Meta, LinkedIn and 5 universities"
@@ -2094,36 +2208,31 @@
    {
     "name": "Munazza Waseem",
     "title": "Digital Content Strategist",
-    "company": "",
-    "year": "2026",
+    "company": "People Perfect",
     "text": "Abdullah is easily one of the best Marketing Managers I've worked with. He knows how to take a simple idea, turn it into a successful campaign, and keep the whole process stress-free for the team. He's creative, super approachable, and always brings a positive attitude to the job."
    },
    {
     "name": "Shahzaib Sohail",
-    "title": "Creative Strategist & AI-Powered Visual Communication",
+    "title": "Creative Strategist",
     "company": "Milele Prime",
-    "year": "2024",
     "text": "Working under Abdullah has been truly transformative. His strategic insights and passionate approach to marketing have continuously inspired me to push creative boundaries. He's not just a mentor but a supportive leader who fosters innovation and growth. His exceptional ideas and understanding of marketing dynamics create an environment where success thrives. It's a privilege to work alongside someone whose guidance and leadership are as invaluable as his passion for marketing."
    },
    {
     "name": "Farhan Hafeez",
     "title": "Director Digital & PR",
-    "company": "Marketing And Advertising Pvt Ltd",
-    "year": "2023",
+    "company": "Marketing & Advertising Pvt Ltd",
     "text": "I'm thrilled to highly recommend Abdullah Sulehri. His dedication to his work is exceptional, and he's a true problem solver. His organizational skills and professionalism are truly admirable. I've had the pleasure of collaborating with him on multiple Influencer marketing campaigns, all of which were tremendously successful. Abdullah's expertise and commitment make him an outstanding professional to work with."
    },
    {
     "name": "Wasiq Iftikhar",
     "title": "Product Owner",
     "company": "AHK Solution",
-    "year": "2023",
     "text": "I highly recommend Abdullah for any digital marketing role. I have always found him reliable, cooperative, friendly, and approachable. His passion, expertise, and commitment to excellence make him an asset to any team. Working with him has been a pleasure, and I wish him all the best in future endeavors."
    },
    {
     "name": "Madiha Tariq",
     "title": "Digital Marketing Manager",
     "company": "AirCod Technologies",
-    "year": "2022",
     "text": "Abdullah is an extremely capable and multitalented professional. He regularly goes beyond his role description to get the job done and I have the distinct pleasure of working with him. His expertise, professionalism, teamwork, and problem-solving skills are commendable. His traits of being helpful and approachable make him my favorite colleague."
    }
   ]
@@ -2286,7 +2395,7 @@
   "other_placeholder": "Tell me in a few words"
  },
  "footer": {
-  "line": "© 2026 Abdullah Sulehri · Lahore"
+  "line": "© 2026 Abdullah Sulehri"
  },
  "skills": {
   "eyebrow": "Skills & tools",
@@ -2306,7 +2415,7 @@
      },
      {
       "name": "ChatGPT",
-      "logo": ""
+      "logo": "assets/tools/chatgpt.svg"
      },
      {
       "name": "Gemini",
@@ -2314,19 +2423,15 @@
      },
      {
       "name": "Microsoft Copilot",
-      "logo": ""
+      "logo": "assets/tools/microsoft-copilot.webp"
      },
      {
       "name": "Perplexity",
       "logo": "assets/tools/perplexity.webp"
      },
      {
-      "name": "NotebookLM",
-      "logo": ""
-     },
-     {
-      "name": "Grok",
-      "logo": ""
+      "name": "Zapier",
+      "logo": "assets/tools/zapier.webp"
      },
      {
       "name": "Claude Code",
@@ -2341,16 +2446,20 @@
       "logo": "assets/tools/claude.webp"
      },
      {
-      "name": "Lovable",
-      "logo": ""
+      "name": "NotebookLM",
+      "logo": "assets/tools/notebooklm.svg"
      },
      {
-      "name": "Zapier",
-      "logo": "assets/tools/zapier.webp"
+      "name": "Grok",
+      "logo": "assets/tools/grok.svg"
+     },
+     {
+      "name": "Lovable",
+      "logo": "assets/tools/lovable.svg"
      },
      {
       "name": "Power Automate",
-      "logo": ""
+      "logo": "assets/tools/power-automate.svg"
      }
     ]
    },
@@ -2370,52 +2479,52 @@
       "logo": "assets/tools/linkedin.webp"
      },
      {
-      "name": "Meta Ads",
-      "logo": "assets/tools/meta.webp"
-     },
-     {
       "name": "LinkedIn Ads",
       "logo": "assets/tools/linkedin.webp"
+     },
+     {
+      "name": "Meta Ads",
+      "logo": "assets/tools/meta.webp"
      },
      {
       "name": "Google Ads",
       "logo": "assets/tools/googleads.webp"
      },
      {
-      "name": "X Ads",
-      "logo": "assets/tools/x.webp"
-     },
-     {
       "name": "Mailchimp",
       "logo": "assets/tools/mailchimp.webp"
+     },
+     {
+      "name": "Apollo.io",
+      "logo": "assets/tools/apollo.webp"
+     },
+     {
+      "name": "X Ads",
+      "logo": "assets/tools/x.webp"
      },
      {
       "name": "Zoho Campaigns",
       "logo": "assets/tools/zoho.webp"
      },
      {
-      "name": "Apollo.io",
-      "logo": ""
-     },
-     {
       "name": "ZoomInfo",
-      "logo": ""
+      "logo": "assets/tools/zoominfo.webp"
      },
      {
       "name": "Hunter.io",
-      "logo": ""
+      "logo": "assets/tools/hunter.webp"
      },
      {
       "name": "Snov.io",
-      "logo": ""
+      "logo": "assets/tools/snov.webp"
      },
      {
       "name": "Reachinbox",
-      "logo": ""
+      "logo": "assets/tools/reachinbox.webp"
      },
      {
       "name": "Scrupp",
-      "logo": ""
+      "logo": "assets/tools/scrupp.webp"
      },
      {
       "name": "Meta Business Suite",
@@ -2427,7 +2536,7 @@
      },
      {
       "name": "Brand24",
-      "logo": ""
+      "logo": "assets/tools/brand24.webp"
      },
      {
       "name": "TweetDeck",
@@ -2435,7 +2544,7 @@
      },
      {
       "name": "Tweet Binder",
-      "logo": ""
+      "logo": "assets/tools/tweet-binder.webp"
      }
     ]
    },
@@ -2449,16 +2558,16 @@
     ],
     "tools": [
      {
-      "name": "WordPress",
-      "logo": "assets/tools/wordpress.webp"
+      "name": "Canva",
+      "logo": "assets/tools/canva.svg"
      },
      {
       "name": "Figma",
       "logo": "assets/tools/figma.webp"
      },
      {
-      "name": "Canva",
-      "logo": ""
+      "name": "WordPress",
+      "logo": "assets/tools/wordpress.webp"
      },
      {
       "name": "SEMrush",
@@ -2474,11 +2583,11 @@
      },
      {
       "name": "CapCut",
-      "logo": ""
+      "logo": "assets/tools/capcut.webp"
      },
      {
       "name": "Google Trends",
-      "logo": ""
+      "logo": "assets/tools/google-trends.webp"
      }
     ]
    },
@@ -2494,6 +2603,18 @@
       "logo": "assets/tools/googleanalytics.webp"
      },
      {
+      "name": "Looker Studio",
+      "logo": "assets/tools/looker.webp"
+     },
+     {
+      "name": "Power BI",
+      "logo": "assets/tools/power-bi.svg"
+     },
+     {
+      "name": "Advanced Excel",
+      "logo": "assets/tools/excel.svg"
+     },
+     {
       "name": "Search Console",
       "logo": "assets/tools/googlesearchconsole.webp"
      },
@@ -2502,24 +2623,12 @@
       "logo": "assets/tools/googletagmanager.webp"
      },
      {
-      "name": "Looker Studio",
-      "logo": "assets/tools/looker.webp"
-     },
-     {
-      "name": "Power BI",
-      "logo": ""
-     },
-     {
-      "name": "Advanced Excel",
-      "logo": ""
-     },
-     {
       "name": "Power Query",
-      "logo": ""
+      "logo": "assets/tools/excel.svg"
      },
      {
       "name": "Windsor.ai",
-      "logo": ""
+      "logo": "assets/tools/windsor.webp"
      }
     ]
    },
@@ -2536,15 +2645,11 @@
      },
      {
       "name": "Bitrix24",
-      "logo": ""
+      "logo": "assets/tools/bitrix24.webp"
      },
      {
       "name": "Zoho CRM",
       "logo": "assets/tools/zoho.webp"
-     },
-     {
-      "name": "Microsoft Bookings",
-      "logo": ""
      },
      {
       "name": "Notion",
@@ -2555,24 +2660,32 @@
       "logo": "assets/tools/asana.webp"
      },
      {
-      "name": "Trello",
-      "logo": "assets/tools/trello.webp"
-     },
-     {
       "name": "Jira",
       "logo": "assets/tools/jira.webp"
      },
      {
-      "name": "GitHub",
-      "logo": "assets/tools/github.webp"
-     },
-     {
       "name": "Microsoft Office",
-      "logo": ""
+      "logo": "assets/tools/microsoft-office.svg"
      },
      {
       "name": "Microsoft Teams",
-      "logo": ""
+      "logo": "assets/tools/microsoft-teams.svg"
+     },
+     {
+      "name": "Trello",
+      "logo": "assets/tools/trello.webp"
+     },
+     {
+      "name": "Microsoft Bookings",
+      "logo": "assets/tools/microsoft-bookings.webp"
+     },
+     {
+      "name": "Calendly",
+      "logo": "assets/tools/calendly.webp"
+     },
+     {
+      "name": "GitHub",
+      "logo": "assets/tools/github.webp"
      }
     ]
    },
@@ -2580,10 +2693,10 @@
     "title": "Strategy & leadership",
     "icon": "strategy",
     "skills": [
-     "Integrated Marketing Management",
      "Marketing Strategy & GTM Planning",
-     "Budget Management & ROI Evaluation",
+     "Integrated Marketing Management",
      "Team Leadership & Stakeholder Management",
+     "Budget Management & ROI Evaluation",
      "Product Costing & Pricing Strategy"
     ],
     "tools": []
@@ -2718,6 +2831,47 @@
     ],
     "key": 3,
     "now": true
+   }
+  ]
+ },
+ "story": {
+  "title": "From a blog to *growth engines*.",
+  "chapters": [
+   {
+    "when": "Before 2018",
+    "t": "It started with a blog",
+    "x": "Tech blogger for Pakistani sites, then food and gadget reviews, including Foodpanda. Qualified as an ACCA along the way.",
+    "role": 4
+   },
+   {
+    "when": "2018",
+    "t": "Into the agency world",
+    "x": "My first agency role taught me to execute fast, for SME clients, bloggers and publishers.",
+    "role": 4
+   },
+   {
+    "when": "2019–21",
+    "t": "Big brands, big reach",
+    "x": "Integrated campaigns for household names, leading influencer networks and teams through high-pressure launches.",
+    "role": 3
+   },
+   {
+    "when": "2021–22",
+    "t": "Building from zero",
+    "x": "In-house at a Pakistan–US software house: built marketing from scratch, and a brand people loved working for.",
+    "role": 2
+   },
+   {
+    "when": "2022–25",
+    "t": "Making the complex simple",
+    "x": "Turned the UAE's new corporate tax into campaigns people acted on. My finance training finally paid off.",
+    "role": 1
+   },
+   {
+    "when": "Now",
+    "t": "Growth engines with AI",
+    "x": "Leading B2B marketing for an HR services marketplace, and building AI agents that do the heavy lifting.",
+    "role": 0
    }
   ]
  }
