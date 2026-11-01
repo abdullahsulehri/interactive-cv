@@ -17,7 +17,7 @@ for n,s in [('S','-Regular'),('S-B','-Bold'),('S-I','-Italic'),('S-BI','-BoldIta
     pdfmetrics.registerFont(TTFont(n,F+s+'.ttf'))
 addMapping('S',0,0,'S');addMapping('S',1,0,'S-B');addMapping('S',0,1,'S-I');addMapping('S',1,1,'S-BI')
 BLUE=HexColor('#1F4E79');INK=HexColor('#1A1A1A');GREY=HexColor('#555555')
-URL='https://abdullahsulehri.github.io/interactive-cv/?src=pdf'
+URL='https://abdullahsulehri.github.io/interactive-cv/?utm_source=cv-pdf'
 SHOW='abdullahsulehri.github.io/interactive-cv'
 SEP='&nbsp;&nbsp;|&nbsp;&nbsp;';SP2='&nbsp;&nbsp;'
 BODY=float(sys.argv[1]) if len(sys.argv)>1 else 10

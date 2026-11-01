@@ -12,7 +12,7 @@ styles=re.findall(r'<style[^>]*>(.*?)</style>',H,re.S)
 if len(styles)!=1: err('S1',f'{len(styles)} <style> blocks; keep exactly one')
 css='\n'.join(styles)
 body=re.sub(r'<script id="content-data".*?</script>','',H,flags=re.S)
-scripts=[s for a,s in re.findall(r'<script(\s[^>]*)?>(.*?)</script>',body,re.S)]
+scripts=[s for a,s in re.findall(r'<script(\s[^>]*)?>(.*?)</script>',body,re.S) if 'ld+json' not in (a or '')]
 js='\n'.join(scripts)
 nocomment=re.sub(r'/\*.*?\*/','',css,flags=re.S)
 decls=re.findall(r'([\w-]+)\s*:\s*([^;{}]+)',re.sub(r'[^{}]*\{','{',nocomment))
@@ -73,10 +73,17 @@ for pj in C.get('panels',{}).get('ai',{}).get('projects',[]):
     if len(pj.get('tags',[]))!=2: err('S6',f'AI card "{pj.get("title")}" has {len(pj.get("tags",[]))} tags; exactly 2 (rule D2)')
 for t in (C.get('testimonials',{}) or {}).get('items',[]):
     if re.search(r'\b(19|20)\d\d\b',json.dumps(t)): err('S6',f'testimonial "{t.get("name")}" contains a year (rule D1)')
+# ---------- F focus system ----------
+FON_OK={'.act:first-child.f-on .pa .pi,.act:first-child:hover .pa .pi','.edu .card.f-on .edc b::before,.edu .card.f-on b::before','.mdi.f-on .mdb i','.logo.f-on .lgc,.tool.f-on .lgc,.logo:hover .lgc,.tool:hover .lgc','.logo.f-on img,.tool.f-on img,.logo:hover img,.tool:hover img','.cc.f-on .node','.cm.f-on .cm-dot','.sch button:hover .sd,.sch.f-on .sd'}
+for s in re.findall(r'([^{}@/][^{}]*?)\{',re.sub(r'@media[^{]*\{','',nocomment)):
+    s=re.sub(r'\s+',' ',s.strip())
+    if '.f-on' in s and s not in FON_OK: err('F8',f'new focus style "{s}": highlights must use the one-dot system (dot fill or pill) - see DESIGN-RULES section 11')
+if 'class=\"pa\" ' in H and '<span class=\"pi\">' not in H: err('F3','action pills must wrap icon + label in <span class="pi">')
+for m in re.finditer(r'<(?:a|button) class="pa[^"]*"[^>]*>(?!<span class="pi">)',body): err('F3',f'pill without .pi wrapper: {m.group(0)[:60]}')
 # ---------- S7 hygiene ----------
 for mk in [r'/\*[^*]*test layer',r'/\*[^*]*round \d',r'TODO',r'FIXME',r'console\.log',r'debugger']:
     if re.search(mk,body,re.I): err('S7',f'leftover marker in index.html: {mk}')
-for ref in sorted(set(re.findall(r'(?:assets|cv)/[\w\-./]+\.(?:webp|svg|png|jpg|jpeg|pdf|woff2)',H))):
+for ref in sorted(set(re.findall(r'(?<![\w-])(?:assets|cv)/[\w\-./]+\.(?:webp|svg|png|jpg|jpeg|pdf|woff2)',H))):
     if not (root/ref).exists(): err('S7',f'missing file: {ref}')
 with tempfile.TemporaryDirectory() as d:
     for i,s in enumerate(scripts):

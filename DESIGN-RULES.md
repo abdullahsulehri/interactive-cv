@@ -41,10 +41,10 @@ The site is one page (`index.html`). Text and data live in `content.json`. Image
 
 | # | Rule |
 |---|---|
-| C1 | Three button types only: primary (filled, 40px), secondary (outline, 40px), and the action pill (32px, icon + label). Labels are 13px. |
-| C2 | Every expand control has a label, shows its open state, and has a clear way back (Hide, Back, Collapse all, ×) that returns exactly the previous state. |
+| C1 | Three button types only: primary (filled, 40px), secondary (outline, 40px), and the action control (32px): a dot with an icon that opens into a labelled pill (section 11). Labels are 13px. |
+| C2 | Every expand control has a label (shown when its pill opens, always read by screen readers), shows its open state (filled pill reading Hide / ×), and has a clear way back that returns exactly the previous state. |
 | C3 | On phone, every tappable thing has at least a 44×44px tap area, even if it looks smaller. |
-| C4 | Highlight rule. Laptop: hovering lights the whole card or row; only "Book a call" also lights when it reaches the middle of the screen. Phone: whatever is at the middle line lights up. Hover always wins. |
+| C4 | Highlighting follows the focus system in section 11, everywhere: home page, panels and the full-experience view. |
 | C5 | Fixed elements (bars, panels) never cover text a visitor needs. |
 | C6 | The same component has the same internal structure at every width. Nothing rearranges because one item's text is longer. |
 | C7 | Each section has one action slot, at the top right of its heading (e.g. View on LinkedIn, Expand all). On phone it sits under the heading. |
@@ -71,9 +71,9 @@ The site is one page (`index.html`). Text and data live in `content.json`. Image
 
 | # | Rule |
 |---|---|
-| K1 | The accent colour has three jobs: highlighted state, primary action, key numbers. Never decoration. |
-| K2 | All text passes 4.5:1 contrast in all six accent colours (Blue, Teal, Terracotta, Burgundy, Plum, Ochre). |
-| K3 | Logos rest in ink and turn the accent when highlighted. |
+| K1 | The accent colour has four jobs: focus state (section 11), highlighted/open state, primary action, key numbers. Never decoration. |
+| K2 | All text passes 4.5:1 contrast (large text 3:1) in all six accent colours, in both its resting and highlighted state. `tools/contrast.py` checks this. |
+| K3 | Brand and tool logos rest in grey (at least 3:1 contrast) and switch to their own brand colour when in focus. A brand colour too light for 3:1 is darkened automatically; a brand with no known colour uses the accent. |
 | K4 | Page backgrounds use the two paper colours only, alternating by section. No dark sections. |
 | K5 | Green is used for WhatsApp only. |
 
@@ -106,7 +106,22 @@ These keep the code clean every time a feature or content is added. `tools/lint.
 | S5 | Breakpoints come from the fixed list in `tools/lint.py`. Laptop starts at `min-width:900px`; phone is `max-width:899.98px`. A new breakpoint needs a rule change first. |
 | S6 | Text lives only in `content.json`. After editing it, run `python tools/sync_content.py` so the copy inside `index.html` matches. US spelling (official course titles excepted). Rules D1–D3 are checked automatically. |
 | S7 | No leftover build markers, `console.log`, `TODO`; every referenced file exists; JavaScript passes a syntax check. |
-| S8 | Before publishing run `python tools/check.py` (sync + lint + 9-size audit + alignment report). GitHub runs the same check on every push; a red ✗ on the commit means a rule is broken. |
+| S8 | Before publishing run `python tools/check.py` (sync + lint + 9-size audit + contrast in 6 accents + alignment report). GitHub runs the same check on every push; a red ✗ on the commit means a rule is broken. |
+
+## 11. Focus system
+
+One way of saying "this is in focus", everywhere. `tools/lint.py` blocks any other highlight style.
+
+| # | Rule |
+|---|---|
+| F1 | Every item has exactly one dot. An item with an action uses its action dot (32px circle with an icon). An item without one gets an 8px marker dot left of its title. |
+| F2 | Phone: the item crossing the middle line of the visible scroll area is in focus (the page, an open panel, or the full-experience view). Laptop: the item under the pointer is in focus; with no pointer on an item, the middle line applies. The pointer always wins. |
+| F3 | In focus, a marker dot fills with the accent. An action dot fills and opens into a labelled pill. Each pill's open width is reserved in advance, so opening it never moves anything. A dot never changes size. |
+| F4 | Collapsed items never open on scroll, only on tap or click. Once open, the pill stays filled and reads Hide (×); the content inside follows these same rules. |
+| F5 | Items in one grid row share focus: the whole row lights together, never one item of it. Tool logos light with their row but never take focus from their skill group. |
+| F6 | Logos are their own marker (K3): grey at rest, brand colour in focus. |
+| F7 | Section heading accent words are lit only while the reader is inside that section, and return to readable grey when they leave. |
+| F8 | Exceptions, written down so nothing falls outside the rule: timeline nodes (story, experience years) are their items' dots; the six hero tiles keep their travelling dot; bars, navigation, headings, hero stats, panel controls (Back, Next, Close), the WhatsApp button, the colour panel and the loader never take focus; form fields use the text cursor; tags are not items; main buttons (Let's talk, Send, Download CV, Book a time) and the email fallback link are always labelled. Motion off: the same states, applied instantly. |
 
 ## How to add content or a feature
 

@@ -18,7 +18,7 @@ for(const e of all){if(!vis(e))continue;const s=getComputedStyle(e);const t=[...
  for(const d of (s.transitionDuration+','+s.animationDuration).split(','))if(d.trim()!=='0s')dur[d.trim()]=(dur[d.trim()]||0)+1}
 const small=[];if(innerWidth<900){for(const e of document.querySelectorAll('a,button,input,select,textarea')){if(!vis(e))continue;const r=e.getBoundingClientRect();if(r.width<40||r.height<40)small.push(((e.className||e.tagName)+'').split(' ')[0]+' '+Math.round(r.width)+'x'+Math.round(r.height))}}
 const offR=[...document.querySelectorAll('.wrap *, .hero *')].filter(e=>vis(e)&&!e.closest('#pnl')&&e.getBoundingClientRect().right>innerWidth+1&&getComputedStyle(e).position!=='fixed').map(e=>((e.className||e.tagName)+'').split(' ')[0]).slice(0,8);
-const hc=[];for(const h of document.querySelectorAll('h1,h2,h3,.h1')){if(!vis(h))continue;const r=document.createRange();r.selectNodeContents(h);const tr=r.getBoundingClientRect();let p=h;while(p&&p!==document.body){const s=getComputedStyle(p);if(/(hidden|clip)/.test(s.overflow+s.overflowX+s.overflowY)){const pr=p.getBoundingClientRect();if(tr.left<pr.left-.5||tr.right>pr.right+.5||tr.top<pr.top-.5||tr.bottom>pr.bottom+.5){hc.push(h.textContent.trim().slice(0,24));}break}p=p.parentElement}}
+const hc=[];for(const h of document.querySelectorAll('h1,h2,h3,.h1')){if(!vis(h))continue;const r=document.createRange();r.selectNodeContents(h);const tr=r.getBoundingClientRect();let p=h;while(p&&p!==document.body){const s=getComputedStyle(p);if(/(hidden|clip)/.test(s.overflow+s.overflowX+s.overflowY)){const pr=p.getBoundingClientRect();if(tr.left<pr.left-.5||tr.right>pr.right+.5||tr.top<pr.top-.5-.15*parseFloat(getComputedStyle(h).fontSize)||tr.bottom>pr.bottom+.5){hc.push(h.textContent.trim().slice(0,24));}break}p=p.parentElement}}
 const ic=[];for(const e of document.querySelectorAll('.pa .ic, #cvbtn .ic')){if(!vis(e))continue;const r=e.getBoundingClientRect(),q=e.parentElement.getBoundingClientRect();if(Math.abs((r.top+r.bottom)/2-(q.top+q.bottom)/2)>1)ic.push((e.parentElement.className||'')+' '+e.textContent)}
 const av=[];for(const e of document.querySelectorAll('.av')){if(!vis(e))continue;const r=document.createRange();r.selectNodeContents(e);const t=r.getBoundingClientRect(),q=e.getBoundingClientRect();if(Math.abs((t.top+t.bottom)/2-(q.top+q.bottom)/2)>1.5||Math.abs((t.left+t.right)/2-(q.left+q.right)/2)>1.5)av.push(e.textContent+' dy'+((t.top+t.bottom)/2-(q.top+q.bottom)/2).toFixed(1))}
 const navOv=document.querySelector('.nav').scrollWidth>innerWidth+1;
@@ -28,7 +28,7 @@ async def main():
     b=await p.chromium.launch()
     res={}
     for W,H,mob in [(360,740,1),(390,844,1),(768,1024,1),(1024,768,0),(1280,720,0),(1366,768,0),(1440,900,0),(1920,1080,0),(2560,1440,0)]:
-      pg=await b.new_page(viewport={'width':W,'height':H},is_mobile=bool(mob),has_touch=bool(mob));errs=[];pg.on('pageerror',lambda e:errs.append(str(e)[:120]))
+      pg=await b.new_page(viewport={'width':W,'height':H},is_mobile=bool(mob),has_touch=bool(mob),reduced_motion='reduce');errs=[];pg.on('pageerror',lambda e:errs.append(str(e)[:120]))
       await pg.goto(URL);await pg.wait_for_timeout(2200)
       for y in range(0,12000,500): await pg.evaluate(f'scrollTo(0,{y})');await pg.wait_for_timeout(40)
       await pg.evaluate("scrollTo({top:0,behavior:'instant'})");await pg.wait_for_timeout(500)

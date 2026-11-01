@@ -1,5 +1,5 @@
 """One command before every publish:   python tools/check.py
-Runs: content sync check -> lint (S1-S8) -> audit at 9 sizes (Q1) -> alignment report.
+Runs: content sync check -> lint (S1-S8, F) -> audit at 9 sizes (Q1) -> contrast in 6 accents (K2) -> alignment report.
 Serves the repo locally, so it checks YOUR changes, not the live site. Exit code 1 = do not publish."""
 import subprocess,sys,time,pathlib,socket
 root=pathlib.Path(__file__).resolve().parent.parent;py=sys.executable
@@ -12,6 +12,7 @@ if ok:
     try:
         time.sleep(2);url=f'http://127.0.0.1:{port}/'
         ok=step('audit (9 sizes)',[py,'tools/audit.py',url])
+        ok=step('contrast (6 accents, rest + highlighted)',[py,'tools/contrast.py',url]) and ok
         step('alignment report (needs the real fonts: trust it on GitHub, not offline)',[py,'tools/align.py',url])
     finally: srv.kill()
 print('\nCHECK PASS: safe to publish' if ok else '\nCHECK FAILED: do not publish');sys.exit(0 if ok else 1)

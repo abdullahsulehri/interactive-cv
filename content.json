@@ -1,7 +1,7 @@
 {
  "_readme": "All site text and data. Edit values, keep quotes and commas. See README.md for the rules.",
  "settings": {
-  "site_title": "Abdullah Sulehri · Marketing Strategist",
+  "site_title": "Abdullah Sulehri · Senior Marketing Manager, B2B Growth & AI",
   "meta_description": "Senior Marketing Manager in Lahore. B2B growth across Pakistan and the UAE, and AI agents and automations for marketing teams.",
   "email": "abdullah@sulehri.com",
   "phone": "+92 331 4074234",
@@ -42,7 +42,9 @@
    "letter_spacing": "0.010em"
   },
   "whatsapp": "https://wa.me/923314074234",
-  "web3forms_key": "c2a48dc6-ef0c-4030-959f-76dc39f2e789"
+  "web3forms_key": "c2a48dc6-ef0c-4030-959f-76dc39f2e789",
+  "site_url": "https://abdullahsulehri.github.io/interactive-cv/",
+  "goatcounter_code": ""
  },
  "nav": [
   {
@@ -277,7 +279,7 @@
       "Claude",
       "GitHub"
      ],
-     "saves": "Built with AI, tested on 9 screen sizes against 48 design rules before every release."
+     "saves": "Built with AI, tested on 9 screen sizes against 56 design rules before every release."
     },
     {
      "title": "MyndKeep: second-brain app",
