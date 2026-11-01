@@ -2253,71 +2253,88 @@
   "items": [
    {
     "name": "Unilever",
-    "logo": "assets/logos/unilever.webp"
+    "logo": "assets/logos/unilever.webp",
+    "color": "#1F36C7"
    },
    {
     "name": "Samsung",
-    "logo": "assets/logos/samsung.webp"
+    "logo": "assets/logos/samsung.webp",
+    "color": "#1428A0"
    },
    {
     "name": "Telenor",
-    "logo": "assets/logos/telenor.webp"
+    "logo": "assets/logos/telenor.webp",
+    "color": "#0097E0"
    },
    {
     "name": "Honda",
-    "logo": "assets/logos/honda.webp"
+    "logo": "assets/logos/honda.webp",
+    "color": "#E40521"
    },
    {
     "name": "Geo TV",
-    "logo": "assets/logos/geo-tv.webp"
+    "logo": "assets/logos/geo-tv.webp",
+    "color": "#F15A22"
    },
    {
     "name": "ARY Digital",
-    "logo": "assets/logos/ary-digital.webp"
+    "logo": "assets/logos/ary-digital.webp",
+    "color": "#D7141A"
    },
    {
     "name": "Suzuki",
-    "logo": "assets/logos/suzuki.webp"
+    "logo": "assets/logos/suzuki.webp",
+    "color": "#E30613"
    },
    {
     "name": "Haier",
-    "logo": "assets/logos/haier.webp"
+    "logo": "assets/logos/haier.webp",
+    "color": "#005BAC"
    },
    {
     "name": "Vivo",
-    "logo": "assets/logos/vivo.webp"
+    "logo": "assets/logos/vivo.webp",
+    "color": "#415FFF"
    },
    {
     "name": "National Foods",
-    "logo": "assets/logos/national-foods.webp"
+    "logo": "assets/logos/national-foods.webp",
+    "color": "#E31B23"
    },
    {
     "name": "Continental Biscuits",
-    "logo": "assets/logos/continental-biscuits.webp"
+    "logo": "assets/logos/continental-biscuits.webp",
+    "color": "#0055A5"
    },
    {
     "name": "LU",
-    "logo": "assets/logos/lu.webp"
+    "logo": "assets/logos/lu.webp",
+    "color": "#0055A5"
    },
    {
     "name": "TUC",
-    "logo": "assets/logos/tuc.webp"
+    "logo": "assets/logos/tuc.webp",
+    "color": "#D2232A"
    },
    {
     "name": "Adamjee Insurance",
-    "logo": "assets/logos/adamjee-insurance.webp"
+    "logo": "assets/logos/adamjee-insurance.webp",
+    "color": "#003DA5"
    },
    {
     "name": "SnackVideo",
-    "logo": "assets/logos/snackvideo.webp"
+    "logo": "assets/logos/snackvideo.webp",
+    "color": "#AF8E04"
    },
    {
     "name": "Mary Brown's",
-    "logo": "assets/logos/mary-browns.webp"
+    "logo": "assets/logos/mary-browns.webp",
+    "color": "#C8102E"
    },
    {
     "name": "EBM",
-    "logo": "assets/logos/ebm.webp"
+    "logo": "assets/logos/ebm.webp",
+    "color": "#E21F26"
    },
    {
     "name": "ARY Laguna",
@@ -2325,7 +2342,8 @@
    },
    {
     "name": "Pink Ribbon",
-    "logo": "assets/logos/pink-ribbon.webp"
+    "logo": "assets/logos/pink-ribbon.webp",
+    "color": "#E5007E"
    },
    {
     "name": "Utho Bolo",
@@ -2420,55 +2438,68 @@
     "tools": [
      {
       "name": "Claude",
-      "logo": "assets/tools/claude.webp"
+      "logo": "assets/tools/claude.webp",
+      "color": "#D97757"
      },
      {
       "name": "ChatGPT",
-      "logo": "assets/tools/chatgpt.svg"
+      "logo": "assets/tools/chatgpt.svg",
+      "color": "#10A37F"
      },
      {
       "name": "Gemini",
-      "logo": "assets/tools/googlegemini.webp"
+      "logo": "assets/tools/googlegemini.webp",
+      "color": "#8E75B2"
      },
      {
       "name": "Microsoft Copilot",
-      "logo": "assets/tools/microsoft-copilot.webp"
+      "logo": "assets/tools/microsoft-copilot.webp",
+      "color": "#0078D4"
      },
      {
       "name": "Perplexity",
-      "logo": "assets/tools/perplexity.webp"
+      "logo": "assets/tools/perplexity.webp",
+      "color": "#1BA0B2"
      },
      {
       "name": "Zapier",
-      "logo": "assets/tools/zapier.webp"
+      "logo": "assets/tools/zapier.webp",
+      "color": "#FF4F00"
      },
      {
       "name": "Claude Code",
-      "logo": "assets/tools/claude.webp"
+      "logo": "assets/tools/claude.webp",
+      "color": "#D97757"
      },
      {
       "name": "Claude Design",
-      "logo": "assets/tools/claude.webp"
+      "logo": "assets/tools/claude.webp",
+      "color": "#D97757"
      },
      {
       "name": "Claude Cowork",
-      "logo": "assets/tools/claude.webp"
+      "logo": "assets/tools/claude.webp",
+      "color": "#D97757"
      },
      {
       "name": "NotebookLM",
-      "logo": "assets/tools/notebooklm.svg"
+      "logo": "assets/tools/notebooklm.svg",
+      "color": "#000000"
      },
      {
       "name": "Grok",
-      "logo": "assets/tools/grok.svg"
+      "logo": "assets/tools/grok.svg",
+      "color": "#000000"
      },
      {
       "name": "Lovable",
-      "logo": "assets/tools/lovable.svg"
+      "logo": "assets/tools/lovable.svg",
+      "color": "#F04E5E"
      },
      {
       "name": "Power Automate",
-      "logo": "assets/tools/power-automate.svg"
+      "logo": "assets/tools/power-automate.svg",
+      "color": "#0066FF"
      }
     ]
    },
@@ -2485,47 +2516,58 @@
     "tools": [
      {
       "name": "LinkedIn Sales Navigator",
-      "logo": "assets/tools/linkedin.webp"
+      "logo": "assets/tools/linkedin.webp",
+      "color": "#0A66C2"
      },
      {
       "name": "LinkedIn Ads",
-      "logo": "assets/tools/linkedin.webp"
+      "logo": "assets/tools/linkedin.webp",
+      "color": "#0A66C2"
      },
      {
       "name": "Meta Ads",
-      "logo": "assets/tools/meta.webp"
+      "logo": "assets/tools/meta.webp",
+      "color": "#0467DF"
      },
      {
       "name": "Google Ads",
-      "logo": "assets/tools/googleads.webp"
+      "logo": "assets/tools/googleads.webp",
+      "color": "#4285F4"
      },
      {
       "name": "Mailchimp",
-      "logo": "assets/tools/mailchimp.webp"
+      "logo": "assets/tools/mailchimp.webp",
+      "color": "#AA9300"
      },
      {
       "name": "Apollo.io",
-      "logo": "assets/tools/apollo.webp"
+      "logo": "assets/tools/apollo.webp",
+      "color": "#2B2B2B"
      },
      {
       "name": "X Ads",
-      "logo": "assets/tools/x.webp"
+      "logo": "assets/tools/x.webp",
+      "color": "#000000"
      },
      {
       "name": "Zoho Campaigns",
-      "logo": "assets/tools/zoho.webp"
+      "logo": "assets/tools/zoho.webp",
+      "color": "#E42527"
      },
      {
       "name": "ZoomInfo",
-      "logo": "assets/tools/zoominfo.webp"
+      "logo": "assets/tools/zoominfo.webp",
+      "color": "#D41E2F"
      },
      {
       "name": "Hunter.io",
-      "logo": "assets/tools/hunter.webp"
+      "logo": "assets/tools/hunter.webp",
+      "color": "#FF5722"
      },
      {
       "name": "Snov.io",
-      "logo": "assets/tools/snov.webp"
+      "logo": "assets/tools/snov.webp",
+      "color": "#2A6CFF"
      },
      {
       "name": "Reachinbox",
@@ -2537,23 +2579,28 @@
      },
      {
       "name": "Meta Business Suite",
-      "logo": "assets/tools/meta.webp"
+      "logo": "assets/tools/meta.webp",
+      "color": "#0467DF"
      },
      {
       "name": "Hootsuite / Buffer",
-      "logo": "assets/tools/hootsuite.webp"
+      "logo": "assets/tools/hootsuite.webp",
+      "color": "#143059"
      },
      {
       "name": "Brand24",
-      "logo": "assets/tools/brand24.webp"
+      "logo": "assets/tools/brand24.webp",
+      "color": "#0F6CD8"
      },
      {
       "name": "TweetDeck",
-      "logo": "assets/tools/x.webp"
+      "logo": "assets/tools/x.webp",
+      "color": "#0E98ED"
      },
      {
       "name": "Tweet Binder",
-      "logo": "assets/tools/tweet-binder.webp"
+      "logo": "assets/tools/tweet-binder.webp",
+      "color": "#0E98ED"
      }
     ]
    },
@@ -2568,35 +2615,43 @@
     "tools": [
      {
       "name": "Canva",
-      "logo": "assets/tools/canva.svg"
+      "logo": "assets/tools/canva.svg",
+      "color": "#009DA3"
      },
      {
       "name": "Figma",
-      "logo": "assets/tools/figma.webp"
+      "logo": "assets/tools/figma.webp",
+      "color": "#F24E1E"
      },
      {
       "name": "WordPress",
-      "logo": "assets/tools/wordpress.webp"
+      "logo": "assets/tools/wordpress.webp",
+      "color": "#21759B"
      },
      {
       "name": "SEMrush",
-      "logo": "assets/tools/semrush.webp"
+      "logo": "assets/tools/semrush.webp",
+      "color": "#FF5C23"
      },
      {
       "name": "Yoast SEO",
-      "logo": "assets/tools/yoast.webp"
+      "logo": "assets/tools/yoast.webp",
+      "color": "#A4286A"
      },
      {
       "name": "Grammarly",
-      "logo": "assets/tools/grammarly.webp"
+      "logo": "assets/tools/grammarly.webp",
+      "color": "#027E6F"
      },
      {
       "name": "CapCut",
-      "logo": "assets/tools/capcut.webp"
+      "logo": "assets/tools/capcut.webp",
+      "color": "#000000"
      },
      {
       "name": "Google Trends",
-      "logo": "assets/tools/google-trends.webp"
+      "logo": "assets/tools/google-trends.webp",
+      "color": "#4285F4"
      }
     ]
    },
@@ -2609,31 +2664,38 @@
     "tools": [
      {
       "name": "Google Analytics",
-      "logo": "assets/tools/googleanalytics.webp"
+      "logo": "assets/tools/googleanalytics.webp",
+      "color": "#E37400"
      },
      {
       "name": "Looker Studio",
-      "logo": "assets/tools/looker.webp"
+      "logo": "assets/tools/looker.webp",
+      "color": "#4285F4"
      },
      {
       "name": "Power BI",
-      "logo": "assets/tools/power-bi.svg"
+      "logo": "assets/tools/power-bi.svg",
+      "color": "#A88B09"
      },
      {
       "name": "Advanced Excel",
-      "logo": "assets/tools/excel.svg"
+      "logo": "assets/tools/excel.svg",
+      "color": "#217346"
      },
      {
       "name": "Search Console",
-      "logo": "assets/tools/googlesearchconsole.webp"
+      "logo": "assets/tools/googlesearchconsole.webp",
+      "color": "#458CF5"
      },
      {
       "name": "Tag Manager",
-      "logo": "assets/tools/googletagmanager.webp"
+      "logo": "assets/tools/googletagmanager.webp",
+      "color": "#246FDB"
      },
      {
       "name": "Power Query",
-      "logo": "assets/tools/excel.svg"
+      "logo": "assets/tools/excel.svg",
+      "color": "#217346"
      },
      {
       "name": "Windsor.ai",
@@ -2650,51 +2712,63 @@
     "tools": [
      {
       "name": "HubSpot",
-      "logo": "assets/tools/hubspot.webp"
+      "logo": "assets/tools/hubspot.webp",
+      "color": "#FF5930"
      },
      {
       "name": "Bitrix24",
-      "logo": "assets/tools/bitrix24.webp"
+      "logo": "assets/tools/bitrix24.webp",
+      "color": "#099CCB"
      },
      {
       "name": "Zoho CRM",
-      "logo": "assets/tools/zoho.webp"
+      "logo": "assets/tools/zoho.webp",
+      "color": "#E42527"
      },
      {
       "name": "Notion",
-      "logo": "assets/tools/notion.webp"
+      "logo": "assets/tools/notion.webp",
+      "color": "#000000"
      },
      {
       "name": "Asana",
-      "logo": "assets/tools/asana.webp"
+      "logo": "assets/tools/asana.webp",
+      "color": "#F06A6A"
      },
      {
       "name": "Jira",
-      "logo": "assets/tools/jira.webp"
+      "logo": "assets/tools/jira.webp",
+      "color": "#0052CC"
      },
      {
       "name": "Microsoft Office",
-      "logo": "assets/tools/microsoft-office.svg"
+      "logo": "assets/tools/microsoft-office.svg",
+      "color": "#D83B01"
      },
      {
       "name": "Microsoft Teams",
-      "logo": "assets/tools/microsoft-teams.svg"
+      "logo": "assets/tools/microsoft-teams.svg",
+      "color": "#6264A7"
      },
      {
       "name": "Trello",
-      "logo": "assets/tools/trello.webp"
+      "logo": "assets/tools/trello.webp",
+      "color": "#0052CC"
      },
      {
       "name": "Microsoft Bookings",
-      "logo": "assets/tools/microsoft-bookings.webp"
+      "logo": "assets/tools/microsoft-bookings.webp",
+      "color": "#0078D4"
      },
      {
       "name": "Calendly",
-      "logo": "assets/tools/calendly.webp"
+      "logo": "assets/tools/calendly.webp",
+      "color": "#006BFF"
      },
      {
       "name": "GitHub",
-      "logo": "assets/tools/github.webp"
+      "logo": "assets/tools/github.webp",
+      "color": "#181717"
      }
     ]
    },
