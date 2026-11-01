@@ -268,8 +268,26 @@
    }
   },
   "ai": {
-   "lead": "Built with AI. Approved by me. Ten agents and automations I run at work, and I review every output before it's used.",
+   "lead": "Built with AI. Approved by me. 10+ agents and automations I run at work, plus tools I've built for myself. I review every output before it's used.",
    "projects": [
+    {
+     "title": "This website",
+     "text": "A live demo of how I work: AI drafts layout, code and copy, I review every detail, and each version is refined from real feedback before release.",
+     "tags": [
+      "Claude",
+      "GitHub"
+     ],
+     "saves": "Built with AI, tested on 9 screen sizes against 41 design rules before every release."
+    },
+    {
+     "title": "MyndKeep: second-brain app",
+     "text": "An Android app I built for my own saves: it captures reels, screenshots, voice notes and docs, then uses AI to sort, summarize and trust-check each one.",
+     "tags": [
+      "Gemini",
+      "Claude Code"
+     ],
+     "saves": "200+ items organized and searchable, each with a 5-point trust check. Friends use it too."
+    },
     {
      "title": "Live campaign report",
      "text": "Joins data from different sources and calculates derived metrics that platforms don't link up, in one custom dashboard for management.",
@@ -344,21 +362,12 @@
     },
     {
      "title": "Data formatter",
-     "text": "Cleans and standardises any export (Bitrix24 CRM records, campaign data, contact lists and more) into one consistent format, ready to use.",
+     "text": "Cleans and standardizes any export (Bitrix24 CRM records, campaign data, contact lists and more) into one consistent format, ready to use.",
      "tags": [
       "Claude",
       "Excel"
      ],
      "saves": "Turns messy exports of 10,000+ rows into clean, usable data in minutes, not days."
-    },
-    {
-     "title": "This website",
-     "text": "A live demo of how I work: AI drafts layout, code and copy, I review every detail, and each version is refined from real feedback before release.",
-     "tags": [
-      "Claude",
-      "GitHub"
-     ],
-     "saves": "Built with AI, tested on 9 screen sizes against 29 design rules before every release."
     }
    ]
   },
@@ -2826,7 +2835,7 @@
      "Recent B2B email campaigns reached a 60% open rate and 5%+ click-through",
      "Run Google, Meta and LinkedIn campaigns, and Path2Progress, our event series and webinars for senior HR leaders",
      "Final sign-off on all brand and marketplace content; leading the new company website and office wall branding",
-     "Optimise Bitrix24 CRM workflows for lead visibility, lifecycle tracking and sales alignment",
+     "Optimize Bitrix24 CRM workflows for lead visibility, lifecycle tracking and sales alignment",
      "Built 10+ AI agents and automations for reporting, checks and content, each one human-approved"
     ],
     "key": 3,
