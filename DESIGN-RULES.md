@@ -92,3 +92,30 @@ The site is one page (`index.html`). Text and data live in `content.json`. Image
 | Q1 | Nothing is published until the audit passes at all 9 sizes: 360×740, 390×844, 768×1024, 1024×768, 1280×720, 1366×768, 1440×900, 1920×1080, 2560×1440. |
 
 The audit checks: sideways scrolling, cut text, half-shown teasers, bar overflow, nav overflow, script errors, clipped letters in headings, icon and label centring (with the real fonts), avatar initials centring, and sticky-header gaps. A person still checks motion and feel in a real browser.
+
+## 10. Source code
+
+These keep the code clean every time a feature or content is added. `tools/lint.py` checks them automatically.
+
+| # | Rule |
+|---|---|
+| S1 | One `<style>` block. No new `!important`, duplicate selectors, `setTimeout`s, inline `style=` attributes or colour literals: their counts in `tools/lint-budget.json` can go down, never up. Fix specificity or order instead of forcing. |
+| S2 | Layers and corners come from tokens only: `--z-*` for z-index, `--r` / `--r-*` for border-radius. Colours come from the `:root` and theme tokens. |
+| S3 | Font sizes follow T4. Named exceptions: 9.5px dot-to-pill micro label (grows inside the fixed pill, so no layout moves), 34px loader monogram, 64px testimonial quote mark. |
+| S4 | Every transition and animation uses `var(--ez)` and a T-rule speed (.2s / .4s / 1.2s). Named exception: 2.4s loader pulse loop. |
+| S5 | Breakpoints come from the fixed list in `tools/lint.py`. Laptop starts at `min-width:900px`; phone is `max-width:899.98px`. A new breakpoint needs a rule change first. |
+| S6 | Text lives only in `content.json`. After editing it, run `python tools/sync_content.py` so the copy inside `index.html` matches. US spelling (official course titles excepted). Rules D1–D3 are checked automatically. |
+| S7 | No leftover build markers, `console.log`, `TODO`; every referenced file exists; JavaScript passes a syntax check. |
+| S8 | Before publishing run `python tools/check.py` (sync + lint + 9-size audit + alignment report). GitHub runs the same check on every push; a red ✗ on the commit means a rule is broken. |
+
+## How to add content or a feature
+
+1. Text only: edit `content.json` → `python tools/sync_content.py` → `python tools/check.py`.
+2. New styles: add them inside the one `<style>` block, next to the related component, using tokens. Never add a second block or an override layer at the end.
+3. New behaviour: add it next to the related code in the main script, not in a new "layer" at the end.
+4. CV PDF: edit `tools/build_cv.py` → `python tools/build_cv.py` → it must stay 2 pages and the QR must scan.
+5. Preview, approve, then push. If the GitHub check turns red, fix before sharing the link.
+
+## How to undo a release
+
+Every release is tagged (`v9`, `v10`, `v11`, …). To roll the live site back: `git checkout main && git reset --hard v10 && git push --force` (replace `v10` with the version to return to). GitHub Pages updates within a few minutes.

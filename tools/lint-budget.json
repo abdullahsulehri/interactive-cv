@@ -1,0 +1,7 @@
+{
+ "important": 88,
+ "duplicate_selectors": 132,
+ "setTimeout": 19,
+ "inline_style_attrs": 14,
+ "colour_literals_outside_root": 80
+}
