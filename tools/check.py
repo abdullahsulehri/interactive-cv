@@ -13,6 +13,7 @@ if ok:
         time.sleep(2);url=f'http://127.0.0.1:{port}/'
         ok=step('audit (9 sizes)',[py,'tools/audit.py',url])
         ok=step('contrast (6 accents, rest + highlighted)',[py,'tools/contrast.py',url]) and ok
+        ok=step('focus (every item reachable, labels readable)',[py,'tools/focuscheck.py',url]) and ok
         step('alignment report (needs the real fonts: trust it on GitHub, not offline)',[py,'tools/align.py',url])
     finally: srv.kill()
 print('\nCHECK PASS: safe to publish' if ok else '\nCHECK FAILED: do not publish');sys.exit(0 if ok else 1)

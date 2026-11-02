@@ -36,6 +36,7 @@ The site is one page (`index.html`). Text and data live in `content.json`. Image
 | A2 | Single-line labels in buttons, pills and chips are centred on their capital letters: `text-box: trim-both cap alphabetic`. If a label must hide overflow (for the expanding pill), use `overflow-x: clip; overflow-y: visible` so descenders (g, p, y) are never cut. |
 | A3 | Every control centres its content vertically (`align-items: center`). Initials in avatar circles are centred both ways. |
 | A4 | Tolerance is 1px. The audit checks icon and label centring with the real fonts loaded. |
+| A5 | Items in one row line up part by part: when a label or title wraps in one item, its neighbours reserve the same height, so titles start on the same line. |
 
 ## 4. Components
 
@@ -48,6 +49,7 @@ The site is one page (`index.html`). Text and data live in `content.json`. Image
 | C5 | Fixed elements (bars, panels) never cover text a visitor needs. |
 | C6 | The same component has the same internal structure at every width. Nothing rearranges because one item's text is longer. |
 | C7 | Each section has one action slot, at the top right of its heading (e.g. View on LinkedIn, Expand all). On phone it sits under the heading. |
+| C8 | A control whose label swaps (Expand all ↔ Collapse all, Show ↔ Hide, Read more ↔ Show less) reserves the longer label's width from the start, with equal cushion on both sides; swapping never moves anything. |
 
 ## 5. Panels
 
@@ -106,7 +108,8 @@ These keep the code clean every time a feature or content is added. `tools/lint.
 | S5 | Breakpoints come from the fixed list in `tools/lint.py`. Laptop starts at `min-width:900px`; phone is `max-width:899.98px`. A new breakpoint needs a rule change first. |
 | S6 | Text lives only in `content.json`. After editing it, run `python tools/sync_content.py` so the copy inside `index.html` matches. US spelling (official course titles excepted). Rules D1–D3 are checked automatically. |
 | S7 | No leftover build markers, `console.log`, `TODO`; every referenced file exists; JavaScript passes a syntax check. |
-| S8 | Before publishing run `python tools/check.py` (sync + lint + 9-size audit + contrast in 6 accents + alignment report). GitHub runs the same check on every push; a red ✗ on the commit means a rule is broken. |
+| S8 | Before publishing run `python tools/check.py` (sync + lint + 9-size audit + contrast in 6 accents + focus reachability + alignment report). GitHub runs the same check on every push; a red ✗ on the commit means a rule is broken. |
+| S9 | Safe clean-up is part of every patch: change code where it lives (never a new layer at the end), remove what the patch makes dead, keep the S1 counts equal or lower, and prove zero unintended visual change with the before/after snapshot check before publishing. |
 
 ## 11. Focus system
 
@@ -115,13 +118,13 @@ One way of saying "this is in focus", everywhere. `tools/lint.py` blocks any oth
 | # | Rule |
 |---|---|
 | F1 | Every item has exactly one dot. An item with an action uses its action dot (32px circle with an icon). An item without one gets an 8px marker dot left of its title. |
-| F2 | Phone: the item crossing the middle line of the visible scroll area is in focus (the page, an open panel, or the full-experience view). Near the top or bottom of a scroll area the line slides towards the first or last item, so every item, including the first and last, can reach focus. Laptop: the item under the pointer is in focus; with no pointer on an item, the line applies. The pointer always wins. |
+| F2 | Phone: the item nearest the middle line of the visible scroll area is in focus (page, open panel or full-experience view); focus stays put until another item is clearly nearer, so nothing flickers. Near the top and bottom the line slides smoothly to the first / last item, so every item can reach focus. If an area doesn't scroll, there is no line: the item you touch is in focus. Laptop: the item under the pointer is in focus, otherwise the line applies. Touch and pointer always win. |
 | F3 | In focus, a marker dot fills with the accent. An action dot fills and opens smoothly into a labelled pill (width, colour and label move together over .4s, to the label's exact width). Each pill's open width is reserved in advance, so opening it never moves anything. A dot never changes size. |
 | F4 | Collapsed items never open on scroll, only on tap or click. Once open, the pill stays filled and reads Hide (×); the content inside follows these same rules. |
 | F5 | Items in one grid row share focus: the whole row lights together, never one item of it. Tool logos light with their row but never take focus from their skill group. |
 | F6 | Logos are their own marker (K3): grey at rest, brand colour in focus. |
-| F7 | Section heading accent words are lit only while the reader is inside that section, and return to readable grey when they leave. |
-| F8 | Exceptions, written down so nothing falls outside the rule: timeline nodes (story, experience years) are their items' dots; the six hero tiles keep their travelling dot; bars, navigation, headings, hero stats, panel controls (Back, Next, Close), the WhatsApp button, the colour panel and the loader never take focus; form fields use the text cursor; tags are not items; main buttons (Let's talk, Send, Download CV, Book a time), the email fallback link, and every Expand all / Show all control are always labelled; in focus they fill (invert) instead of opening. Accordion panels (Problems, Experience) offer Expand all. Motion off: the same states, applied instantly. |
+| F7 | Heading accent words (including the hero line) are grey until the heading reaches the middle line, stay lit while the reader is in that section, and return to readable grey when they leave it. |
+| F8 | Exceptions, so nothing falls outside the rule: timeline nodes are their items' dots; the hero tiles keep their travelling dot; bars, navigation, headings, hero stats, panel controls, the WhatsApp button, the colour panel and the loader never take focus; form fields use the text cursor; tags are not items; contact icons stay neutral. Every standalone control (Expand / Collapse all, Show more / Show all, View full experience, View on LinkedIn…), the main buttons and Book a time are always labelled: in focus they fill (invert) instead of opening. Accordion panels offer an Expand all that stays pinned while the panel scrolls. Motion off: same states, instantly. |
 
 ## How to add content or a feature
 

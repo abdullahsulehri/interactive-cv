@@ -291,7 +291,7 @@ button {
 .pa:hover .pi,.pa:focus-visible .pi,.pa.on .pi,.pa.f-act .pi {
   background: var(--accent);
 }
-.pa:hover .lb,.pa:focus-visible .lb,.pa.on .lb,.pa.f-act .lb,.pa.wide .lb,.pa.keep .lb,.pa.measure .lb {
+.pa:hover .lb,.pa:focus-visible .lb,.pa.on .lb,.pa.f-act .lb,.pa.wide .lb,.pa.keep .lb {
   max-width: var(--lw,190px);
   padding-right: 13px;
   opacity: 1;
@@ -299,20 +299,10 @@ button {
 .pa.nt .lb,.pa.nt .pi {
   transition: none;
 }
-.act:first-child .pa {
-  color: var(--on-accent);
-}
-.act:first-child .pa .pi {
-  background: linear-gradient(90deg,var(--accent) 50%,var(--ink) 50%) 100% 0/200% 100%;
-  border-color: transparent;
-  transition: background-position .4s var(--ez);
-}
-.act:first-child .pa .lb {
-  max-width: 190px;
+.pa.measure .lb {
+  max-width: none;
   padding-right: 13px;
-}
-.act:first-child.f-on .pa .pi,.act:first-child:hover .pa .pi {
-  background-position: 0 0;
+  opacity: 1;
 }
 /* focus system visuals (rules F1-F8): one dot per item, filled when the item is in focus */
 :root {
@@ -1522,11 +1512,8 @@ button {
   width: 42px;
   height: 42px;
   border-radius: var(--r-circle);
-  background: var(--ink);
-  color: #fff;
-}
-.act:first-child .ai {
-  background: var(--accent);
+  background: var(--paper);
+  color: var(--ink-2);
 }
 .act .ai svg {
   stroke: currentColor;
@@ -1641,6 +1628,9 @@ html.lock,html.lock body {
 }
 /* phone + tablet */
 @media (max-width:899.98px) {
+  .tiles .tl {
+    min-height: 2.4em;
+  }
   .name.stack .w {
     display: block;
   }
@@ -2908,16 +2898,6 @@ body {
   .pc,.skgrp,.cert,.act,.rec,.logo,.ca {
     transition: box-shadow .2s var(--ez);
   }
-  .act:hover .ai {
-    background: var(--accent);
-  }
-  .act:hover b {
-    color: var(--accent);
-  }
-  .skgrp:hover .gic {
-    background: var(--accent);
-    color: var(--on-accent);
-  }
 }
 .mdc>p {
   margin: 0 0 10px;
@@ -3177,11 +3157,17 @@ body {
 .mdi.on .mdb i,.mdb:hover i {
   background: var(--accent);
 }
-.mdi.on .mdk,.mdb:hover .mdk {
-  color: var(--accent);
-}
 .mdall {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-lift-2);
   margin: 14px 0 0;
+  padding: 8px 0;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+.mdx .mdhd {
+  display: none;
 }
 .mdc {
   display: none;
@@ -3418,6 +3404,9 @@ footer .wrap {
 }
 .mdi.on .mdc {
   display: block;
+}
+.mdx:not(.all) .mdi.on .mdhd {
+  display: flex;
 }
 .mdx.all {
   display: flex;
@@ -6029,9 +6018,9 @@ setTimeout(function () {
     /* focus system (DESIGN-RULES F1-F8): one dot per item; the item on the middle line (or under the pointer) is in focus.
        Middle line = middle of the visible scroller (page, panel body or full-experience view). Grid rows focus together. */
     const ITEMS = '.skgrp,.ca,.cert,.open-row,.edc,.logo,.tool,.rec,.act,.mdb,.pc,.rowx,.sch,.xb,.st,.xr';
-    const KEEP = '.pa[data-xall],.pa[data-mdall],.pa[data-wm],#ball'; /* expand-all / show-all controls stay labelled (F8) */
     const NOFOCUS = '.tiles,.tile,.nav,.hbar,.phd,.chips,.chipr,form,#pnl .pnav,.xnav';
-    const PASSIVE = '.tool'; /* tool logos light with their row but never take focus away from their skill group */
+    const PASSIVE = '.tool';
+    let touchItem = null; /* phone: the item you touch is in focus until you scroll again */ /* tool logos light with their row but never take focus away from their skill group */
     const canHover = matchMedia('(hover:hover)').matches;
     let fq = 0,
       hoverItem = null;
@@ -6070,38 +6059,41 @@ setTimeout(function () {
       let mid = (top + bot) / 2;
       let on = [];
       const all = candidates(sc);
-      /* edge-aware line: near the top or bottom of a scroll area the line slides towards the first / last item, so every item can reach focus */
+      /* edge-aware line (F2): near the top and bottom of a scroll area the line slides smoothly towards the first / last item,
+         so every item can reach focus. The two ramps never overlap, so the line always moves forward through the content. */
       if (all.length) {
-        const half = (bot - top) / 2,
+        const d = sc.d || 0,
+          mx = Math.max(0, sc.max || 0),
+          e = Math.max(0, mx - d),
+          ramp = Math.min((bot - top) / 2, mx / 2),
           c0 = all[0].getBoundingClientRect(),
           c1 = all[all.length - 1].getBoundingClientRect();
-        const atTop = Math.min(mid, Math.max(top + 8, (c0.top + c0.bottom) / 2)),
-          atBot = Math.max(mid, Math.min(bot - 8, (c1.top + c1.bottom) / 2));
-        const e = Math.max(0, (sc.max || 0) - (sc.d || 0));
-        if ((sc.max || 0) <= 1) mid = (sc.d || 0) <= 1 && atTop < mid ? atTop : mid;
-        else if ((sc.d || 0) < half && (sc.d || 0) <= e) mid = atTop + (mid - atTop) * ((sc.d || 0) / half);
-        else if (e < half) mid = atBot + (mid - atBot) * (e / half);
+        const vTop = Math.min(mid, Math.max(top + 8, (c0.top + c0.bottom) / 2 + d)),
+          vBot = Math.max(mid, Math.min(bot - 8, (c1.top + c1.bottom) / 2 - e));
+        if (mx <= 1) mid = NaN; /* nothing scrolls: no line; focus comes from touch or pointer only */
+        else if (ramp > 0) mid += (vTop - mid) * Math.max(0, 1 - d / ramp) + (vBot - mid) * Math.max(0, 1 - e / ramp);
       }
-      if (hoverItem && all.includes(hoverItem)) on = [hoverItem];
+      const pin = hoverItem || touchItem;
+      if (pin && all.includes(pin)) on = [pin];
+      else if (Number.isNaN(mid)) on = [];
       else {
-        const rs = all.map(el => [el, el.getBoundingClientRect()]).filter(([, r]) => r.height);
-        let hit = rs.filter(([, r]) => r.top <= mid && r.bottom >= mid);
-        /* innermost wins: drop an item if one of its own items also crosses the line */
-        hit = hit.filter(([el]) => !hit.some(([o]) => o !== el && el.contains(o) && !o.matches(PASSIVE)));
-        if (!hit.length) {
-          let best = null,
-            bd = 41;
-          rs.forEach(([el, r]) => {
-            const d = Math.min(Math.abs(r.top - mid), Math.abs(r.bottom - mid));
-            if (d < bd) (bd = d), (best = r);
-          });
-          if (best) hit = rs.filter(([, r]) => Math.abs(r.top - best.top) < 4 && Math.abs(r.bottom - best.bottom) < 4);
-        } else {
-          /* rows: everything sharing the hit row's band lights together */
-          const r0 = hit[0][1];
-          hit = rs.filter(([el, r]) => (hit.some(h => h[0] === el) || (Math.abs(r.top - r0.top) < 4 && Math.abs(r.bottom - r0.bottom) < 4)) && !rs.some(([o, ro]) => o !== el && el.contains(o) && !o.matches(PASSIVE) && ro.top <= mid && ro.bottom >= mid));
+        /* steady focus (F2): the item nearest the line is in focus (distance 0 when it crosses the line). The current item keeps
+           focus until another is clearly nearer, so pills never flicker open and shut while scrolling. */
+        const rs = all.map(el => [el, el.getBoundingClientRect()]).filter(([, r]) => r.height && r.bottom > top && r.top < bot);
+        const dist = r => (r.top <= mid && r.bottom >= mid ? 0 : Math.min(Math.abs(r.top - mid), Math.abs(r.bottom - mid)));
+        let best = null,
+          bd = Infinity;
+        rs.forEach(([el, r]) => {
+          const d = dist(r);
+          if (d < bd || (d === bd && best && best[0].contains(el) && !el.matches(PASSIVE))) (bd = d), (best = [el, r]);
+        });
+        const cur = rs.find(([el]) => el.classList.contains('f-on') && !el.matches(PASSIVE));
+        if (cur && best && cur[0] !== best[0] && !cur[0].contains(best[0]) && dist(cur[1]) <= bd + 16) best = cur;
+        if (best) {
+          const r0 = best[1];
+          on = rs.filter(([el, r]) => el === best[0] || (Math.abs(r.top - r0.top) < 4 && Math.abs(r.bottom - r0.bottom) < 4 && !best[0].contains(el) && !el.contains(best[0]))).map(([el]) => el);
+          if (best[0].matches('.skgrp')) on = on.concat(rs.filter(([el, r]) => best[0].contains(el) && el.matches(PASSIVE) && dist(r) === 0).map(([el]) => el));
         }
-        on = hit.map(([el]) => el);
       }
       $$('.f-on').forEach(el => !on.includes(el) && el.classList.remove('f-on'));
       $$('.pa.f-act').forEach(p => p.classList.remove('f-act'));
@@ -6114,12 +6106,13 @@ setTimeout(function () {
           stamp();
         }
       });
-      /* section headings: accent words lit while the reader is inside that section */
+      /* headings: accent words lit from the moment the heading reaches the middle line until the reader leaves its section (F7) */
       const pm = innerHeight / 2;
-      $$('main section').forEach(s => {
-        const r = s.getBoundingClientRect(),
-          inside = r.top <= pm && r.bottom >= pm;
-        $$('.h1,.thesis', s).forEach(h => h.classList.toggle('lit', inside));
+      $$('main .h1, main .thesis').forEach(hd => {
+        const s = hd.closest('section') || hd.parentElement,
+          r = s.getBoundingClientRect(),
+          t = hd.getBoundingClientRect();
+        hd.classList.toggle('lit', t.top <= pm && r.bottom >= pm);
       });
     }
     /* keyboard: Tab stays inside an open overlay (full experience, or a panel that covers the screen on phone) */
@@ -6143,11 +6136,23 @@ setTimeout(function () {
       g.dataset.goatcounter = `https://${S.goatcounter_code}.goatcounter.com/count`;
       document.head.appendChild(g);
     }
+    window.__fx = () => candidates(scope()); /* used by tools/focuscheck.py */
     const queueFocus = () => {
       if (!fq) fq = requestAnimationFrame(focusLine);
     };
     addEventListener('scroll', queueFocus, { passive: true, capture: true });
     addEventListener('resize', queueFocus);
+    document.addEventListener(
+      'pointerdown',
+      e => {
+        if (e.pointerType === 'mouse') return;
+        const it = e.target.closest(ITEMS + ',.pa');
+        touchItem = it && it.classList.contains('pa') && ownerOf(it) ? ownerOf(it) : it;
+        queueFocus();
+      },
+      { passive: true },
+    );
+    addEventListener('touchmove', () => (touchItem = null), { passive: true, capture: true });
     if (canHover) {
       document.addEventListener('pointerover', e => {
         const it = e.target.closest(ITEMS + ',.pa');
@@ -6159,9 +6164,13 @@ setTimeout(function () {
     /* reserve each pill's open width so opening it never moves the layout (rule F3) */
     let rq = 0;
     const measured = new WeakMap();
+    const swapOf = t =>
+      ({ 'Expand all': 'Collapse all', 'Collapse all': 'Expand all', 'Read more': 'Show less', 'Show less': 'Read more', Show: 'Hide', Hide: 'Show' })[t] ||
+      (/^Show (all )?\d+/.test(t) ? 'Show fewer' : t === 'Show fewer' ? 'Show 99 more' : '');
     function reserve() {
       rq = 0;
-      $$(KEEP).forEach(p => p.classList.add('keep'));
+      /* standalone controls and the primary contact button stay labelled (F8); a pill inside an item is that item's action dot */
+      $$('.pa').forEach(p => p.classList.toggle('keep', !ownerOf(p) || !!p.closest('.act:first-child')));
       $$('.lgw:not([data-p])').forEach(w => {
         const c = $('.lgc', w),
           i = $('img', w);
@@ -6171,13 +6180,21 @@ setTimeout(function () {
       });
       $$('.pa').forEach(p => {
         if (!visible(p) || p.classList.contains('wide')) return;
-        const key = $('.lb', p).textContent + '|' + innerWidth;
+        const lb = $('.lb', p),
+          txt = lb.textContent,
+          key = txt + '|' + innerWidth;
         if (measured.get(p) !== key) {
-          /* measure the open width with transitions off, so nothing flashes */
+          /* measure the open width with transitions off, so nothing flashes; reserve the longer of a label and its swap (rule C8) */
           p.classList.add('nt', 'measure');
           p.style.minWidth = '';
-          const w = $('.pi', p).getBoundingClientRect().width;
-          p.style.setProperty('--lw', Math.ceil($('.lb', p).getBoundingClientRect().width) + 'px');
+          p.style.setProperty('--lw', Math.ceil(lb.getBoundingClientRect().width) + 'px');
+          let w = $('.pi', p).getBoundingClientRect().width;
+          const alt = swapOf(txt);
+          if (alt) {
+            lb.textContent = alt;
+            w = Math.max(w, $('.pi', p).getBoundingClientRect().width);
+            lb.textContent = txt;
+          }
           p.classList.remove('measure');
           void p.offsetWidth;
           p.classList.remove('nt');
@@ -7002,7 +7019,6 @@ setTimeout(function () {
         );
       countUp($('#hstats'));
       setTimeout(name.sweep, 400);
-      setTimeout(() => $('#thesis').classList.add('lit'), 900);
     };
     (document.fonts && document.fonts.ready
       ? Promise.race([document.fonts.load("450 100px 'Oswald'"), new Promise(r => setTimeout(r, 1800))])
