@@ -115,13 +115,13 @@ One way of saying "this is in focus", everywhere. `tools/lint.py` blocks any oth
 | # | Rule |
 |---|---|
 | F1 | Every item has exactly one dot. An item with an action uses its action dot (32px circle with an icon). An item without one gets an 8px marker dot left of its title. |
-| F2 | Phone: the item crossing the middle line of the visible scroll area is in focus (the page, an open panel, or the full-experience view). Laptop: the item under the pointer is in focus; with no pointer on an item, the middle line applies. The pointer always wins. |
-| F3 | In focus, a marker dot fills with the accent. An action dot fills and opens into a labelled pill. Each pill's open width is reserved in advance, so opening it never moves anything. A dot never changes size. |
+| F2 | Phone: the item crossing the middle line of the visible scroll area is in focus (the page, an open panel, or the full-experience view). Near the top or bottom of a scroll area the line slides towards the first or last item, so every item, including the first and last, can reach focus. Laptop: the item under the pointer is in focus; with no pointer on an item, the line applies. The pointer always wins. |
+| F3 | In focus, a marker dot fills with the accent. An action dot fills and opens smoothly into a labelled pill (width, colour and label move together over .4s, to the label's exact width). Each pill's open width is reserved in advance, so opening it never moves anything. A dot never changes size. |
 | F4 | Collapsed items never open on scroll, only on tap or click. Once open, the pill stays filled and reads Hide (×); the content inside follows these same rules. |
 | F5 | Items in one grid row share focus: the whole row lights together, never one item of it. Tool logos light with their row but never take focus from their skill group. |
 | F6 | Logos are their own marker (K3): grey at rest, brand colour in focus. |
 | F7 | Section heading accent words are lit only while the reader is inside that section, and return to readable grey when they leave. |
-| F8 | Exceptions, written down so nothing falls outside the rule: timeline nodes (story, experience years) are their items' dots; the six hero tiles keep their travelling dot; bars, navigation, headings, hero stats, panel controls (Back, Next, Close), the WhatsApp button, the colour panel and the loader never take focus; form fields use the text cursor; tags are not items; main buttons (Let's talk, Send, Download CV, Book a time) and the email fallback link are always labelled. Motion off: the same states, applied instantly. |
+| F8 | Exceptions, written down so nothing falls outside the rule: timeline nodes (story, experience years) are their items' dots; the six hero tiles keep their travelling dot; bars, navigation, headings, hero stats, panel controls (Back, Next, Close), the WhatsApp button, the colour panel and the loader never take focus; form fields use the text cursor; tags are not items; main buttons (Let's talk, Send, Download CV, Book a time), the email fallback link, and every Expand all / Show all control are always labelled; in focus they fill (invert) instead of opening. Accordion panels (Problems, Experience) offer Expand all. Motion off: the same states, applied instantly. |
 
 ## How to add content or a feature
 

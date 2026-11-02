@@ -275,14 +275,15 @@ button {
   border-radius: var(--r-pill);
   border: 1.5px solid var(--accent);
   background: transparent;
-  transition: background .2s var(--ez),color .2s var(--ez);
+  transition: background .4s var(--ez),color .4s var(--ez);
 }
 .pa .lb {
   max-width: 0;
+  opacity: 0;
   overflow-x: clip;
   overflow-y: visible;
   padding-right: 0;
-  transition: max-width .4s var(--ez),padding .4s var(--ez);
+  transition: max-width .4s var(--ez),padding .4s var(--ez),opacity .4s var(--ez);
 }
 .pa:hover,.pa:focus-visible,.pa.on,.pa.f-act {
   color: var(--on-accent);
@@ -290,9 +291,10 @@ button {
 .pa:hover .pi,.pa:focus-visible .pi,.pa.on .pi,.pa.f-act .pi {
   background: var(--accent);
 }
-.pa:hover .lb,.pa:focus-visible .lb,.pa.on .lb,.pa.f-act .lb,.pa.wide .lb,.pa.measure .lb {
-  max-width: 190px;
+.pa:hover .lb,.pa:focus-visible .lb,.pa.on .lb,.pa.f-act .lb,.pa.wide .lb,.pa.keep .lb,.pa.measure .lb {
+  max-width: var(--lw,190px);
   padding-right: 13px;
+  opacity: 1;
 }
 .pa.nt .lb,.pa.nt .pi {
   transition: none;
@@ -328,7 +330,18 @@ button {
   vertical-align: .1em;
   transition: background .2s var(--ez),border-color .2s var(--ez),box-shadow .2s var(--ez);
 }
-.edu .card.f-on .edc b::before,.edu .card.f-on b::before {
+.xr h3::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  border-radius: var(--r-circle);
+  border: 1.5px solid var(--ink-3);
+  vertical-align: .25em;
+  transition: background .2s var(--ez),border-color .2s var(--ez),box-shadow .2s var(--ez);
+}
+.xr.f-on h3::before,.edc.f-on b::before {
   background: var(--accent);
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--tint-2);
@@ -336,7 +349,7 @@ button {
 .edc .edi {
   color: var(--ink-2);
 }
-.mdi.f-on .mdb i {
+.mdb.f-on i {
   background: var(--accent);
   box-shadow: 0 0 0 3px var(--tint-2);
 }
@@ -3167,6 +3180,9 @@ body {
 .mdi.on .mdk,.mdb:hover .mdk {
   color: var(--accent);
 }
+.mdall {
+  margin: 14px 0 0;
+}
 .mdc {
   display: none;
   padding: 12px 6px 6px 22px;
@@ -3402,6 +3418,17 @@ footer .wrap {
 }
 .mdi.on .mdc {
   display: block;
+}
+.mdx.all {
+  display: flex;
+  flex-direction: column;
+}
+.mdx.all .mdi {
+  display: block;
+}
+.mdx.all .mdc {
+  display: block;
+  padding: 12px 6px 6px 22px;
 }
 .mds {
   font-size: 13px;
@@ -4647,7 +4674,7 @@ setTimeout(function () {
     const mdx = L => {
       const s = Math.min(mdSel, L.length - 1);
       mdSel = 0;
-      return `<div class="mdx">${L.map((x, i) => `<div class="mdi${i === s ? ' on' : ''}"><button class="mdb" type="button" aria-expanded="${i === s}"><span class="mdk">${esc(x.k)}</span>${x.s ? `<span class="mds">${esc(x.s)}</span>` : ''}<i aria-hidden="true"></i></button><div class="mdc">${x.b}</div></div>`).join('')}</div>`;
+      return `<p class="mdall">${pa('+', 'Expand all', 'data-mdall aria-expanded="false"')}</p><div class="mdx">${L.map((x, i) => `<div class="mdi${i === s ? ' on' : ''}"><button class="mdb" type="button" aria-expanded="${i === s}"><span class="mdk">${esc(x.k)}</span>${x.s ? `<span class="mds">${esc(x.s)}</span>` : ''}<i aria-hidden="true"></i></button><div class="mdc">${x.b}</div></div>`).join('')}</div>`;
     };
     const R = {
       problems: (t, d) =>
@@ -6001,7 +6028,8 @@ setTimeout(function () {
     let sealDone = false;
     /* focus system (DESIGN-RULES F1-F8): one dot per item; the item on the middle line (or under the pointer) is in focus.
        Middle line = middle of the visible scroller (page, panel body or full-experience view). Grid rows focus together. */
-    const ITEMS = '.skgrp,.ca,.cert,.open-row,.edu .card,.logo,.tool,.rec,.act,.mdi,.pc,.rowx,.sch,.xb,.st';
+    const ITEMS = '.skgrp,.ca,.cert,.open-row,.edc,.logo,.tool,.rec,.act,.mdb,.pc,.rowx,.sch,.xb,.st,.xr';
+    const KEEP = '.pa[data-xall],.pa[data-mdall],.pa[data-wm],#ball'; /* expand-all / show-all controls stay labelled (F8) */
     const NOFOCUS = '.tiles,.tile,.nav,.hbar,.phd,.chips,.chipr,form,#pnl .pnav,.xnav';
     const PASSIVE = '.tool'; /* tool logos light with their row but never take focus away from their skill group */
     const canHover = matchMedia('(hover:hover)').matches;
@@ -6012,11 +6040,12 @@ setTimeout(function () {
     function scope() {
       const xo = $('.xo');
       if (xo && visible(xo) && !xo.hidden) {
-        const s = $('.xo-in', xo) || xo;
-        return { root: xo, box: s.getBoundingClientRect() };
+        const s = [$('.pbody', xo), $('.xo-in', xo), xo].find(e => e && e.scrollHeight > e.clientHeight + 1) || xo;
+        return { root: xo, box: s.getBoundingClientRect(), d: s.scrollTop, max: s.scrollHeight - s.clientHeight };
       }
-      if (pnl && !pnl.hidden && visible(pnl)) return { root: pbd, box: pbd.getBoundingClientRect() };
-      return { root: $('main'), box: { top: 0, bottom: innerHeight }, page: true };
+      if (pnl && !pnl.hidden && visible(pnl)) return { root: pbd, box: pbd.getBoundingClientRect(), d: pbd.scrollTop, max: pbd.scrollHeight - pbd.clientHeight };
+      const se = document.scrollingElement;
+      return { root: $('main'), box: { top: 52, bottom: innerHeight - 40 }, page: true, d: se.scrollTop, max: se.scrollHeight - innerHeight };
     }
     function candidates(sc) {
       const out = [];
@@ -6036,9 +6065,23 @@ setTimeout(function () {
     function focusLine() {
       fq = 0;
       const sc = scope();
-      const mid = (Math.max(sc.box.top, 0) + Math.min(sc.box.bottom, innerHeight)) / 2;
+      const top = Math.max(sc.box.top, 0),
+        bot = Math.min(sc.box.bottom, innerHeight);
+      let mid = (top + bot) / 2;
       let on = [];
       const all = candidates(sc);
+      /* edge-aware line: near the top or bottom of a scroll area the line slides towards the first / last item, so every item can reach focus */
+      if (all.length) {
+        const half = (bot - top) / 2,
+          c0 = all[0].getBoundingClientRect(),
+          c1 = all[all.length - 1].getBoundingClientRect();
+        const atTop = Math.min(mid, Math.max(top + 8, (c0.top + c0.bottom) / 2)),
+          atBot = Math.max(mid, Math.min(bot - 8, (c1.top + c1.bottom) / 2));
+        const e = Math.max(0, (sc.max || 0) - (sc.d || 0));
+        if ((sc.max || 0) <= 1) mid = (sc.d || 0) <= 1 && atTop < mid ? atTop : mid;
+        else if ((sc.d || 0) < half && (sc.d || 0) <= e) mid = atTop + (mid - atTop) * ((sc.d || 0) / half);
+        else if (e < half) mid = atBot + (mid - atBot) * (e / half);
+      }
       if (hoverItem && all.includes(hoverItem)) on = [hoverItem];
       else {
         const rs = all.map(el => [el, el.getBoundingClientRect()]).filter(([, r]) => r.height);
@@ -6118,6 +6161,7 @@ setTimeout(function () {
     const measured = new WeakMap();
     function reserve() {
       rq = 0;
+      $$(KEEP).forEach(p => p.classList.add('keep'));
       $$('.lgw:not([data-p])').forEach(w => {
         const c = $('.lgc', w),
           i = $('img', w);
@@ -6133,6 +6177,7 @@ setTimeout(function () {
           p.classList.add('nt', 'measure');
           p.style.minWidth = '';
           const w = $('.pi', p).getBoundingClientRect().width;
+          p.style.setProperty('--lw', Math.ceil($('.lb', p).getBoundingClientRect().width) + 'px');
           p.classList.remove('measure');
           void p.offsetWidth;
           p.classList.remove('nt');
@@ -6200,6 +6245,17 @@ setTimeout(function () {
         backTo = -1;
         switchTo(k, -1);
         addBack();
+        return;
+      }
+      const ma = e.target.closest('[data-mdall]');
+      if (ma) {
+        const x = $('.mdx', pbd),
+          o = !x.classList.contains('all');
+        x.classList.toggle('all', o);
+        ma.classList.toggle('on', o);
+        ma.setAttribute('aria-expanded', o);
+        $('.ic', ma).textContent = o ? '×' : '+';
+        $('.lb', ma).textContent = o ? 'Collapse all' : 'Expand all';
         return;
       }
       const mb = e.target.closest('.mdb');
