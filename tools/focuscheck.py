@@ -11,11 +11,12 @@ async def sweep(pg,scroller):
     mx=await pg.evaluate(f"(()=>{{const s={scroller};return s.scrollHeight-s.clientHeight}})()")
     y=0
     while True:
-        await pg.evaluate(f"(()=>{{const s={scroller};s.scrollTop={y}}})()");await pg.wait_for_timeout(45)
+        await pg.evaluate(f"(()=>{{const s={scroller};s.scrollTop={y}}})()");await pg.wait_for_timeout(230)  # let scrolling settle so pills may open
+        if await pg.evaluate("document.querySelectorAll('.pa.f-act').length>1"):MANY.append(scroller[:30]+f' @{y}')
         if await pg.evaluate("document.querySelectorAll('.f-on').length===0 && window.__fx().some(e=>{const r=e.getBoundingClientRect();return r.height&&r.bottom>60&&r.top<innerHeight-60})"):EMPTY.append(scroller[:30]+f' @{y}')
         if y>=mx:break
         y=min(mx,y+max(6,min(30,mx//40)))
-EMPTY=[]
+EMPTY=[];MANY=[]
 async def main():
     fails=[]
     async with async_playwright() as p:
@@ -64,6 +65,7 @@ async def main():
             await pg.keyboard.press('Escape');await pg.wait_for_timeout(400)
             await pg.close()
         await b.close()
+    if MANY:fails.append(f'more than one pill open at once ({len(MANY)}x), e.g. '+', '.join(MANY[:3]))
     if EMPTY:fails.append(f'focus empty while items are on screen ({len(EMPTY)}x), e.g. '+', '.join(EMPTY[:3]))
     for f in fails[:40]:print(' -',f)
     print(f'\n{len(fails)} focus problems' if fails else 'FOCUS PASS (every item reachable, labels readable)');sys.exit(1 if fails else 0)

@@ -348,7 +348,7 @@ button {
 .edc .edi {
   color: var(--ink-2);
 }
-.mdb.f-on i {
+.mdb.f-on i,.mdi.f-on > .mdb i {
   background: var(--accent);
   box-shadow: 0 0 0 3px var(--tint-2);
 }
@@ -2709,11 +2709,7 @@ body {
   line-height: 1.45;
   color: var(--ink-2);
 }
-.sch.cur .sd {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-.sch.cur .sw2,.sch.cur b {
+.sch.cur .sw2 {
   color: var(--accent);
 }
 .sch button:hover .sd,.sch.f-on .sd {
@@ -4566,7 +4562,7 @@ setTimeout(function () {
                   {
                     k: d.case.title,
                     s: 'Turnaround · Jun–Aug 2025',
-                    b: `<p>${esc(d.case.text || '')}</p>${graphSVG(d.case)}`,
+                    b: `<p>${esc(d.case.text || '')}</p><div class="graph">${graphSVG(d.case)}</div>`,
                   },
                 ]
               : [],
@@ -5844,8 +5840,8 @@ setTimeout(function () {
     let sealDone = false;
     /* focus system (DESIGN-RULES F1-F8): one dot per item; the item on the middle line (or under the pointer) is in focus.
        Middle line = middle of the visible scroller (page, panel body or full-experience view). Grid rows focus together. */
-    const ITEMS = '.skgrp,.ca,.cert,.open-row,.edc,.logo,.tool,.rec,.act,.mdb,.pc,.rowx,.sch,.xb,.st';
-    const NOFOCUS = '.tiles,.tile,.nav,.hbar,.phd,.chips,.chipr,form,#pnl .pnav,.xnav';
+    const ITEMS = '.skgrp,.ca,.cert,.open-row,.edc,.logo,.tool,.rec,.act,.mdi,.mdb,.pc,.rowx,.sch,.xb,.st';
+    const NOFOCUS = '.tiles,.tile,.nav,.hbar,.phd,.chips,.chipr,form,#pnl .pnav,.xnav,.mdbar'; /* the pinned bar is a panel control (F8) */
     const PASSIVE = '.tool';
     let touchItem = null; /* phone: the item you touch is in focus until you scroll again */ /* tool logos light with their row but never take focus away from their skill group */
     const canHover = matchMedia('(hover:hover)').matches;
@@ -5863,6 +5859,8 @@ setTimeout(function () {
       $$(ITEMS + ',.pa', sc.root).forEach(el => {
         if (el.closest(NOFOCUS)) return;
         if (sc.page && el.closest('#pnl')) return;
+        /* accordion: the whole problem / role is the item when it has its own box (phone, Expand all); the list row is the item in the laptop list + detail layout */
+        if (el.matches('.mdb') && visible(el.parentElement) && el.parentElement.getBoundingClientRect().height) return;
         if (el.classList.contains('pa') && (ownerOf(el) || el.classList.contains('wide'))) return; /* a pill inside an item belongs to that item */
         if (!visible(el)) return;
         out.push(el);
@@ -5937,11 +5935,22 @@ setTimeout(function () {
           }
         }
       }
-      $$('.pa.f-act').forEach(p => p.classList.remove('f-act'));
+      const settled = performance.now() - lastScroll > 150 || !!pin;
+      if (!settled && !fq) fq = requestAnimationFrame(focusLine); /* keep checking until scrolling pauses */
+      const lead = on[0];
+      if (settled) {
+        const keepPill = lead && primaryPill(lead);
+        $$('.pa.f-act').forEach(p => p !== keepPill && p.classList.remove('f-act'));
+        if (keepPill) keepPill.classList.add('f-act');
+        /* laptop list + detail: the selected problem's button belongs to the selected row */
+        if (lead && lead.matches('.mdb')) {
+          const sel = $('.mdi.on', lead.closest('.mdx'));
+          const dp = sel && primaryPill(sel);
+          if (dp) dp.classList.add('f-act');
+        }
+      }
       on.forEach(el => {
         el.classList.add('f-on');
-        const p = primaryPill(el);
-        if (p) p.classList.add('f-act');
         if (!sealDone && el.querySelector('#seal')) {
           sealDone = true;
           stamp();
@@ -5977,6 +5986,8 @@ setTimeout(function () {
       document.head.appendChild(g);
     }
     window.__fx = () => candidates(scope()); /* used by tools/focuscheck.py */
+    let lastScroll = 0;
+    addEventListener('scroll', () => (lastScroll = performance.now()), { passive: true, capture: true });
     const queueFocus = () => {
       if (!fq) fq = requestAnimationFrame(focusLine);
     };

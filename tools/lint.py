@@ -74,7 +74,7 @@ for pj in C.get('panels',{}).get('ai',{}).get('projects',[]):
 for t in (C.get('testimonials',{}) or {}).get('items',[]):
     if re.search(r'\b(19|20)\d\d\b',json.dumps(t)): err('S6',f'testimonial "{t.get("name")}" contains a year (rule D1)')
 # ---------- F focus system ----------
-FON_OK={'.edc.f-on b::before','.mdb.f-on i','.logo.f-on .lgc,.tool.f-on .lgc,.logo:hover .lgc,.tool:hover .lgc','.logo.f-on img,.tool.f-on img,.logo:hover img,.tool:hover img','.cc.f-on .node','.cm.f-on .cm-dot','.sch button:hover .sd,.sch.f-on .sd'}
+FON_OK={'.edc.f-on b::before','.mdb.f-on i,.mdi.f-on > .mdb i','.logo.f-on .lgc,.tool.f-on .lgc,.logo:hover .lgc,.tool:hover .lgc','.logo.f-on img,.tool.f-on img,.logo:hover img,.tool:hover img','.cc.f-on .node','.cm.f-on .cm-dot','.sch button:hover .sd,.sch.f-on .sd'}
 for s in re.findall(r'([^{}@/][^{}]*?)\{',re.sub(r'@media[^{]*\{','',nocomment)):
     s=re.sub(r'\s+',' ',s.strip())
     if '.f-on' in s and s not in FON_OK: err('F8',f'new focus style "{s}": highlights must use the one-dot system (dot fill or pill) - see DESIGN-RULES section 11')
