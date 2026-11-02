@@ -10,14 +10,15 @@ def ink(img):
   a=np.asarray(img.convert('RGB')).astype(int);h,w,_=a.shape
   if h<4 or w<4:return None
   px=a.reshape(-1,3);vals,cnt=np.unique(px,axis=0,return_counts=True);bg=vals[cnt.argmax()]
-  m=(np.abs(a-bg).sum(-1)>200);rows=m.sum(1)
+  c2=a[0,0]  # pixel outside a rounded pill: ignore it too, so filled pills are measured by their label, not their corners
+  m=(np.abs(a-bg).sum(-1)>200)&(np.abs(a-c2).sum(-1)>200);rows=m.sum(1)
   if rows.max()==0:return None
   top=np.argmax(rows>max(1,rows.max()*.08));base=h-1-np.argmax((rows[::-1]>rows.max()*.3))
   return (top+base)/2
 async def run(W,H,mob,url):
   async with async_playwright() as p:
     b=await p.chromium.launch()
-    pg=await b.new_page(viewport={'width':W,'height':H},is_mobile=bool(mob),has_touch=bool(mob),device_scale_factor=2)
+    pg=await b.new_page(viewport={'width':W,'height':H},is_mobile=bool(mob),has_touch=bool(mob),device_scale_factor=2,reduced_motion='reduce')
     await pg.goto(url);await pg.wait_for_timeout(2500)
     els=await pg.query_selector_all(SEL);bad=[];n=0
     for e in els:

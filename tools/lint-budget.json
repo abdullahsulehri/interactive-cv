@@ -1,7 +1,7 @@
 {
- "important": 85,
- "duplicate_selectors": 132,
- "setTimeout": 19,
- "inline_style_attrs": 14,
- "colour_literals_outside_root": 78
+ "important": 84,
+ "duplicate_selectors": 128,
+ "setTimeout": 17,
+ "inline_style_attrs": 13,
+ "colour_literals_outside_root": 74
 }

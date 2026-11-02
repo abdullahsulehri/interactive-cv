@@ -150,8 +150,8 @@
    "label": "Qualifications",
    "headline": "Always learning",
    "teaser": "Certifications and education",
-   "scrolls_to": "certificates",
-   "icon": "ribbon"
+   "icon": "ribbon",
+   "opens": "certs"
   }
  ],
  "panels": {
@@ -2004,7 +2004,8 @@
      ]
     }
    ]
-  }
+  },
+  "certs": {}
  },
  "certificates": {
   "eyebrow": "Certifications & education",
@@ -2827,7 +2828,7 @@
   "items": [
    {
     "dot": "2018",
-    "short": "Transmedia",
+    "short": "Transmedia Digital Solutions",
     "dates": "Mar 2018 – Dec 2018",
     "title": "Digital Marketing Executive",
     "company": "Transmedia Digital Solutions · Lahore",
@@ -2844,7 +2845,7 @@
    },
    {
     "dot": "2019",
-    "short": "Acumen",
+    "short": "Acumen Consulting",
     "dates": "Jan 2019 – Aug 2021",
     "title": "Assistant Manager Marketing",
     "company": "Acumen Consulting · Lahore",
@@ -2861,7 +2862,7 @@
    },
    {
     "dot": "2021",
-    "short": "Soliton",
+    "short": "Soliton Technologies",
     "dates": "Sep 2021 – Nov 2022",
     "title": "Senior Marketing Specialist",
     "company": "Soliton Technologies · Pakistan/US software house",
@@ -2879,7 +2880,7 @@
    },
    {
     "dot": "2022",
-    "short": "Creative Zone",
+    "short": "Creative Zone Tax & Accounting",
     "dates": "Dec 2022 – May 2025",
     "title": "Marketing Manager",
     "company": "Creative Zone Tax & Accounting · UAE",

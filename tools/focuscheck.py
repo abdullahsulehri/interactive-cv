@@ -12,8 +12,10 @@ async def sweep(pg,scroller):
     y=0
     while True:
         await pg.evaluate(f"(()=>{{const s={scroller};s.scrollTop={y}}})()");await pg.wait_for_timeout(45)
+        if await pg.evaluate("document.querySelectorAll('.f-on').length===0 && window.__fx().some(e=>{const r=e.getBoundingClientRect();return r.height&&r.bottom>60&&r.top<innerHeight-60})"):EMPTY.append(scroller[:30]+f' @{y}')
         if y>=mx:break
         y=min(mx,y+max(6,min(30,mx//40)))
+EMPTY=[]
 async def main():
     fails=[]
     async with async_playwright() as p:
@@ -55,13 +57,14 @@ async def main():
                 for m in await pg.evaluate(MISS):
                     if mob:fails.append(f'{W}px panel {t}: never in focus: {m}')
                 await pg.keyboard.press('Escape');await pg.wait_for_timeout(400)
-            if await pg.locator('[data-xfull]').count():
-                await pg.evaluate("document.querySelector('[data-xfull]').click()");await pg.wait_for_timeout(900)
-                await pg.evaluate(WATCH);await sweep(pg,"(document.querySelector('.xo .pbody')||document.querySelector('.xo'))")
-                for m in await pg.evaluate(MISS):
-                    if mob:fails.append(f'{W}px full experience: never in focus: {m}')
+            # merged view: View full experience opens the Experience panel expanded
+            await pg.evaluate('scrollTo(0,0)');await pg.wait_for_timeout(300)
+            await pg.evaluate("document.querySelector('[data-xfull]').click()");await pg.wait_for_timeout(1200)
+            if not await pg.evaluate("!document.querySelector('#pnl').hidden && document.querySelector('#pbd .mdx').classList.contains('all')"):fails.append(f'{W}px View full experience did not open the expanded Experience panel')
+            await pg.keyboard.press('Escape');await pg.wait_for_timeout(400)
             await pg.close()
         await b.close()
+    if EMPTY:fails.append(f'focus empty while items are on screen ({len(EMPTY)}x), e.g. '+', '.join(EMPTY[:3]))
     for f in fails[:40]:print(' -',f)
     print(f'\n{len(fails)} focus problems' if fails else 'FOCUS PASS (every item reachable, labels readable)');sys.exit(1 if fails else 0)
 asyncio.run(main())
