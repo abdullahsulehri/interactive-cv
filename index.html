@@ -302,24 +302,53 @@ button {
   transform: translateX(-4px);
   transition: opacity .2s var(--ez),transform .2s var(--ez);
 }
-.pa:hover,.pa:focus-visible,.pa.on,.pa.f-act {
+.ch .pa:hover,.pa:focus-visible,.pa.on,.pa.f-act {
   color: var(--on-accent);
 }
-.pa:hover .pi,.pa:focus-visible .pi,.pa.on .pi,.pa.f-act .pi {
+.ch .pa:hover .pi,.pa:focus-visible .pi,.pa.on .pi,.pa.f-act .pi {
   background: var(--accent);
 }
-.pa:hover .pi,.pa:focus-visible .pi,.pa.on .pi,.pa.f-act .pi,.pa.wide .pi,.pa.keep .pi {
+.ch .pa:hover .pi,.pa:focus-visible .pi,.pa.on .pi,.pa.f-act .pi,.pa.wide .pi,.pa.keep .pi {
   clip-path: inset(0 round calc(var(--h) / 2));
   border-color: var(--accent);
 }
-.pa:hover .ic,.pa:focus-visible .ic,.pa.on .ic,.pa.f-act .ic,.pa.wide .ic,.pa.keep .ic {
+.ch .pa:hover .ic,.pa:focus-visible .ic,.pa.on .ic,.pa.f-act .ic,.pa.wide .ic,.pa.keep .ic {
   transform: none;
   box-shadow: 0 0 0 1.5px transparent;
 }
-.pa:hover .lb,.pa:focus-visible .lb,.pa.on .lb,.pa.f-act .lb,.pa.wide .lb,.pa.keep .lb {
+.ch .pa:hover .lb,.pa:focus-visible .lb,.pa.on .lb,.pa.f-act .lb,.pa.wide .lb,.pa.keep .lb {
   opacity: 1;
   transform: none;
   transition: opacity .2s var(--ez) .2s,transform .4s var(--ez);
+}
+.pa.on.dim {
+  color: var(--accent);
+}
+/* an open item's Hide button that is no longer in focus rests as its × dot, so only one pill is ever open (rule F3) */
+.pa.on.dim .pi {
+  background: transparent;
+  border-color: transparent;
+  clip-path: inset(0 calc(100% - var(--h)) 0 0 round calc(var(--h) / 2));
+}
+.pa.re.on.dim .pi {
+  clip-path: inset(0 0 0 calc(100% - var(--h)) round calc(var(--h) / 2));
+}
+.pa.ce.on.dim .pi {
+  clip-path: inset(0 calc((100% - var(--h)) / 2) round calc(var(--h) / 2));
+}
+.pa.on.dim .ic {
+  box-shadow: 0 0 0 1.5px var(--accent);
+}
+.pa.re.on.dim .ic {
+  transform: translateX(calc(var(--pw,var(--h)) - var(--h)));
+}
+.pa.ce.on.dim .ic {
+  transform: translateX(calc((var(--pw,var(--h)) - var(--h)) / 2));
+}
+.pa.on.dim .lb {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity .2s var(--ez),transform .2s var(--ez);
 }
 .pa.nt .lb,.pa.nt .pi,.pa.nt .ic {
   transition: none;
@@ -6016,6 +6045,7 @@ setTimeout(function () {
     const PASSIVE = '.tool';
     let touchItem = null; /* phone: the item you touch is in focus until you scroll again */ /* tool logos light with their row but never take focus away from their skill group */
     const canHover = matchMedia('(hover:hover)').matches;
+    document.documentElement.classList.toggle('ch', canHover); /* hover styles only where a pointer can hover: a tapped pill must not stay open on touch screens */
     let fq = 0,
       hoverItem = null;
     const ownerOf = el => el.parentElement && el.parentElement.closest(ITEMS);
@@ -6113,6 +6143,7 @@ setTimeout(function () {
         const keepPill = lead && primaryPill(lead);
         $$('.pa.f-act').forEach(p => p !== keepPill && p.classList.remove('f-act'));
         if (keepPill) keepPill.classList.add('f-act');
+        $$('.pa.on').forEach(p => p.classList.toggle('dim', p !== keepPill && !p.classList.contains('keep') && !p.classList.contains('wide') && !(lead && lead.contains(p))));
         /* laptop list + detail: the selected problem's button belongs to the selected row */
         if (lead && lead.matches('.mdb')) {
           const sel = $('.mdi.on', lead.closest('.mdx'));
