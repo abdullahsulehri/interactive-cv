@@ -120,7 +120,7 @@
   },
   {
    "label": "Experience",
-   "headline": "Eight years, five roles",
+   "headline": "Nine years, four companies",
    "teaser": "Every role, plus one turnaround",
    "opens": "proof",
    "icon": "chart"
@@ -207,7 +207,7 @@
       "New B2B channel: team offers for nearby software houses"
      ],
      "link_label": "See it in my experience",
-     "role": 5
+     "role": 4
     }
    ]
   },
@@ -215,8 +215,8 @@
    "lead": "Growth-focused marketing leader across B2B, brand, PR and CRM-led growth in Pakistan and the UAE, with US clients along the way.",
    "stats": [
     {
-     "value": 8,
-     "suffix": "+",
+     "value": 9,
+     "suffix": "",
      "label": "Years in marketing"
     },
     {
@@ -2015,7 +2015,7 @@
    {
     "issuer": "Google",
     "logo": "assets/logos/google.webp",
-    "title": "Google AI Specialization",
+    "title": "Google AI Professional Certificate",
     "url": "https://coursera.org/share/962fb66cf2dadef6038fac0d1fa185f4",
     "courses": [
      {
@@ -2056,7 +2056,10 @@
       "title": "Foundations of Project Management",
       "url": "https://www.coursera.org/account/accomplishments/verify/PDFVUF7OITUJ"
      }
-    ]
+    ],
+    "kind": "Professional Certificate",
+    "verify_label": "Verify Google AI certificate",
+    "also_label": "Also from Google"
    },
    {
     "issuer": "Anthropic",
@@ -2082,7 +2085,10 @@
       "title": "Claude Code 101",
       "url": "https://verify.skilljar.com/c/97aya5ah5x4v"
      }
-    ]
+    ],
+    "kind": "Specialization",
+    "verify_label": "Verify Claude specialization",
+    "also_label": "Also from Anthropic"
    },
    {
     "issuer": "Meta",
@@ -2115,7 +2121,10 @@
       "url": "https://www.coursera.org/account/accomplishments/verify/COA4BH567Y3L"
      }
     ],
-    "also": []
+    "also": [],
+    "kind": "Professional Certificate",
+    "verify_label": "Verify Meta certificate",
+    "also_label": "Also from Meta"
    }
   ],
   "issuers": [
@@ -2232,7 +2241,7 @@
    {
     "name": "Farhan Hafeez",
     "title": "Director Digital & PR",
-    "company": "Marketing & Advertising Pvt Ltd",
+    "company": "Marketing and Advertising Pvt Ltd",
     "text": "I'm thrilled to highly recommend Abdullah Sulehri. His dedication to his work is exceptional, and he's a true problem solver. His organizational skills and professionalism are truly admirable. I've had the pleasure of collaborating with him on multiple Influencer marketing campaigns, all of which were tremendously successful. Abdullah's expertise and commitment make him an outstanding professional to work with."
    },
    {
@@ -2791,12 +2800,13 @@
  },
  "experience": {
   "eyebrow": "Experience",
-  "title": "Five roles.\n*One focus: growth.*",
-  "summary": "5 roles · 8+ years in marketing",
+  "title": "Nine years.\n*One focus: growth.*",
+  "summary": "4 companies · 9 years in marketing",
   "origin": {
    "label": "Where it started",
    "title": "It started with a blog",
-   "text": "I began as a tech blogger for Pakistani tech sites, then moved into lifestyle and food reviews, gadget reviews for mobile brands, and event and launch coverage, including Foodpanda's Pakistan blog. Along the way I qualified as an ACCA, earned a Journalism degree, and kept adding marketing certifications."
+   "text": "I began as a tech blogger for Pakistani tech sites, then moved into lifestyle and food reviews, gadget reviews for mobile brands, and event and launch coverage, including Foodpanda's Pakistan blog. Along the way I qualified as an ACCA, earned a Journalism degree, and kept adding marketing certifications.",
+   "when": "Before 2017"
   },
   "keywords": [
    "B2B",
@@ -2827,35 +2837,29 @@
   ],
   "items": [
    {
-    "dot": "2018",
-    "short": "Transmedia Digital Solutions",
-    "dates": "Mar 2018 – Dec 2018",
-    "title": "Digital Marketing Executive",
-    "company": "Transmedia Digital Solutions · Lahore",
-    "headline": "From blogger to agency",
-    "story": "My first agency role, where I learned to execute fast: blogs and content for SME clients, SMS campaigns that reached customers directly, vendor coordination, and partnerships with bloggers and publishers, a network I'd built as a blogger myself.",
-    "results": [
-     "Wrote blogs and social content for SME clients",
-     "Ran SMS campaigns that reached customers directly",
-     "Coordinated events, vendors and guests",
-     "Built partnerships with bloggers and online publishers"
-    ],
-    "key": 3,
-    "now": false
-   },
-   {
-    "dot": "2019",
-    "short": "Acumen Consulting",
-    "dates": "Jan 2019 – Aug 2021",
+    "dot": "2017",
+    "short": "Marketing and Advertising Pvt Ltd",
+    "dates": "Dec 2017 – Aug 2021",
     "title": "Assistant Manager Marketing",
-    "company": "Acumen Consulting · Lahore",
+    "company": "Marketing and Advertising Pvt Ltd · Lahore",
+    "positions": [
+     {
+      "title": "Assistant Manager Marketing",
+      "dates": "Jan 2019 – Aug 2021"
+     },
+     {
+      "title": "Marketing Executive",
+      "dates": "Dec 2017 – Dec 2018"
+     }
+    ],
     "headline": "Big brands, big reach",
-    "story": "Integrated campaigns for brands like Unilever, Samsung and Telenor across X, Instagram, Facebook and LinkedIn: up to 500 influencers and ~27M impressions per campaign on average, backed by PR, bloggers and on-ground activations, while leading teams through high-pressure launches.",
+    "story": "My agency years. I joined as an executive, learning to execute fast for SME clients, and was promoted to lead integrated campaigns for Unilever, Samsung, Telenor and 20+ brands across X, Instagram, Facebook and LinkedIn: up to 500 influencers and ~27M impressions per campaign on average.",
     "results": [
-     "Delivered integrated digital, influencer and PR campaigns for Samsung, Unilever, Telenor, Haier, Vivo, National Foods, ARY Digital, Honda, SnackVideo, Pink Ribbon and more",
-     "Ran influencer and trend campaigns across X, Instagram, Facebook and LinkedIn with up to 500 influencers per campaign, averaging ~27M impressions",
-     "Managed PR agencies, bloggers and on-ground activations",
-     "Led cross-functional teams through high-pressure launches"
+     "Delivered integrated digital, influencer and PR campaigns for 20+ brands, including Samsung, Unilever, Telenor, Honda and National Foods",
+     "Ran campaigns across X, Instagram, Facebook and LinkedIn with up to 500 influencers, averaging ~27M impressions per campaign",
+     "Coordinated PR agencies, bloggers, publishers and vendors, building on partnerships from my own blogging days",
+     "Supervised cross-functional teams during high-pressure launches",
+     "Supported SMS campaigns and content for SME clients early on"
     ],
     "key": 3,
     "now": false
@@ -2924,21 +2928,15 @@
   "title": "From a blog to *growth engines*.",
   "chapters": [
    {
-    "when": "Before 2018",
+    "when": "Before 2017",
     "t": "It started with a blog",
     "x": "Tech blogger for Pakistani sites, then food and gadget reviews, including Foodpanda. Qualified as an ACCA along the way.",
-    "role": 4
+    "role": 5
    },
    {
-    "when": "2018",
-    "t": "Into the agency world",
-    "x": "My first agency role taught me to execute fast, for SME clients, bloggers and publishers.",
-    "role": 4
-   },
-   {
-    "when": "2019–21",
-    "t": "Big brands, big reach",
-    "x": "Integrated campaigns for household names, leading influencer networks and teams through high-pressure launches.",
+    "when": "2017–21",
+    "t": "The agency years",
+    "x": "Joined an agency group as an executive, then was promoted to lead integrated campaigns for household names, influencer networks and teams through high-pressure launches.",
     "role": 3
    },
    {

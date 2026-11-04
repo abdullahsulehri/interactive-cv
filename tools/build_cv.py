@@ -50,7 +50,7 @@ hdr=Table([[Spacer(1,1),mid,qcell]],colWidths=[70,W-140,70]);hdr.setStyle(TableS
 S=[hdr]
 def sec(t):S.append(Paragraph(t,h))
 sec('PROFESSIONAL SUMMARY')
-S.append(Paragraph('Senior Marketing Manager with 8+ years in B2B growth, brand, PR and CRM-led marketing across Pakistan and the UAE. Leads a 6-person marketing function (4 direct reports, 2 freelancers) for a first-of-its-kind HR services marketplace, owning strategy, demand generation, product pricing and a ~$10K monthly budget. Builds AI agents and automations (10+ live) that take reporting, checks and content work off the team, with human review on every output. ACCA Fellow, bringing financial discipline to budgeting, pricing and ROI.',p))
+S.append(Paragraph('Senior Marketing Manager with nine years in B2B growth, brand, PR and CRM-led marketing across Pakistan and the UAE. Leads a 6-person marketing function (4 direct reports, 2 freelancers) for a first-of-its-kind HR services marketplace, owning strategy, demand generation, product pricing and a ~$10K monthly budget. Builds AI agents and automations (10+ live) that take reporting, checks and content work off the team, with human review on every output. ACCA Fellow, bringing financial discipline to budgeting, pricing and ROI.',p))
 sec('CORE MARKETING EXPERTISE')
 a=['B2B Marketing Management','Account-Based Marketing (ABM)','Marketing Strategy &amp; GTM Planning','Integrated Marketing Management','Performance Marketing','Email Marketing &amp; Segmentation','Social Media Marketing','SEO &amp; Content Strategy']
 b=['Brand &amp; Employer Branding','PR &amp; Communications','CRM &amp; Marketing Automation','AI Agents &amp; Marketing Automation','Marketing Analytics &amp; Reporting','Budget Management &amp; ROI Evaluation','Product Costing &amp; Pricing Strategy','Team Leadership &amp; Stakeholder Management']
@@ -91,13 +91,12 @@ J('Senior Marketing Specialist','Soliton Technologies (Pakistan/US software hous
  'Built the employer brand: employee events, employee of the month, wall branding, merchandise and employee videos',
  'Built university partnerships and represented the company at industry and campus events',
  'Secured PR placements and shared performance insights with SEO, design and development teams via Looker Studio'])
-J('Assistant Manager Marketing','Acumen Consulting',f'Jan 2019 – Aug 2021{SP2}(Lahore, Onsite)',[
- "Delivered integrated digital, influencer and PR campaigns for Samsung, Unilever, Telenor, Haier, Vivo, National Foods, ARY Digital, Honda, EBM, SnackVideo, Mary Brown's and Pink Ribbon",
- 'Ran campaigns across X, Instagram, Facebook and LinkedIn with up to 500 influencers per campaign, averaging ~27M impressions per campaign',
- 'Coordinated PR agencies, influencers, bloggers and internal teams, and supervised cross-functional teams on high-intensity engagements'])
-J('Digital Marketing Executive','Transmedia Digital Solutions',f'Mar 2018 – Dec 2018{SP2}(Lahore, Onsite)',[
- 'Created and edited blog and social media content for SME clients, and supported SMS marketing campaigns',
- 'Assisted with event coordination, vendor management and guest handling; built early partnerships with bloggers and online publishers'])
+J('Assistant Manager Marketing','Marketing and Advertising Pvt Ltd',f'Jan 2019 – Aug 2021{SP2}(Lahore, Onsite)',[
+ 'Delivered integrated digital, influencer and PR campaigns for 20+ brands, including Samsung, Unilever, Telenor, Honda and National Foods',
+ 'Ran campaigns across X, Instagram, Facebook and LinkedIn with up to 500 influencers, averaging ~27M impressions per campaign',
+ 'Coordinated PR agencies, bloggers, publishers and vendors, and supervised cross-functional teams during high-pressure launches'])
+S.append(Paragraph(f'<b>Marketing Executive</b>{SP2}<font name="S-I" color="#555555">Dec 2017 – Dec 2018</font>',st(spaceBefore=3,spaceAfter=1)))
+S.append(B('Supported SMS campaigns and content for SME clients; built partnerships with bloggers and online publishers'))
 def PJ(t,sub,bs,head=None):
     S.append(KeepTogether(([head] if head else [])+[Paragraph(f'{t}{SP2}<font name="S-I" color="#555555">{sub}</font>',job)]+[B(x) for x in bs]))
 PJ('MyndKeep: AI second-brain app','(personal build, 2026)',[
@@ -112,7 +111,7 @@ S.append(KeepTogether([Paragraph('EDUCATION',h)]+[Paragraph(x,st(spaceAfter=1)) 
  f'<b>Bachelor of Business Administration</b> (2025){SEP}European Global Institute',
  f'<b>Bachelor of Arts – Journalism</b> (2019){SEP}University of the Punjab']]))
 ce=[Paragraph('CERTIFICATIONS',h)]+[B(x) for x in [
- f'<b>Google AI Specialization</b> (8 courses) – Google{SEP}<b>Foundations of Project Management</b> – Google',
+ f'<b>Google AI Professional Certificate</b> (8 courses) – Google{SEP}<b>Foundations of Project Management</b> – Google',
  '<b>Real-World AI with Claude</b> (3 courses) and <b>Claude Code 101</b> – Anthropic',
  '<b>Meta Social Media Marketing Professional Certificate</b> (6 courses) – Meta',
  '<b>Online courses:</b> Brand Management (University of London); Advertising: Print, Outdoor &amp; Digital (LUMS); Introduction to Marketing (Wharton, University of Pennsylvania); The Strategy of Content Marketing and Introduction to Google SEO (UC Davis); The Digital Marketing Revolution (University of Illinois); Advertising on LinkedIn (LinkedIn)']]

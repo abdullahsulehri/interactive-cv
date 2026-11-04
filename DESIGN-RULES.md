@@ -76,6 +76,7 @@ The site is one page (`index.html`). Text and data live in `content.json`. Image
 | K1 | The accent colour has four jobs: focus state (section 11), highlighted/open state, primary action, key numbers. Never decoration. |
 | K2 | All text passes 4.5:1 contrast (large text 3:1) in all six accent colours, in both its resting and highlighted state. `tools/contrast.py` checks this. |
 | K3 | Brand and tool logos rest in grey (at least 3:1 contrast) and switch to their own brand colour when in focus. A brand colour too light for 3:1 is darkened automatically; a brand with no known colour uses the accent. |
+| K4 | A certificate earned from a set of courses is shown as one unit: a tinted header with its type, exact name and its own labelled Verify button, then its courses as a numbered track. Certificates from the same issuer that are not part of the set sit apart under "Also from [issuer]". One Verify never sits below a mixed list. |
 | K4 | Page backgrounds use the two paper colours only, alternating by section. No dark sections. |
 | K5 | Green is used for WhatsApp only. |
 
