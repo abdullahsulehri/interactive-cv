@@ -1,6 +1,6 @@
 # Rebuilds cv/Abdullah-Sulehri-CV.pdf (2 pages, QR code to the live site).
 # Run from repo root: python tools/build_cv.py   (needs reportlab + Liberation Serif fonts)
-# CV rules (checked at the end of every build, exit 1 on failure): exactly 2 pages; no wrapped line left with 1-2 words; no brackets in the summary; course lines carry no years. Needs reportlab + pdfplumber.
+# CV rules. Checked at the end of every build (exit 1 on failure): exactly 2 pages; no wrapped line left with 1-2 words. Content rules (by hand): no brackets in the summary; course lines carry no years. Needs reportlab + pdfplumber.
 import sys
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import BaseDocTemplate,PageTemplate,Frame,Paragraph,Spacer,Table,TableStyle,KeepTogether
