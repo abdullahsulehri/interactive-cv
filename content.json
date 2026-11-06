@@ -283,12 +283,12 @@
     },
     {
      "title": "MyndKeep: second-brain app",
-     "text": "An Android app I built for my own saves: it captures reels, screenshots, voice notes and docs, then uses AI to sort, summarize and trust-check each one.",
+     "text": "An Android app that saves anything (links, PDFs, voice notes, screenshots, videos, text), sorts it with AI automatically, and learns from my feedback by text, voice or screenshot.",
      "tags": [
       "Gemini",
       "Claude Code"
      ],
-     "saves": "200+ items organized and searchable, each with a 5-point trust check. Friends use it too."
+     "saves": "Anything is a search away: semantic search finds items by meaning across 200+ saves, each trust-checked."
     },
     {
      "title": "Live campaign report",

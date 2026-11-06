@@ -92,17 +92,19 @@ J('Senior Marketing Specialist','Soliton Technologies (Pakistan/US software hous
  'Built university partnerships and represented the company at industry and campus events',
  'Secured PR placements and shared performance insights with SEO, design and development teams via Looker Studio'])
 J('Assistant Manager Marketing','Marketing and Advertising Pvt Ltd',f'Jan 2019 – Aug 2021{SP2}(Lahore, Onsite)',[
- 'Delivered integrated digital, influencer and PR campaigns for 20+ brands, including Samsung, Unilever, Telenor, Honda and National Foods',
- 'Ran campaigns across X, Instagram, Facebook and LinkedIn with up to 500 influencers, averaging ~27M impressions per campaign',
- 'Coordinated PR agencies, bloggers, publishers and vendors, and supervised cross-functional teams during high-pressure launches'])
+ 'Led integrated digital, influencer and PR campaigns for 20+ brands, incl. Samsung, Unilever, Telenor and Honda',
+ 'Ran campaigns on X, Instagram, Facebook and LinkedIn with up to 500 influencers each',
+ 'Averaged ~27M impressions per campaign across social and influencer launches',
+ 'Coordinated PR agencies, bloggers, publishers and vendors; supervised teams through launches'])
 S.append(Paragraph(f'<b>Marketing Executive</b>{SP2}<font name="S-I" color="#555555">Dec 2017 – Dec 2018</font>',st(spaceBefore=3,spaceAfter=1)))
 S.append(B('Supported SMS campaigns and content for SME clients; built partnerships with bloggers and online publishers'))
 def PJ(t,sub,bs,head=None):
     S.append(KeepTogether(([head] if head else [])+[Paragraph(f'{t}{SP2}<font name="S-I" color="#555555">{sub}</font>',job)]+[B(x) for x in bs]))
 PJ('MyndKeep: AI second-brain app','(personal build, 2026)',[
  '<b>Problem:</b> useful reels, posts and notes were scattered across apps, hard to find later and of unclear reliability',
- '<b>Built</b> an Android app (shared as an APK with friends) that captures reels, screenshots, voice notes and docs; Gemini sorts, summarizes and runs a 5-point trust check on each item; 200+ items saved so far',
- '<b>Owned every product call:</b> review-first ingestion, scope cuts, categories and UI; built with Claude Code, GitHub and Render'],head=Paragraph('SELECTED AI PROJECTS',h))
+ '<b>Saves anything:</b> links, PDFs, voice notes, screenshots, videos and text; AI categorizes each item automatically',
+ '<b>Finds anything:</b> semantic search by meaning, not keywords; 200+ items saved, each with a 5-point trust check',
+ '<b>Learns from feedback</b> given by text, voice or screenshot; built with Claude Code, GitHub and Render'],head=Paragraph('SELECTED AI PROJECTS',h))
 PJ('Daily website health checker','(People Perfect)',[
  '<b>Problem:</b> broken links and pages on 6 company websites were being found by visitors before the team',
  '<b>Built</b> an automated checker on GitHub Actions that scans 92 pages and 10,000+ links every morning and emails a report; ~300 hidden issues found on the first run'])
@@ -126,7 +128,7 @@ groups=[
         L('Anthropic','Claude Code 101','2026',A['also'][0]['url'])]),
  ('Brand &amp; marketing',[L('Wharton (UPenn)','Introduction to Marketing','2022',_I['University of Pennsylvania (Wharton)'][0]['url']),
         L('University of London','Brand Management','2023',_I['University of London'][0]['url']),
-        L('University of Illinois','The Digital Marketing Revolution','2023',_I['University of Illinois Urbana-Champaign'][0]['url']),
+        L('University of Illinois','Digital Marketing Revolution','2023',_I['University of Illinois Urbana-Champaign'][0]['url']),
         L('Meta','Social Media Marketing Certificate','6 courses, 2026',M['url'])]),
  ('Advertising',[L('LUMS','Advertising: Print, Outdoor &amp; Digital','2023',_I['LUMS'][0]['url']),
         L('LinkedIn','Advertising on LinkedIn','2023',_I['LinkedIn'][0]['url'])]),
