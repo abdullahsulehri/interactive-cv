@@ -82,7 +82,8 @@
    "Sulehri"
   ],
   "portrait": "assets/portrait.webp",
-  "role_line": "Senior Marketing Manager at People Perfect · since 2025",
+  "role_line": "Senior Marketing Manager",
+  "company_line": "People Perfect · Since 2025",
   "thesis": "B2B growth leader,\nbuilding marketing engines *with AI*.",
   "status": "Open to conversations",
   "city": "Lahore",
@@ -279,7 +280,7 @@
       "Claude",
       "GitHub"
      ],
-     "saves": "Built with AI, tested on 9 screen sizes against 56 design rules before every release."
+     "saves": "Built with AI, tested on 9 screen sizes against 64 design rules before every release."
     },
     {
      "title": "MyndKeep: second-brain app",
