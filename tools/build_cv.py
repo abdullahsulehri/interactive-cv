@@ -91,13 +91,17 @@ J('Senior Marketing Specialist','Soliton Technologies (Pakistan/US software hous
  'Built the employer brand: employee events, employee of the month, wall branding, merchandise and employee videos',
  'Built university partnerships and represented the company at industry and campus events',
  'Secured PR placements and shared performance insights with SEO, design and development teams via Looker Studio'])
-J('Assistant Manager Marketing','Marketing and Advertising Pvt Ltd',f'Jan 2019 – Aug 2021{SP2}(Lahore, Onsite)',[
+# one company, two titles: company line with the full tenure, then each title with its own dates (in order held)
+_sub=st(spaceBefore=3,spaceAfter=1)
+S.append(KeepTogether([Paragraph('Marketing and Advertising (Pvt) Ltd',job),Paragraph(f'Dec 2017 – Aug 2021{SP2}(Lahore, Onsite)',date),
+ Paragraph(f'<b>Marketing Executive</b>{SP2}<font name="S-I" color="#555555">Dec 2017 – Dec 2018</font>',_sub),
+ B('Supported SMS campaigns and content for SME clients; built partnerships with bloggers and online publishers')]))
+S.append(Paragraph(f'<b>Assistant Manager Marketing</b>{SP2}<font name="S-I" color="#555555">Jan 2019 – Aug 2021</font>',_sub))
+S.extend(B(x) for x in [
  'Led integrated digital, influencer and PR campaigns for 20+ brands, incl. Samsung, Unilever, Telenor and Honda',
  'Ran campaigns on X, Instagram, Facebook and LinkedIn with up to 500 influencers each',
  'Averaged ~27M impressions per campaign across social and influencer launches',
  'Coordinated PR agencies, bloggers, publishers and vendors; supervised teams through launches'])
-S.append(Paragraph(f'<b>Marketing Executive</b>{SP2}<font name="S-I" color="#555555">Dec 2017 – Dec 2018</font>',st(spaceBefore=3,spaceAfter=1)))
-S.append(B('Supported SMS campaigns and content for SME clients; built partnerships with bloggers and online publishers'))
 def PJ(t,sub,bs,head=None):
     S.append(KeepTogether(([head] if head else [])+[Paragraph(f'{t}{SP2}<font name="S-I" color="#555555">{sub}</font>',job)]+[B(x) for x in bs]))
 PJ('MyndKeep: AI second-brain app','(personal build, 2026)',[
