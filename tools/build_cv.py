@@ -1,6 +1,6 @@
 # Rebuilds cv/Abdullah-Sulehri-CV.pdf (2 pages, QR code to the live site).
 # Run from repo root: python tools/build_cv.py   (needs reportlab + Liberation Serif fonts)
-# After editing text: rebuild, check it is still 2 pages, and that the QR still scans.
+# CV rules (checked at the end of every build, exit 1 on failure): exactly 2 pages; no wrapped line left with 1-2 words; no brackets in the summary; course lines carry no years. Needs reportlab + pdfplumber.
 import sys
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import BaseDocTemplate,PageTemplate,Frame,Paragraph,Spacer,Table,TableStyle,KeepTogether
@@ -50,38 +50,38 @@ hdr=Table([[Spacer(1,1),mid,qcell]],colWidths=[70,W-140,70]);hdr.setStyle(TableS
 S=[hdr]
 def sec(t):S.append(Paragraph(t,h))
 sec('PROFESSIONAL SUMMARY')
-S.append(Paragraph('Senior Marketing Manager with nine years in B2B growth, brand, PR and CRM-led marketing across Pakistan and the UAE. Leads a 6-person marketing function (4 direct reports, 2 freelancers) for a first-of-its-kind HR services marketplace, owning strategy, demand generation, product pricing and a ~$10K monthly budget. Builds AI agents and automations (10+ live) that take reporting, checks and content work off the team, with human review on every output. ACCA Fellow, bringing financial discipline to budgeting, pricing and ROI.',p))
+S.append(Paragraph('Senior Marketing Manager with nine years in B2B growth, brand, PR and CRM-led marketing across Pakistan and the UAE. Leads a 6-person team at a multi-country HR services group, owning strategy, demand generation, product pricing and the marketing budget. Has built 10+ AI agents and automations that take reporting, checks and content work off the team, with human review on every output. An accounting background brings financial discipline to budgets, pricing and ROI.',p))
 sec('CORE MARKETING EXPERTISE')
 a=['B2B Marketing Management','Account-Based Marketing (ABM)','Marketing Strategy &amp; GTM Planning','Integrated Marketing Management','Performance Marketing','Email Marketing &amp; Segmentation','Social Media Marketing','SEO &amp; Content Strategy']
 b=['Brand &amp; Employer Branding','PR &amp; Communications','CRM &amp; Marketing Automation','AI Agents &amp; Marketing Automation','Marketing Analytics &amp; Reporting','Budget Management &amp; ROI Evaluation','Product Costing &amp; Pricing Strategy','Team Leadership &amp; Stakeholder Management']
 cb=st(leftIndent=12,bulletIndent=2,leading=BODY*1.22)
 t=Table([[Paragraph(x,cb,bulletText='•'),Paragraph(y,cb,bulletText='•')] for x,y in zip(a,b)],colWidths=[W/2,W/2]);t.setStyle(TableStyle(NOPAD));S.append(t)
 sec('TOOLS &amp; PLATFORMS')
-for k,v in [('AI &amp; Automation','Claude (incl. Claude Code, Cowork, Design), ChatGPT, Gemini, Microsoft Copilot, Perplexity, Zapier, Power Automate'),
- ('Growth &amp; Demand','LinkedIn Sales Navigator, Meta Ads, LinkedIn Ads, Google Ads, X Ads, Mailchimp, Zoho Campaigns, Apollo.io, Hootsuite'),
+for k,v in [('AI &amp; Automation','Claude (incl. Code &amp; Cowork), ChatGPT, Gemini, Copilot, Perplexity, Zapier, Power Automate'),
+ ('Growth &amp; Demand','Sales Navigator, Meta, LinkedIn, Google &amp; X Ads, Mailchimp, Zoho Campaigns, Apollo.io, Hootsuite'),
  ('Brand &amp; Content','WordPress, Yoast SEO, SEMrush, Google Trends, Canva, Figma'),
  ('Data &amp; Analytics','Google Analytics, Search Console, Tag Manager, Looker Studio, Power BI, Advanced Excel, Power Query'),
- ('CRM &amp; Operations','Bitrix24, HubSpot, Zoho CRM, Microsoft Bookings, Notion, Asana, Trello, Jira, Microsoft Office, Google Workspace')]:
+ ('CRM &amp; Operations','Bitrix24, HubSpot, Zoho CRM, Notion, Asana, Trello, Jira, Microsoft 365, Google Workspace')]:
     S.append(Paragraph(f'<b>{k}:</b> {v}',st(spaceAfter=1)))
 sec('WORK EXPERIENCE')
 def J(role,co,dt,bs):
     S.append(KeepTogether([Paragraph(f'{role}{SEP}{co}',job),Paragraph(dt,date),B(bs[0])]));S.extend(B(x) for x in bs[1:])
 J('Senior Marketing Manager','People Perfect',f'Sep 2025 – Present{SP2}(Lahore, Onsite)',[
- 'Own end-to-end marketing strategy for a first-of-its-kind HR services marketplace: brand, PR, product marketing, content governance, CRM-led growth and B2B demand',
+ 'Own end-to-end marketing for a multi-country HR services group: brand, PR, product marketing, content governance, CRM-led growth and B2B demand',
  'Lead a team of 4 direct reports and 2 freelancers across content, design, SEO and digital; manage a ~$10K monthly budget and ROI across campaigns, CRM and content',
- 'Led product research and costing for 5 HR consultancy service lines, with pricing now live on the marketplace',
+ 'Led product research and costing for 5 HR consultancy service lines for the company’s upcoming HR services marketplace',
  'Run account-based marketing via LinkedIn Sales Navigator, targeting C-level leaders at UAE enterprises (500+ employees) and owners of large Pakistani FMCG businesses',
  'Recent B2B email campaigns reached a 60% open rate and 5%+ click-through',
  'Run Google, Meta and LinkedIn campaigns, plus Path2Progress, an event and webinar series for senior HR leaders',
  'Final authority on brand and content governance; leading the new company website and office wall branding',
  'Optimize Bitrix24 CRM workflows for lead visibility, lifecycle tracking and sales alignment',
- 'Built 10+ AI agents and automations (Claude, ChatGPT, Zapier, Notion) for reporting, website checks and content review, each human-approved'])
+ 'Built 10+ human-approved AI agents and automations (Claude, ChatGPT, Zapier, Notion) for reporting and checks'])
 J('Marketing Turnaround Project','Fast Food Restaurant, DHA Lahore',f'Jun 2025 – Aug 2025{SP2}(Lahore)',[
  'Reversed a year of falling sales: +25% in month one, then a further +15% in month two (~44% above the starting point)',
- 'Strengthened the burger menu, relaunched consumer campaigns, and opened a new B2B channel with offers for teams at nearby software houses'])
+ 'Improved the burger menu, relaunched consumer campaigns and opened a B2B channel for nearby software houses'])
 J('Marketing Manager','Creative Zone Tax &amp; Accounting (UAE)',f'Dec 2022 – May 2025{SP2}(Lahore, Hybrid)',[
  'Led integrated marketing for a UAE tax and accounting firm: brand visibility, demand generation and client acquisition',
- 'Turned the new UAE corporate tax (2023) into clear Meta, LinkedIn and X campaigns, delivering 20–40% sustained engagement growth',
+ 'Turned the new UAE corporate tax (2023) into clear Meta, LinkedIn and X campaigns: 20–40% sustained engagement growth',
  'Owned email marketing and automation; segmentation and A/B testing lifted open rates up to 35%',
  'Directed SEO-led content strategy, growing organic traffic by ~30% across blogs and landing pages',
  'Used SEMrush and Google Trends research to shape go-to-market plans, and reported insights to senior leaders'])
@@ -123,17 +123,17 @@ def L(inst,name,extra,url):
     return f'<a href="{url}" color="#1A1A1A">{t}</a>' if url else t
 G=_F['Google'];A=_F['Anthropic'];M=_F['Meta']
 groups=[
- ('AI',[L('Google','AI Professional Certificate','8 courses, 2026',G['url']),
-        L('Anthropic','Real-World AI with Claude','3 courses, 2026',A['url']),
-        L('Anthropic','Claude Code 101','2026',A['also'][0]['url'])]),
- ('Brand &amp; marketing',[L('Wharton (UPenn)','Introduction to Marketing','2022',_I['University of Pennsylvania (Wharton)'][0]['url']),
-        L('University of London','Brand Management','2023',_I['University of London'][0]['url']),
-        L('University of Illinois','Digital Marketing Revolution','2023',_I['University of Illinois Urbana-Champaign'][0]['url']),
-        L('Meta','Social Media Marketing Certificate','6 courses, 2026',M['url'])]),
- ('Advertising',[L('LUMS','Advertising: Print, Outdoor &amp; Digital','2023',_I['LUMS'][0]['url']),
-        L('LinkedIn','Advertising on LinkedIn','2023',_I['LinkedIn'][0]['url'])]),
- ('SEO &amp; content',[L('UC Davis','Introduction to Google SEO','2022',_I['UC Davis'][1]['url']),
-        L('UC Davis','The Strategy of Content Marketing','2023',_I['UC Davis'][0]['url'])]),
+ ('AI',[L('Google','AI Professional Certificate','8 courses',G['url']),
+        L('Anthropic','Real-World AI with Claude','3 courses',A['url']),
+        L('Anthropic','Claude Code 101','',A['also'][0]['url'])]),
+ ('Brand &amp; marketing',[L('Wharton (UPenn)','Introduction to Marketing','',_I['University of Pennsylvania (Wharton)'][0]['url']),
+        L('University of London','Brand Management','',_I['University of London'][0]['url']),
+        L('University of Illinois','Digital Marketing Revolution','',_I['University of Illinois Urbana-Champaign'][0]['url']),
+        L('Meta','Social Media Marketing Certificate','6 courses',M['url'])]),
+ ('Advertising',[L('LUMS','Advertising: Print, Outdoor &amp; Digital','',_I['LUMS'][0]['url']),
+        L('LinkedIn','Advertising on LinkedIn','',_I['LinkedIn'][0]['url'])]),
+ ('SEO &amp; content',[L('UC Davis','Introduction to Google SEO','',_I['UC Davis'][1]['url']),
+        L('UC Davis','The Strategy of Content Marketing','',_I['UC Davis'][0]['url'])]),
  ('Project management',[L('Google','Foundations of Project Management','',G['also'][0]['url'])]),
 ]
 gl=st(fontName='S-I',textColor=GREY,spaceBefore=1,spaceAfter=0)
@@ -151,3 +151,28 @@ doc=BaseDocTemplate('cv/Abdullah-Sulehri-CV.pdf',pagesize=letter,leftMargin=40,r
  title='Abdullah Sulehri – CV',author='Abdullah Sulehri',subject='Senior Marketing Manager | B2B Growth & AI',creator='Abdullah Sulehri')
 doc.addPageTemplates([PageTemplate('p',[Frame(40,36,W,792-72,leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)])]);doc.build(S)
 print('pages:',doc.page)
+# ---- layout checks (CV rules): exactly 2 pages, and no short orphan lines (a wrapped line left with 1-2 words, like "growth")
+def orphans(path):
+    import pdfplumber
+    out = []
+    with pdfplumber.open(path) as pdf:
+        for pn, pg in enumerate(pdf.pages, 1):
+            rows = {}
+            for w in pg.extract_words(keep_blank_chars=False, extra_attrs=['fontname']):
+                rows.setdefault(round(w['top'] / 2), []).append(w)
+            for k in sorted(rows):
+                ws = sorted(rows[k], key=lambda w: w['x0'])
+                cols = [[]]
+                for w in ws:  # split side-by-side columns (certificates, expertise) at wide gaps
+                    if cols[-1] and w['x0'] - cols[-1][-1]['x1'] > 40: cols.append([])
+                    cols[-1].append(w)
+                for c in cols:
+                    t = ' '.join(w['text'] for w in c if w['text'] != '•')
+                    label = all('Italic' in w['fontname'] for w in c) or t.isupper() or t.endswith(':')  # group labels, headings
+                    if 0 < len(t.split()) <= 2 and not label and c[0]['top'] > 130:  # 1-2 words left alone on a line
+                        out.append(f'page {pn}: "{t}"')
+    return out
+bad = orphans('cv/Abdullah-Sulehri-CV.pdf')
+if doc.page != 2 or bad:
+    print('CV LAYOUT FAILED:', 'pages=%d' % doc.page if doc.page != 2 else '', *bad, sep='\n - '); sys.exit(1)
+print('CV LAYOUT PASS (2 pages, no orphan words)')
