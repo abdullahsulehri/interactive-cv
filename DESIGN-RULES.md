@@ -139,7 +139,7 @@ One way of saying "this is in focus", everywhere. `tools/lint.py` blocks any oth
 
 Every release is tagged (`v9`, `v10`, `v11`, …). To roll the live site back: `git checkout main && git reset --hard v10 && git push --force` (replace `v10` with the version to return to). GitHub Pages updates within a few minutes.
 
-## 12. Interaction contract (I1–I4)
+## 12. Interaction contract (I1–I5)
 
 Every item that can take focus is one of three kinds, declared once in code (`kindOf` in index.html, written to `data-kind`). Styles are written per kind, never per item, so a new item cannot miss a behaviour. `tools/hovercheck.py` enforces this on the page and inside every panel.
 
@@ -149,4 +149,5 @@ Every item that can take focus is one of three kinds, declared once in code (`ki
 | I2 | **Cursor response by kind, identical everywhere.** Card: lifts 2px with a soft shadow (.4s). Row: a tint appears behind it, reaching 6px past its text, nothing moves (.2s). Mark: grey to brand colour (K3). Touch screens show none of these (no hover). |
 | I3 | **Focus is the same for all kinds.** Scroll, tap or hover puts one item in focus: its dot fills and its own button opens (F-rules). Hovering anywhere on an item counts, not only its button. |
 | I4 | **Checked before every release.** `hovercheck.py` hovers up to 3 items of every kind and class, on the page and in each panel, and fails if any item misses its response; it also fails if fewer than 30 items carry a kind. Run with `--sabotage` to prove the check still catches a broken style. |
+| I5 | **Scroll focus is for touch screens only.** On a device with a mouse, items take focus from the cursor (and keyboard) only; scrolling never lights an item, opens its button or colours a logo. Scroll still drives section-level effects on every device: heading accent fills, section reveals, the story line, the menu's current section. |
 

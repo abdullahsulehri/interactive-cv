@@ -13,10 +13,10 @@ async def sweep(pg,scroller):
     while True:
         await pg.evaluate(f"(()=>{{const s={scroller};s.scrollTop={y}}})()");await pg.wait_for_timeout(230)  # let scrolling settle so pills may open
         if await pg.evaluate("document.querySelectorAll('.pa.f-act').length>1"):MANY.append(scroller[:30]+f' @{y}')
-        if await pg.evaluate("document.querySelectorAll('.f-on').length===0 && window.__fx().some(e=>{const r=e.getBoundingClientRect();return r.height&&r.bottom>60&&r.top<innerHeight-60})"):EMPTY.append(scroller[:30]+f' @{y}')
+        if (pg.viewport_size or {}).get('width',0)<900 and await pg.evaluate("document.querySelectorAll('.f-on').length===0 && window.__fx().some(e=>{const r=e.getBoundingClientRect();return r.height&&r.bottom>60&&r.top<innerHeight-60})"):EMPTY.append(scroller[:30]+f' @{y}')
         if y>=mx:break
         y=min(mx,y+max(6,min(30,mx//40)))
-EMPTY=[];MANY=[]
+EMPTY=[];MANY=[]  # EMPTY: phone only; with a mouse, focus comes from the cursor (I5) and may be empty
 async def main():
     fails=[]
     async with async_playwright() as p:

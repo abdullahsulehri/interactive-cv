@@ -82,7 +82,7 @@ J('Marketing Turnaround Project','Fast Food Restaurant, DHA Lahore',f'Jun 2025 �
 J('Marketing Manager','Creative Zone Tax &amp; Accounting (UAE)',f'Dec 2022 – May 2025{SP2}(Lahore, Hybrid)',[
  'Led integrated marketing for a UAE tax and accounting firm: brand visibility, demand generation and client acquisition',
  'Turned the new UAE corporate tax (2023) into clear Meta, LinkedIn and X campaigns: 20–40% sustained engagement growth',
- 'Owned email marketing and automation; segmentation and A/B testing lifted open rates up to 35%',
+ 'Owned email marketing and automation, using segmentation and A/B testing to lift engagement',
  'Directed SEO-led content strategy, growing organic traffic by ~30% across blogs and landing pages',
  'Used SEMrush and Google Trends research to shape go-to-market plans, and reported insights to senior leaders'])
 J('Senior Marketing Specialist','Soliton Technologies (Pakistan/US software house)',f'Sep 2021 – Nov 2022{SP2}(Lahore, Onsite)',[

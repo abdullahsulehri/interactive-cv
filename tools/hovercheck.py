@@ -1,4 +1,4 @@
-"""Interaction contract check (rules I1-I4), laptop 1440x900, on the page and inside every panel.
+"""Interaction contract check (rules I1-I5), laptop 1440x900, on the page and inside every panel.
 Hovers up to 3 items of each kind/class and fails if one does not answer the cursor the way its kind requires:
   card -> lifts (translate) and is in focus     row -> tint behind it and in focus     mark -> in focus
   any item with its own button -> that button opens (or is a labelled / open control)
@@ -52,6 +52,14 @@ async def run():
         await pg.add_style_tag(content='html{scroll-behavior:auto!important}')
         if len(sys.argv) > 2 and sys.argv[2] == '--sabotage':  # self-test: with the kind styles switched off, this check must fail
             await pg.add_style_tag(content='.ch [data-kind]:hover{translate:none!important;background-color:transparent!important;box-shadow:none!important}')
+        # I5: with a mouse, scrolling alone must never light an item
+        await pg.mouse.move(2, 450)
+        H = await pg.evaluate('document.documentElement.scrollHeight')
+        for y in range(0, H, 450):
+            await pg.evaluate(f'scrollTo(0,{y})'); await pg.wait_for_timeout(450)
+            lit = await pg.evaluate("[...document.querySelectorAll('main [data-kind].f-on')].map(e => e.className.split(' ')[0])")
+            if lit: fails.append(f'I5: scrolled to {y}px with the cursor away, items lit anyway: {lit[:3]}'); break
+        await pg.evaluate('scrollTo(0,0)'); await pg.wait_for_timeout(300)
         tiles = await pg.evaluate("document.querySelectorAll('.tile').length")
         for scope in [-1] + list(range(tiles)):
             if scope >= 0:
