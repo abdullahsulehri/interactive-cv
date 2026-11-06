@@ -40,11 +40,11 @@ class QRLink(Table):
     def drawOn(self,c,x,y,_sW=0):
         Table.drawOn(self,c,x,y,_sW);c.linkURL(URL,(x,y,x+self._width,y+self._height),relative=1,thickness=0)
 NOPAD=[('LEFTPADDING',(0,0),(-1,-1),0),('RIGHTPADDING',(0,0),(-1,-1),0),('TOPPADDING',(0,0),(-1,-1),0),('BOTTOMPADDING',(0,0),(-1,-1),0)]
-qcell=QRLink([[qr()],[Paragraph('<b>Interactive CV</b><br/>scan or click',qlab)]],colWidths=[70])
+qcell=QRLink([[qr()],[Paragraph('<b>Interactive CV</b><br/>scan to open',qlab)]],colWidths=[70])
 qcell.setStyle(TableStyle([('ALIGN',(0,0),(-1,-1),'CENTER')]+NOPAD+[('TOPPADDING',(0,1),(0,1),3)]))
 mid=[Paragraph('ABDULLAH SULEHRI',name),Paragraph(f'SENIOR MARKETING MANAGER{SEP}B2B GROWTH &amp; AI',title),Spacer(1,2),
  Paragraph('Lahore, Pakistan'+SEP+L('mailto:abdullah@sulehri.com','abdullah@sulehri.com')+SEP+L('tel:+923314074234','+92 331 4074234'),cont),
- Paragraph(L('https://www.linkedin.com/in/abdullahsulehri','linkedin.com/in/abdullahsulehri')+SEP+f'Portfolio: <a href="{URL}" color="#1F4E79"><u>{SHOW}</u></a>',cont)]
+ Paragraph(L('https://www.linkedin.com/in/abdullahsulehri','linkedin.com/in/abdullahsulehri')+SEP+f'Interactive CV: <a href="{URL}" color="#1F4E79"><u>{SHOW}</u></a>',cont)]
 W=612-2*40
 hdr=Table([[Spacer(1,1),mid,qcell]],colWidths=[70,W-140,70]);hdr.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'MIDDLE')]+NOPAD))
 S=[hdr]
@@ -123,7 +123,7 @@ def L(inst,name,extra,url):
     return f'<a href="{url}" color="#1A1A1A">{t}</a>' if url else t
 G=_F['Google'];A=_F['Anthropic'];M=_F['Meta']
 groups=[
- ('AI',[L('Google','AI Professional Certificate','8 courses',G['url']),
+ ('Artificial intelligence (AI)',[L('Google','AI Professional Certificate','8 courses',G['url']),
         L('Anthropic','Real-World AI with Claude','3 courses',A['url']),
         L('Anthropic','Claude Code 101','',A['also'][0]['url'])]),
  ('Brand &amp; marketing',[L('Wharton (UPenn)','Introduction to Marketing','',_I['University of Pennsylvania (Wharton)'][0]['url']),
