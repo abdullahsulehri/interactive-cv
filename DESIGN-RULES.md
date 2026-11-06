@@ -105,7 +105,7 @@ These keep the code clean every time a feature or content is added. `tools/lint.
 | S1 | One `<style>` block. No new `!important`, duplicate selectors, `setTimeout`s, inline `style=` attributes or colour literals: their counts in `tools/lint-budget.json` can go down, never up. Fix specificity or order instead of forcing. |
 | S2 | Layers and corners come from tokens only: `--z-*` for z-index, `--r` / `--r-*` for border-radius. Colours come from the `:root` and theme tokens. |
 | S3 | Font sizes follow T4. Named exceptions: 9.5px dot-to-pill micro label (grows inside the fixed pill, so no layout moves), 34px loader monogram, 64px testimonial quote mark. |
-| S4 | Every transition and animation uses `var(--ez)` and a T-rule speed (.2s / .4s / 1.2s). Named exception: 2.4s loader pulse loop. |
+| S4 | Every transition and animation uses `var(--ez)` and a T-rule speed (.2s / .4s / 1.2s). Named exceptions: 2.4s loader pulse loop; 9s stats colour wave (ambient loop, off with the Motion switch and reduced motion). |
 | S5 | Breakpoints come from the fixed list in `tools/lint.py`. Laptop starts at `min-width:900px`; phone is `max-width:899.98px`. A new breakpoint needs a rule change first. |
 | S6 | Text lives only in `content.json`. After editing it, run `python tools/sync_content.py` so the copy inside `index.html` matches. US spelling (official course titles excepted). Rules D1–D3 are checked automatically. |
 | S7 | No leftover build markers, `console.log`, `TODO`; every referenced file exists; JavaScript passes a syntax check. |

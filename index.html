@@ -672,10 +672,14 @@ button {
   display: block;
   font: 700 clamp(28px,2.6vw,42px)/.95 var(--f-display);
   font-variant-numeric: tabular-nums;
+  animation: sink 9s var(--ez) infinite; /* colour wave, see @keyframes sink */
+  animation-delay: calc(var(--si,0) * .6s + 2s);
 }
 .stat b i {
   font-style: normal;
   color: var(--accent);
+  animation: ssuf 9s var(--ez) infinite;
+  animation-delay: calc(var(--si,0) * .6s + 2.15s);
   display: inline-block;
   transform-origin: 30% 80%;
 }
@@ -690,6 +694,28 @@ button {
     transform: scale(1.35);
   }
 }
+/* stats breathe colour: a slow wave runs across the strip, each number warming to the accent in turn and its suffix
+   brightening, then settling back. Off with the Motion switch and for reduced motion. */
+@keyframes sink {
+  0%,12%,100% {
+    color: var(--ink);
+  }
+  6% {
+    color: var(--accent);
+  }
+}
+@keyframes ssuf {
+  0%,13%,100% {
+    color: var(--accent);
+  }
+  6.5% {
+    color: color-mix(in srgb,var(--accent) 60%,var(--paper));
+  }
+}
+.no-motion .stat b,.no-motion .stat b i {
+  animation: none;
+}
+
 .stat span {
   display: block;
   margin-top: 6px;
@@ -1982,7 +2008,7 @@ html.lock,html.lock body {
   html {
     scroll-behavior: auto;
   }
-  .status .live::after {
+  .status .live::after,.stat b,.stat b i {
     animation: none;
   }
 }
@@ -4589,6 +4615,7 @@ setTimeout(function () {
     const hs = H.stats || [];
     $('#hstats').style.setProperty('--n', Math.min(hs.length, 4) || 1);
     $('#hstats').innerHTML = hs.map(statHTML).join('');
+    $$('#hstats .stat').forEach((s, i) => s.style.setProperty('--si', i)); /* order in the colour wave */
     function countUp(root) {
       $$('b[data-n]', root).forEach(b => {
         const n = parseFloat(b.dataset.n),

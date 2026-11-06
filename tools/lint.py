@@ -39,7 +39,7 @@ for v in sizes:
     n=v.replace('px','')
     if n not in SCALE and n not in EXC: err('S3',f'font-size {v} is off the T4 scale (11 12 13 14 15 16 18 20 24)')
 # ---------- S4 motion (M1, M2) ----------
-OKDUR={'.2s','0.2s','.4s','0.4s','1.2s','0s','0ms'};EXCDUR={'2.4s':'loader pulse loop (exception)'}
+OKDUR={'.2s','0.2s','.4s','0.4s','1.2s','0s','0ms'};EXCDUR={'2.4s':'loader pulse loop (exception)','9s':'stats colour wave, ambient loop (exception)'}
 for p,v in decls:
     if p not in('transition','animation') or v.strip().startswith('none'): continue
     for seg in re.split(r',(?![^()]*\))',v):
