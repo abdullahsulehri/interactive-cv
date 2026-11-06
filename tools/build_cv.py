@@ -110,12 +110,41 @@ S.append(KeepTogether([Paragraph('EDUCATION',h)]+[Paragraph(x,st(spaceAfter=1)) 
  f'<b>ACCA</b> – Member 2016, Fellow 2021{SEP}SKANS School of Accountancy',
  f'<b>Bachelor of Business Administration</b> (2025){SEP}European Global Institute',
  f'<b>Bachelor of Arts – Journalism</b> (2019){SEP}University of the Punjab']]))
-ce=[Paragraph('CERTIFICATIONS',h)]+[B(x) for x in [
- f'<b>Google AI Professional Certificate</b> (8 courses) – Google{SEP}<b>Foundations of Project Management</b> – Google',
- '<b>Real-World AI with Claude</b> (3 courses) and <b>Claude Code 101</b> – Anthropic',
- '<b>Meta Social Media Marketing Professional Certificate</b> (6 courses) – Meta',
- '<b>Online courses:</b> Brand Management (University of London); Advertising: Print, Outdoor &amp; Digital (LUMS); Introduction to Marketing (Wharton, University of Pennsylvania); The Strategy of Content Marketing and Introduction to Google SEO (UC Davis); The Digital Marketing Revolution (University of Illinois); Advertising on LinkedIn (LinkedIn)']]
-ce.append(Paragraph('<b>Languages:</b> English, Urdu',st(spaceBefore=6)));S.append(KeepTogether(ce))
+# certifications: grouped by skill, one certificate per line, institution first (bold) and linked to its verify page
+import json as _j
+_C=_j.load(open('content.json'))['certificates']
+_F={f['issuer']:f for f in _C['featured']}
+_I={i['issuer']:i['items'] for i in _C['issuers']}
+_n=sum(len(f['courses'])+len(f.get('also',[])) for f in _C['featured'])+sum(len(v) for v in _I.values())
+def L(inst,name,extra,url):
+    t=f'<b>{inst}</b> – {name}' + (f' ({extra})' if extra else '')
+    return f'<a href="{url}" color="#1A1A1A">{t}</a>' if url else t
+G=_F['Google'];A=_F['Anthropic'];M=_F['Meta']
+groups=[
+ ('AI',[L('Google','AI Professional Certificate','8 courses, 2026',G['url']),
+        L('Anthropic','Real-World AI with Claude','3 courses, 2026',A['url']),
+        L('Anthropic','Claude Code 101','2026',A['also'][0]['url'])]),
+ ('Brand &amp; marketing',[L('Wharton (UPenn)','Introduction to Marketing','2022',_I['University of Pennsylvania (Wharton)'][0]['url']),
+        L('University of London','Brand Management','2023',_I['University of London'][0]['url']),
+        L('University of Illinois','The Digital Marketing Revolution','2023',_I['University of Illinois Urbana-Champaign'][0]['url']),
+        L('Meta','Social Media Marketing Certificate','6 courses, 2026',M['url'])]),
+ ('Advertising',[L('LUMS','Advertising: Print, Outdoor &amp; Digital','2023',_I['LUMS'][0]['url']),
+        L('LinkedIn','Advertising on LinkedIn','2023',_I['LinkedIn'][0]['url'])]),
+ ('SEO &amp; content',[L('UC Davis','Introduction to Google SEO','2022',_I['UC Davis'][1]['url']),
+        L('UC Davis','The Strategy of Content Marketing','2023',_I['UC Davis'][0]['url'])]),
+ ('Project management',[L('Google','Foundations of Project Management','',G['also'][0]['url'])]),
+]
+gl=st(fontName='S-I',textColor=GREY,spaceBefore=1,spaceAfter=0)
+def col(gs):
+    out=[]
+    for t,items in gs: out+= [Paragraph(t,gl)]+[B(x) for x in items]
+    return out
+_site=f'<a href="https://abdullahsulehri.github.io/interactive-cv/?utm_source=cv-pdf" color="#1F4E8C">abdullahsulehri.github.io/interactive-cv</a>'
+ce=[Paragraph('CERTIFICATIONS',h),Paragraph(f'{_n}+ certificates, all verifiable at {_site}',st(spaceAfter=2))]
+_t=Table([[col([groups[0],groups[2],groups[4]]),col([groups[1],groups[3]])]],colWidths=[W*0.5,W*0.5])
+_t.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),0),('RIGHTPADDING',(0,0),(0,0),10),('TOPPADDING',(0,0),(-1,-1),0),('BOTTOMPADDING',(0,0),(-1,-1),0)]))
+ce.append(_t)
+ce.append(Paragraph('<b>Languages:</b> English, Urdu',st(spaceBefore=3)));S.append(KeepTogether(ce))
 doc=BaseDocTemplate('cv/Abdullah-Sulehri-CV.pdf',pagesize=letter,leftMargin=40,rightMargin=40,topMargin=36,bottomMargin=36,
  title='Abdullah Sulehri – CV',author='Abdullah Sulehri',subject='Senior Marketing Manager | B2B Growth & AI',creator='Abdullah Sulehri')
 doc.addPageTemplates([PageTemplate('p',[Frame(40,36,W,792-72,leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)])]);doc.build(S)

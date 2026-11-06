@@ -49,7 +49,7 @@ The site is one page (`index.html`). Text and data live in `content.json`. Image
 | C5 | Fixed elements (bars, panels) never cover text a visitor needs. |
 | C6 | The same component has the same internal structure at every width. Nothing rearranges because one item's text is longer. |
 | C7 | Each section has one action slot, at the top right of its heading (e.g. View on LinkedIn, Expand all). On phone it sits under the heading. |
-| C8 | A control whose label swaps (Expand all ↔ Collapse all, Show ↔ Hide, Read more ↔ Show less) reserves the longer label's width from the start, with equal cushion on both sides; swapping never moves anything. |
+| C8 | A control whose label swaps (Expand all ↔ Collapse all, Show ↔ Hide, Show all 25 brands ↔ Show fewer) fits its current label: on a swap the pill glides to the new width (.4s), so there is never a gap after a short label and nothing jumps. |
 
 ## 5. Panels
 
